@@ -1,0 +1,9 @@
+<!-- HTML in externe template -->
+<h1>Hello Angular 2</h1>
+<p>Dit is een externe template</p>
+<h2>Mijn naam is : {{ name }}</h2>
+<h2>Mijn favoriete steden  zijn :</h2>
+<ul>
+	<li *ngFor="#city of cities">{{ city.id}} - {{ city.name }}</li>
+</ul>
+<h2 *ngIf="cities.length > 3">Jij hebt veel favoriete steden!</h2>

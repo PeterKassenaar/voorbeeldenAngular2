@@ -1,0 +1,20 @@
+<!-- HTML in externe template -->
+<h1>Hello Angular 2</h1>
+<h2>Mijn favoriete steden zijn :</h2>
+<ul class="list-group">
+	<li *ngFor="#city of cities" class="list-group-item">{{ city.id}} - {{ city.name }}</li>
+</ul>
+<hr>
+
+<!-- City toevoegen -->
+<div>
+	<input type="text" class="input-lg" placeholder="Plaatsnaam..." #txtCity>
+	<button class="btn btn-success"
+			(click)="addCity(txtCity)">Toevoegen    
+	</button>
+</div>
+<hr>
+
+<!-- Attribute binding -->
+<button class="btn btn-success" (click)="toggleText()">Toggle text</button>
+<h2 [hidden]="textVisible">Geweldige steden, allemaal.</h2>

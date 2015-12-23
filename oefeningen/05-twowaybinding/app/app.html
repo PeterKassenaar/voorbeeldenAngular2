@@ -1,0 +1,27 @@
+<style>
+	.photoCity {
+		max-width : 300px;
+	}
+</style>
+<h1>Hello Angular 2</h1>
+<h2>Mijn favoriete steden zijn :</h2>
+<ul class="list-group">
+	<li *ngFor="#city of cities" class="list-group-item"
+		(click)="updateCity(city)">
+		{{ city.id}} - {{ city.name }}
+	</li>
+</ul>
+<hr>
+
+<!-- Two-way binding -->
+<h2>Two-way binding</h2>
+<input type="text" class="input-lg" [(ngModel)]="newCity" placeholder="Plaatsnaam..."/>
+<h2>{{ newCity }}</h2>
+
+<h2>Two-way binding met uitgebreide syntaxis</h2>
+<!-- Two-way binding met uitgebreide syntaxis-->
+<input type="text" class="input-lg"
+	   [value]="newCityExtended"
+	   (input)="newCityExtended = $event.target.value"
+	   placeholder="Plaatsnaam..."/>
+<h2>{{ newCityExtended }}</h2>
