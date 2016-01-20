@@ -1,9 +1,6 @@
 import {Component} from 'angular2/core';
 import {City} from './city.model'
 
-// component met multi-line HTML-string
-// Lijst met steden via *ngFor
-// Conditionele koptekst wordt getoond met *ngIf
 @Component({
 	selector   : 'hello-world',
 	templateUrl: 'app/app.html'

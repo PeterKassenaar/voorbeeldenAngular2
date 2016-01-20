@@ -4,6 +4,7 @@ import {Http} from 'angular2/http';
 
 @Injectable()
 export class CityService {
+	private _cities;
 
 	constructor(private _http:Http) {
 
@@ -13,4 +14,5 @@ export class CityService {
 	getCities() {
 		return this._http.get('app/cities.json')
 	}
+
 }
