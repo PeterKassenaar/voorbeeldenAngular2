@@ -11,7 +11,8 @@ import {City} from './city.model'
 export class AppComponent {
 	// Properties voor de component/class
 	name   = 'Peter Kassenaar';
-	cities = [
+
+	cities:City[] = [
 		new City(1, 'Groningen', 'Groningen'),
 		new City(2, 'Hengelo', 'Overijssel'),
 		new City(3, 'Den Haag', 'Zuid-Holland'),
@@ -22,6 +23,7 @@ export class AppComponent {
 
 	// City toevoegen aan de array
 	addCity(txtCity) {
+		console.log(txtCity);
 		let newID   = this.cities.length + 1;
 		let newCity = new City(newID, txtCity.value, 'Onbekend');
 		this.cities.push(newCity);

@@ -16,6 +16,6 @@ export class AppComponent {
 
 	constructor() {
 		this.name = 'Peter Kassenaar';
-		this.city = 'Groningen'
+		this.city = 'Groningen';
 	}
 }
