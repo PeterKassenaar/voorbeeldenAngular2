@@ -12,16 +12,17 @@ export class CityAddComponent {
 	// lokale (dummy) data om te testen
 	provinces:string[] = ['Groningen', 'Friesland', 'Drenthe', 'Overijssel', 'Flevoland', 'Gelderland', 'Noord-Holland', 'Zuid-Holland', 'Utrecht', 'Noord-Brabant', 'Zeeland', 'Limburg'];
 
-	model:City = new City(8, 'Delfzijl', this.provinces[0], 0, ['De Dollard']);
+	city:City = new City(8, 'Delfzijl', this.provinces[0], 0, ['De Dollard']);
 
 	submitted:boolean = false;
 
 	onSubmit() {
 		this.submitted = true;
+		// TODO: push city on the array and clear form
 	}
 
 	// TODO - weghalen zodra gereed
 	get diagnostic() {
-		return JSON.stringify(this.model);
+		return JSON.stringify(this.city);
 	}
 }
