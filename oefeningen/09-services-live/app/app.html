@@ -2,8 +2,8 @@
 	<div class="col-md-6">
 		<h1>Movies via een service</h1>
 		<div>
-			<input type="text" #movieName class="input-lg" placeholder="movie name...">
-			<button class="btn btn-primary" (click)="searchMovies(movieName.value)">Find movies</button>
+			<input type="text" #keyword class="input-lg" placeholder="movie name...">
+			<button class="btn btn-primary" (click)="searchMovies(keyword.value)">Find movies</button>
 		</div>
 		<ul class="list-group">
 			<li *ngFor="#movie of movies" class="list-group-item">

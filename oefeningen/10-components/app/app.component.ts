@@ -1,5 +1,5 @@
 // app.component.ts
-import {Component} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 import {HTTP_PROVIDERS} from "angular2/http";
 import {City} from './city.model'
 import {CityService} from "./city.service";
@@ -16,12 +16,21 @@ import {CityDetail} from "./city.detail"; // Nieuwe component invoegen
 export class AppComponent {
 	// Properties voor de component/class
 	public  cities:City[];
+	public  currentCity:boolean=false;
+
 
 	constructor(private cityService:CityService) {
 		//...eventuele extra initialisaties
 		this.getCities();
 	}
 
+	getCity(city) {
+		this.currentCity = true;
+	}
+
+	clearCity() {
+		this.currentCity = null;
+	}
 
 	//***********************
 	// implementation

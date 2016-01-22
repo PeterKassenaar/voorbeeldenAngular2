@@ -35,10 +35,11 @@
 	"highlights": "Mijnbouwmuseum"
   },
   {
-	"id"        : 6,
-	"name"      : "Mechelen",
-	"province"  : "Antwerpen",
-	"rating"    : 0,
-	"highlights": "McDonald's"
+	"id"        : 7,
+	"name"      : "Diemen",
+	"province"  : "Noord-Holland",
+	"rating"    : -1,
+	"highlights": "World of Food, Devoteam! Yeah!"
   }
+
 ]

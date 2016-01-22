@@ -15,18 +15,17 @@ export class AppComponent {
 	// Properties voor de component/class
 	public  cities:City[];
 
-	constructor(private _cityService:CityService) {
+	constructor(private cityService:CityService) {
 		//...eventuele extra initialisaties
-		this._getCities();
+		this.getCities();
 	}
-
 
 	//***********************
 	// implementation
 	//***********************
-	_getCities() {
+	getCities() {
 		if (!this.cities) {
-			this._cityService.getCities()
+			this.cityService.getCities()
 				.subscribe(cityData => {
 						this.cities = cityData.json();				// 1. success handler
 					},

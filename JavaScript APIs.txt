@@ -7,6 +7,7 @@ http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
 https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
 https://addb.absolutdrinks.com/docs/ - Eigen drankjes mixen, na sign-up
 http://openbeerdatabase.com/ - Open beer database (deels open toegankelijk)
+https://freemusicarchive.org/api - informatie over ('open source') songs & artiesten
 
 
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)

@@ -4,15 +4,17 @@
 		<h1>Cities via een service</h1>
 		<h2>Mijn favoriete steden zijn :</h2>
 		<ul class="list-group">
-			<li *ngFor="#city of cities" class="list-group-item">
+			<li *ngFor="#city of cities" class="list-group-item" (click)="getCity()">
 				{{ city.id}} - {{ city.name }}
 			</li>
 		</ul>
+		<button class="btn btn-primary" (click)="clearCity()">Clear</button>
 	</div>
+
 	<div class="col-md-6">
 		<!-- Details via nieuwe component -->
 		<div *ngIf="currentCity">
-			<city-detail city="currentCity"></city-detail>
+			<city-detail></city-detail>
 		</div>
 	</div>
 </div>
