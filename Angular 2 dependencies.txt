@@ -1,0 +1,117 @@
+// ***********************
+// Behorende bij de training Angular 2 - (C) 2016 - Peter Kassenaar <info@kassenaar.com>
+
+// Gebruik deze snippets om snel een boilerplate-project samen
+// te stellen voor Angular 2
+// ***********************
+
+// 1. package.json - in de root van je project
+
+{
+  "name"           : "<<name of project>>",
+  "version"        : "1.0.0",
+  "description"    : "Starter/base project for Angular 2 beta.2",
+  "main"           : "index.js",
+  "scripts"        : {
+    "tsc"  : "tsc",
+    "tsc:w": "tsc -w",
+    "lite" : "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+  },
+  "keywords"       : [
+    "Angular2",
+    "boilerplate",
+    "base",
+    "starter project"
+  ],
+  "dependencies"   : {
+    "angular2"        : "2.0.0-beta.2",
+    "bootstrap"       : "^3.3.6",
+    "es6-promise"     : "^3.0.2",
+    "es6-shim"        : "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs"            : "5.0.0-beta.0",
+    "systemjs"        : "0.19.6",
+    "zone.js"         : "0.5.10"
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0",
+    "lite-server" : "^1.3.1",
+    "typescript"  : "^1.7.3"
+  },
+  "author"         : "Peter Kassenaar <info@kassenaar.com>",
+  "license"        : "ISC"
+}
+
+// 2. tsconfig.json - in de root van je project.
+
+{
+  "compilerOptions": {
+    "target"                : "ES5",
+    "module"                : "system",
+    "moduleResolution"      : "node",
+    "sourceMap"             : true,
+    "emitDecoratorMetadata" : true,
+    "experimentalDecorators": true,
+    "removeComments"        : false,
+    "noImplicitAny"         : false
+  },
+  "exclude"        : [
+    "node_modules"
+  ]
+}
+
+// 3. Component maken - app/app.component.ts
+
+import {Component} from 'angular2/core';
+
+@Component({
+	// add component description/annotations here
+})
+
+export class AppComponent {
+	// add constructor, class logic, etc. here
+}
+
+
+// 4. Bootstrapper maken - app/boot.ts
+
+import {bootstrap} from 'angular2/platform/browser';
+bootstrap(<<Name of Component here>>);
+
+// 5. Index.html - in root van je project. In de header:
+
+ <!-- 1. Load libraries -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+
+<!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/boot')
+                .then(null, console.error.bind(console));
+    </script>
+
+<!-- 3. Add some styling -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+// 6. Inhoud van index.html - in de <body>
+
+<div class="container">
+    <!-- Place root component here, for instance -->
+        <my-app>Bezig met laden...</my-app>
+</div>
+
+// 7. App draaien - in command line window
+
+npm start
