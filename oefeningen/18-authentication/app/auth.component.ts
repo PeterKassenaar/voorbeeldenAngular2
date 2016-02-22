@@ -13,7 +13,7 @@ import {Http, Headers, HTTP_PROVIDERS} from "angular2/http";
 	<hr>
 
 	<!-- TODO : activate Form -->
-	<h2>Login - TODO : activate form</h2>
+	<!--<h2>Login - TODO : activate form</h2>
 	<form (submit)="onSubmit()" #loginForm="ngForm">
  	<div class="form-group">
         <label for="userName">Username</label>
@@ -33,7 +33,9 @@ import {Http, Headers, HTTP_PROVIDERS} from "angular2/http";
 	</div>
 	<button type="submit" class="btn btn-default">Submit</button>
 	</form>
+	-->
 	<button class="btn btn-success" (click)="auth()">{{btnLoginMsg}}</button>
+	
 	`,
 	providers: [HTTP_PROVIDERS]
 })

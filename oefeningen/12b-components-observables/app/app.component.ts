@@ -4,29 +4,40 @@ import {HTTP_PROVIDERS} from "angular2/http";
 import {City} from './city.model'
 import {CityService} from "./city.service";
 import {CityDetail} from "./city.detail";
-import {NumRatings} from "./numRatings.component"; // Nieuwe component invoegen
+import {NumRatings} from "./numRatings.component";
+import {ProducerComponent} from "./producer.component";
+import {PubSubService} from "./services/pubSubService"; // Nieuwe component invoegen
 
 @Component({
 	selector   : 'city-app',
 	templateUrl: 'app/app.html',
 	providers  : [CityService, HTTP_PROVIDERS],
-	directives : [CityDetail, NumRatings]	// Niet vergeten: invoegen bij directives!
+	directives : [CityDetail, NumRatings, ProducerComponent]	// Niet vergeten: invoegen bij directives!
 })
 
 // Class met properties, array met cities
 export class AppComponent {
 	// Properties voor de component/class
 	public cities:City[];
+	public processedCities:string[] = [];
 	public currentCity:City;
-	public numRatings : number = 0; // <-- wordt doorgegeven aan Sibling Component
+	public numRatings:number        = 0; // <-- wordt doorgegeven aan Sibling Component
 
-
-	public ratingObject : City; // <-- wordt doorgegeven aan Sibling Component
-
-	constructor(private cityService:CityService) {
-		//...eventuele extra initialisaties
-		this.getCities();
+	constructor(private cityService:CityService,
+				private pubSubService:PubSubService) {
 	}
+
+	ngOnInit() {
+		this.getCities();
+		this.pubSubService.Stream
+			.subscribe((city:City) => this.processCity(city));
+	}
+
+	private processCity(city:City) {
+		console.log('City ontvangen:', city);
+		this.cities.push(city);
+	}
+
 
 	getCity(city) {
 		this.currentCity = city;
@@ -37,13 +48,9 @@ export class AppComponent {
 	}
 
 	// increase or decrease rating on Event Emitted
-	updateRating(rating){
+	updateRating(rating) {
 		this.currentCity.rating += rating;
 		this.numRatings++;
-
-		// Complex Object
-		// this.ratingObject = rating;
-		// this.currentCity.rating += 1;
 	}
 
 	//***********************

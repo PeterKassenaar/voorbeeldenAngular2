@@ -3,7 +3,8 @@ import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from "angular2/http";
 import {City} from './city.model'
 import {CityService} from "./city.service";
-import {CityDetail} from "./city.detail"; // Nieuwe component invoegen
+import {CityDetail} from "./city.detail";
+import {Observable} from "rxjs/Observable"; // Nieuwe component invoegen
 
 @Component({
 	selector   : 'city-app',
@@ -32,8 +33,18 @@ export class AppComponent {
 	}
 
 	// increase or decrease rating on Event Emitted
-	updateRating(rating){
+	updateRating(rating:number):void {
 		this.currentCity.rating += rating;
+	}
+
+	updateRating(rating:string, name:string):void {
+		this.currentCity.rating += parseInt(rating);
+		// Ga sorteren op rating
+
+	}
+
+	ngOnChanges(changes:{[rating: number]: any}) {
+		console.log('in Changes');
 	}
 
 	//***********************

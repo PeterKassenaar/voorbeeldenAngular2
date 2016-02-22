@@ -6,7 +6,8 @@
 		<ul class="list-group">
 			<li *ngFor="#city of cities" class="list-group-item">
 				{{ city.id}} - {{ city.name }}
-				<a class="btn btn-sm btn-default pull-right" [routerLink]="['/Detail', {id: city.id}]">Details</a>
+				<a class="btn btn-sm btn-default pull-right"
+				   [routerLink]="['Detail', {id: city.id}]">Details</a>
 			</li>
 		</ul>
 		<button *ngIf="currentCity" class="btn btn-primary" (click)="clearCity()">Clear</button>

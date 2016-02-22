@@ -11,12 +11,17 @@ import {CityService} from "./city.service";
 })
 
 // Class met properties, array met cities
-export class AppComponent {
+export class AppComponent{
 	// Properties voor de component/class
 	public  cities:City[];
 
 	constructor(private cityService:CityService) {
 		//...eventuele extra initialisaties
+		// this.getCities(); <== Verplaatst naar ngOnInit() = nu best practice
+		console.log('1. In de constructor');
+	}
+	ngOnInit(){
+		console.log('3. In ngOnInit');
 		this.getCities();
 	}
 

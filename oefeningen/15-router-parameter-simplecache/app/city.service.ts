@@ -6,13 +6,13 @@ import {Http} from 'angular2/http';
 export class CityService {
 	private cities;
 
-	constructor(private _http:Http) {
+	constructor(private http:Http) {
 
 	}
 
 	// retourneer alle cities
 	getCities() {
-		return this._http.get('app/cities.json')
+		return this.http.get('app/cities.json')
 	}
 
 	// **************************

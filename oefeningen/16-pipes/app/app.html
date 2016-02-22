@@ -3,7 +3,9 @@
 	<div class="col-md-6">
 		<h1>Cities via een service</h1>
 		<h2>Mijn favoriete steden zijn :</h2>
-		<input class="input-lg" type="text" placeholder="filter cities..." [(ngModel)]="filterCity">
+		<input class="input-lg" type="text"
+			   placeholder="filter cities..."
+			   [(ngModel)]="filterCity">
 		<ul class="list-group">
 			<li *ngFor="#city of cities | filter:filterCity" class="list-group-item">
 				<!-- pipe -->

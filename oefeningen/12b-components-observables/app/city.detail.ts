@@ -22,11 +22,8 @@ export class CityDetail {
 	@Input() city:City;
 	@Output() rating: EventEmitter<number> = new EventEmitter(); // emit simple number
 
-	// @Output() rating: EventEmitter<City> = new EventEmitter(); // complex type
-
 	rate(num) {
 		console.log('rating voor ', this.city.name, ': ', num);
 		this.rating.emit(num); // emit simple number
-		// this.rating.emit(this.city); // emit complex type
 	}
 }

@@ -20,6 +20,8 @@ export class AppComponent {
 
 	constructor(private cityService:CityService) {
 		//...eventuele extra initialisaties
+	}
+	ngOnInit(){
 		this.getCities();
 	}
 

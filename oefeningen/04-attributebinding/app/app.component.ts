@@ -10,15 +10,15 @@ import {City} from './city.model'
 // push nieuwe city op de array
 export class AppComponent {
 	// Properties voor de component/class
-	name   = 'Peter Kassenaar';
+	name:string = 'Peter Kassenaar';
 
-	cities:City[] = [
+	cities:City[]       = [
 		new City(1, 'Groningen', 'Groningen'),
 		new City(2, 'Hengelo', 'Overijssel'),
 		new City(3, 'Den Haag', 'Zuid-Holland'),
 		new City(4, 'Enschede', 'Overijssel'),
 	];
-	textVisible=true;
+	textVisible:boolean = true;
 
 
 	// City toevoegen aan de array
@@ -31,7 +31,7 @@ export class AppComponent {
 	}
 
 	// attribuut toggelen: tekst zichtbaar/onzichtbaar maken.
-	toggleText(){
+	toggleText() {
 		this.textVisible = !this.textVisible;
 	}
 }

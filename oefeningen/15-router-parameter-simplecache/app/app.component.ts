@@ -43,15 +43,17 @@ export class AppComponent {
 	// implementation
 	//***********************
 	getCities() {
-		if (!this.cities) {
+		if (!this.cityService.cache) {
 			this.cityService.getCities()
 				.subscribe(cityData => {
-						this.cities = cityData.json();				// 1. success handler
+						this.cities            = cityData.json();				// 1. success handler
 						this.cityService.cache = this.cities;			// caching van cities
 					},
 					err => console.log(err),						// 2. error handler
 					()=> console.log('Getting cities complete...')	// 3. complete handler
 				)
+		} else {
+			this.cities = this.cityService.cache;
 		}
 	}
 }
