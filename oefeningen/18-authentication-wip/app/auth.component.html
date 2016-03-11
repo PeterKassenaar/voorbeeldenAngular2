@@ -1,27 +1,29 @@
 <!-- auth.component.html -->
 <h2>Authentication Component</h2>
-<button class="btn btn-success" (click)="getRandomQuote()">Get random quote</button>
-<button class="btn btn-success" (click)="getAuthQuote()">Get auth quote</button>
-<div>Random quote: {{ randomQuote }}</div>
-<div>Random auth quote: {{ authQuote }}</div>
-<hr>
-<h2>Login - TODO : activate form</h2>
+
 <form (submit)="onSubmit()" #loginForm="ngForm">
-	<div class="form-group">
-		<label for="userName">Username</label>
-		<input type="text" id="userName" class="form-control"
-			   [(ngModel)]="user.username" required>
-		<!--ngControl="password"-->
-		<!--#password="ngForm"-->
-	</div>
-	<div class="form-group">
-		<label for="password">Password</label>
-		<input type="text" id="password" class="form-control"
-			   [(ngModel)]="user.password" required>
-		<!--ngControl="password"-->
-		<!--#password="ngForm"-->
+	<div *ngIf="!isLoggedIn">
+		<div class="form-group">
+			<label for="userName">Username</label>
+			<input type="text" id="userName" class="form-control"
+				   [(ngModel)]="user.username" required>
+			<!--ngControl="password"-->
+			<!--#password="ngForm"-->
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="text" id="password" class="form-control"
+				   [(ngModel)]="user.password" required>
+			<!--ngControl="password"-->
+			<!--#password="ngForm"-->
+		</div>
 	</div>
 	<button type="submit" class="btn btn-success">{{btnLoginMsg}}</button>
 </form>
 
-<!--<button class="btn btn-success" (click)="auth()">{{btnLoginMsg}}</button>-->
+<hr>
+<button class="btn btn-success" (click)="getRandomQuote()">Get random quote</button>
+<button class="btn btn-success" (click)="getAuthQuote()">Get auth quote</button>
+<h3>Random public quote: {{ randomQuote }}</h3>
+<h3>Random authorized quote: {{ authQuote }}</h3>
+<button class="btn btn-danger" (click)="hardReset()">Hard Reset Logout</button>
