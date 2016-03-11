@@ -28,3 +28,5 @@ node_modules
 .idea
 oefeningen/**/app/**/*.js
 oefeningen/**/app/**/*.js.map
+
+oefeningen/**/*.d.ts

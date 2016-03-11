@@ -1,29 +1,30 @@
 {
-  "name"           : "angular2-demo",
-  "version"        : "1.0.0",
-  "scripts"        : {
-	"tsc"  : "tsc",
-	"tsc:w": "tsc -w",
-	"lite" : "lite-server",
-	"start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
-	"live" : "live-server --open=index.html"
+  "name": "angular2-auth",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "typings": "typings",
+    "postinstall": "typings install"
   },
-  "author"         : "Peter Kassenaar",
-  "license"        : "MIT",
-  "dependencies"   : {
-	"angular2"        : "2.0.0-beta.0",
-	"bootstrap"       : "^3.3.6",
-	"es6-promise"     : "^3.0.2",
-	"es6-shim"        : "^0.33.3",
-	"live-server"     : "^0.9.0",
-	"reflect-metadata": "0.1.2",
-	"rxjs"            : "5.0.0-beta.0",
-	"systemjs"        : "0.19.6",
-	"zone.js"         : "0.5.10"
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-beta.8",
+    "bootstrap": "^3.3.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.22",
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
-	"concurrently": "^1.0.0",
-	"lite-server" : "^1.3.1",
-	"typescript"  : "^1.7.3"
-  }
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0",
+    "typescript": "^1.8.2",
+    "typings": "^0.6.8"
+  },
+  "author": "Peter Kassenaar <info@kassenaar.com>"
 }
