@@ -1,8 +1,7 @@
-var express = require('express'),
-    quoter  = require('./quoter');
+var express = require('express');
 
 var app = module.exports = express.Router();
 
-app.get('/api/random-quote', function(req, res) {
-  res.status(200).send(quoter.getRandomOne());
+app.get('/api/public', function(req, res) {
+  res.status(200).send("This is public text - no auth required");
 });

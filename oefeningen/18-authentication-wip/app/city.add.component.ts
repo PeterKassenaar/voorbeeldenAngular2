@@ -1,7 +1,7 @@
 // city.add.component.ts
 import { Component } from 'angular2/core';
 import { NgForm } from 'angular2/common';
-import { City } from "./city.model";
+import { City } from "./model/city.model";
 import {CanActivate} from "angular2/router";
 import {SessionService} from "./services/session.service";
 import {Router} from "angular2/router";

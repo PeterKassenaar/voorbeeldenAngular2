@@ -13,9 +13,6 @@ import {SessionService} from "./services/session.service";
 })
 
 export class AuthComponent {
-	randomQuote:string = '';
-	authQuote:string   = '';
-	errorMsg:string    = '';
 	btnLoginMsg:string = 'Log in';
 	isLoggedIn:boolean = false;
 	user:User          = new User();
@@ -23,7 +20,10 @@ export class AuthComponent {
 	constructor(private http:Http,
 				private loginService:LoginService,
 				private sessionService:SessionService) {
+	}
 
+	logError(err) {
+		console.log('ERROR!', err);
 	}
 
 	ngOnInit() {
@@ -31,43 +31,6 @@ export class AuthComponent {
 			this.isLoggedIn  = true;
 			this.btnLoginMsg = 'Log out';
 		}
-	}
-
-	getRandomQuote() {
-		console.log('getting random quote');
-		this.http.get('http://localhost:3001/api/random-quote')
-			.subscribe(
-				(res) => this.randomQuote = res.text(),
-				(err) => {
-					this.errorMsg = err.toString();
-					this.logError(err)
-				},
-				() => console.log('getting quote complete')
-			);
-	}
-
-	getAuthQuote() {
-		console.log('getting authenticated quote');
-		let token = localStorage.getItem('token');
-		if (token) {
-			let authHeader = new Headers();
-			authHeader.append('Authorization', 'Bearer ' + token);
-			this.http.get('http://localhost:3001/api/protected/random-quote',
-				{headers: authHeader})
-				.subscribe(
-					res => this.authQuote = res.text(),
-					err => this.logError(err),
-					() => console.log('getting authenticated quote complete'));
-		}
-		else {
-			let msg        = 'Sorry, not authenticated yet';
-			this.authQuote = msg;
-			console.log(msg);
-		}
-	}
-
-	logError(err) {
-		console.log('ERROR!', err);
 	}
 
 	onSubmit() {
@@ -112,7 +75,6 @@ export class AuthComponent {
 		localStorage.removeItem('token');
 		this.btnLoginMsg = 'Log In';
 		this.isLoggedIn  = false;
-		this.randomQuote = '';
 		this.sessionService.destroy();
 		this.loginService.Stream.next(Constants.AUTH_LOGOUT_SUCCESS);// throw event
 	}

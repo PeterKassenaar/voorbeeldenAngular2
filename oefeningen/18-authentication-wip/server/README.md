@@ -45,15 +45,15 @@ It returns the following:
 
 The JWT is signed with the secret located at the `config.json` file. That JWT will contain the `username` and the `extra` information that you sent at signup time.
 
-### Quotes API
+### Public API
 
-#### GET `/api/random-quote`
+#### GET `/api/public`
 
-It returns a String with a Random quote from Chuck Norris. It doesn't require authentication.
+It returns a String. It doesn't require authentication.
 
-#### GET `/api/protected/random-quote`
+#### GET `/api/protected/`
 
-It returns a String with a Random quote from Chuck Norris. It requires authentication. 
+It returns a String with a date/timestamp. It requires authentication. 
 
 The JWT must be sent on the `Authorization` header as follows: `Authorization: Bearer {jwt}`
 
@@ -71,7 +71,7 @@ If you have found a bug or if you have a feature request, please report them at 
 
 MIT
 
-## What is Auth0?
+## Credits to Auth0!
 
 Auth0 helps you to:
 

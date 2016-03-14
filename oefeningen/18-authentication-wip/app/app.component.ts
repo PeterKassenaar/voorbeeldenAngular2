@@ -1,6 +1,6 @@
 // app.component.ts
 import {Component} from 'angular2/core';
-import {City} from './city.model'
+import {City} from './model/city.model'
 import {CityService} from "./city.service";
 import {RouterLink} from 'angular2/router'
 
