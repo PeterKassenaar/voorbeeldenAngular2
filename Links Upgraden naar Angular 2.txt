@@ -1,0 +1,8 @@
+Gebruik de volgende links voor meer informatie over het
+upgraden van een project naar Angular 2.
+
+- https://angular.io/docs/ts/latest/guide/upgrade.html  - officiele documentatie.
+
+- http://blog.thoughtram.io/angular/2015/10/24/upgrading-apps-to-angular-2-using-ngupgrade.html - artikel van Pascal Precht / Thougthram.io
+
+- http://teropa.info/blog/2015/10/18/refactoring-angular-apps-to-components.html - uitgebreid voorbereidend (refactoring) artikel van Tero Parvainen.
