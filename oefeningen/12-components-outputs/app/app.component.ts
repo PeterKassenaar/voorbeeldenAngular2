@@ -37,10 +37,14 @@ export class AppComponent {
 		this.currentCity.rating += rating;
 	}
 
+	updateFavorite(favorite:boolean):void{
+		this.currentCity.favorite = favorite;
+	}
+
+
 	updateRating(rating:string, name:string):void {
 		this.currentCity.rating += parseInt(rating);
 		// Ga sorteren op rating
-
 	}
 
 	ngOnChanges(changes:{[rating: number]: any}) {

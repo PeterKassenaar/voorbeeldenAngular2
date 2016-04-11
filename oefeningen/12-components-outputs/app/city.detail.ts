@@ -1,5 +1,5 @@
 // city.detail.ts
-import { Component, Input, Output, EventEmitter } from 'angular2/core';
+import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import {City} from "./city.model";
 
 @Component({
@@ -8,6 +8,8 @@ import {City} from "./city.model";
 	<h2>City details
 		<button (click)="rate(1)" class="btn btn-sm btn-success">+1</button>
 		<button (click)="rate(-1)" class="btn btn-sm btn-danger">-1</button>
+		<button (click)="favorite()" class="btn btn-sm btn-default">favorite</button>
+		<span [hidden]="isFavorite">Favoriet!</span>
 	</h2>
 		<ul class="list-group">
 			<li class="list-group-item">Naam: {{ city.name }}</li>
@@ -19,11 +21,20 @@ import {City} from "./city.model";
 })
 
 export class CityDetail {
+	isFavorite:boolean=true;
 	@Input() city:City;
-	@Output() rating: EventEmitter<number> = new EventEmitter();
+	@Output() rating:EventEmitter<number> = new EventEmitter();
+	@Output() fav:EventEmitter<boolean> = new EventEmitter();
 
-	rate(num) {
+	rate(num:number):void {
 		console.log('rating voor ', this.city.name, ': ', num);
 		this.rating.emit(num);
 	}
+
+	// Maak een stad favoriet - of niet!
+	favorite(){
+		this.isFavorite=!this.isFavorite;
+		this.fav.emit(!this.isFavorite);
+	}
 }
+

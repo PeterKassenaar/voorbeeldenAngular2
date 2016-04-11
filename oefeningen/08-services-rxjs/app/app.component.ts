@@ -14,24 +14,23 @@ import  'rxjs/Rx';
 // Class met properties, array met cities
 export class AppComponent {
 	// Properties voor de component/class
-	public  cities:City[];
+	public cities:City[];
 
-	constructor(private _cityService:CityService) {
+	constructor(private cityService:CityService) {
 		//...eventuele extra initialisaties
-		this._getCities();
+		this.getCities();
 	}
 
 
 	//***********************
 	// implementation
 	//***********************
-	_getCities() {
+	getCities() {
 		if (!this.cities) {
-			this._cityService.getCities()
-				.map(res => res.json())
-				.delay(3000)
-				.subscribe(cityData => {
-						this.cities = cityData;				// 1. success handler
+			this.cityService.getCities()
+				.map(result => result.json())
+				.subscribe(result => {
+						this.cities = result;				// 1. success handler
 					},
 					err => console.log(err),						// 2. error handler
 					()=> console.log('Getting cities complete...')	// 3. complete handler

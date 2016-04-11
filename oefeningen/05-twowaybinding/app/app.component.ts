@@ -9,6 +9,8 @@ import {City} from './city.model'
 
 // Class met properties, array met cities
 export class AppComponent {
+	newCityExtended:string = '';
+
 	// Properties voor de component/class
 	cities:City[]  = [
 		new City(1, 'Groningen', 'Groningen'),
@@ -16,4 +18,10 @@ export class AppComponent {
 		new City(3, 'Den Haag', 'Zuid-Holland'),
 		new City(4, 'Enschede', 'Overijssel'),
 	];
+
+	updateCity(e){
+		// console.log(mijnEvent);
+		// console.log(mijnEvent.target.value);
+		this.newCityExtended = e.target.value;
+	}
 }

@@ -5,7 +5,7 @@ import {City} from './city.model'
 // Nieuw: scoped classes
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app/app.html',
+	templateUrl: 'app/app-02.html',
 	styles     : [`
 		.cityPhoto {
 			max-width : 300px;

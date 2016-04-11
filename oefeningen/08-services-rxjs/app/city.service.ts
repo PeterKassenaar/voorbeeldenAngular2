@@ -11,6 +11,6 @@ export class CityService {
 
 	// retourneer alle cities
 	getCities() {
-		return this.http.get('app/cities.json')
+		return this.http.get('app/cities.json');
 	}
 }

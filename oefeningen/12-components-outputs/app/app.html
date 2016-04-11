@@ -6,6 +6,7 @@
 		<ul class="list-group">
 			<li *ngFor="#city of cities" class="list-group-item" (click)="getCity(city)">
 				{{ city.id}} - {{ city.name }}
+				<span class="label-info" *ngIf="city.favorite">Favoriet!</span>
 				<span class="badge">{{city.rating}}</span>
 			</li>
 		</ul>
@@ -14,7 +15,9 @@
 	<div class="col-md-6">
 		<!-- Details via nieuwe component -->
 		<div *ngIf="currentCity">
-			<city-detail [city]="currentCity" (rating)="updateRating($event)"></city-detail>
+			<city-detail [city]="currentCity"
+						 (rating)="updateRating($event)"
+						 (fav)="updateFavorite($event)"></city-detail>
 		</div>
 	</div>
 </div>
