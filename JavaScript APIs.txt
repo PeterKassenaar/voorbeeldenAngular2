@@ -21,4 +21,5 @@ https://api.github.com/users/ - GitHub user information.
 http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
 http://restcountries.eu/ - Informatie over landen ter wereld.
 http://www.postcodedata.nl/api/  - Postcode Data (PC + NAW-gegevens)
+  bijvoorbeeld: http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json
 Meer API's - http://www.webresourcesdepot.com/15-free-apis-you-didnt-hear-about-but-will-make-use-of/
