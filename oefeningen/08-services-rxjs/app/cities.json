@@ -1,4 +1,4 @@
-{
+[{
   "id"        : 1,
   "name"      : "Groningen",
   "province"  : "Groningen",
@@ -46,4 +46,4 @@
 "province"  : "Noord-Brabant",
 "rating": 0,
 "highlights": "Praxis"
-}
+}]
