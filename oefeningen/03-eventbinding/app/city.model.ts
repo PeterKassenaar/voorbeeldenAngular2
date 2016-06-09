@@ -3,6 +3,6 @@ export class City{
 		public id: number,
 		public name: string,
 		public province: string,
-		public highlights: string[]
+		public highlights?: string[]
 	){	}
 }
