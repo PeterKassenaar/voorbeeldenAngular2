@@ -17,7 +17,7 @@ import {City} from './city.model'
 })
 
 // Class met properties, array met cities
-export class AppComponent {
+export class AppComponent2 {
 	// Properties voor de component/class
 	name:string         = 'Peter Kassenaar';
 	cities:City[]       = [
