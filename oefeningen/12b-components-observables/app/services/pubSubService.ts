@@ -5,7 +5,7 @@ import {Injectable} from "angular2/core";
 
 @Injectable()
 export class PubSubService {
-	Stream:Subject; // Hier: rechtstreeks Subject gebruikt in plaat van CustomEventEmitter wrapper-class voor Service, zoals in artikel
+	Stream:Subject<any>; // Hier: rechtstreeks Subject gebruikt in plaat van CustomEventEmitter wrapper-class voor Service, zoals in artikel
 
 	constructor() {
 		this.Stream = new Subject();
