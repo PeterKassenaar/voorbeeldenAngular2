@@ -20,7 +20,10 @@ export class MovieService {
 				// Het enige dat hier wordt omgezet zijn de velden Title, Year en Poster.
 				// Ze krijgen nu een kleine letter.
 				return movies.map(movie => {
-					return new MovieModel(movie.Title, movie.Year, movie.Poster);
+					return new MovieModel(
+						movie.Title,
+						movie.Year,
+						movie.Poster);
 				})
 			})
 	}

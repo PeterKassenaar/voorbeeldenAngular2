@@ -17,7 +17,8 @@
 		<div *ngIf="currentCity">
 			<city-detail [city]="currentCity"
 						 (rating)="updateRating($event)"
-						 (fav)="updateFavorite($event)"></city-detail>
+						 (fav)="updateFavorite($event)">
+			</city-detail>
 		</div>
 	</div>
 </div>

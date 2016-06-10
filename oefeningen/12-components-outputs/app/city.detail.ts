@@ -9,7 +9,7 @@ import {City} from "./city.model";
 		<button (click)="rate(1)" class="btn btn-sm btn-success">+1</button>
 		<button (click)="rate(-1)" class="btn btn-sm btn-danger">-1</button>
 		<button (click)="favorite()" class="btn btn-sm btn-default">favorite</button>
-		<span [hidden]="isFavorite">Favoriet!</span>
+		<span [hidden]="!isFavorite">Favoriet!</span>
 	</h2>
 		<ul class="list-group">
 			<li class="list-group-item">Naam: {{ city.name }}</li>
@@ -21,20 +21,28 @@ import {City} from "./city.model";
 })
 
 export class CityDetail {
-	isFavorite:boolean=true;
-	@Input() city:City;
-	@Output() rating:EventEmitter<number> = new EventEmitter();
-	@Output() fav:EventEmitter<boolean> = new EventEmitter();
+	isFavorite: boolean                    = true;
+	@Input() city: City;
+	@Output() rating: EventEmitter<number> = new EventEmitter();
+	@Output() fav: EventEmitter<boolean>   = new EventEmitter();
 
-	rate(num:number):void {
+	rate(num: number): void {
 		console.log('rating voor ', this.city.name, ': ', num);
 		this.rating.emit(num);
 	}
 
+	ngOnChanges() {
+		debugger;
+		if (this.city) {
+			console.log('in Changes: Nieuwe city ontvangen');
+			this.isFavorite = this.city.favorite;
+		}
+	}
+
 	// Maak een stad favoriet - of niet!
-	favorite(){
-		this.isFavorite=!this.isFavorite;
-		this.fav.emit(!this.isFavorite);
+	favorite() {
+		this.isFavorite = !this.isFavorite;
+		this.fav.emit(this.isFavorite);
 	}
 }
 

@@ -16,10 +16,10 @@ import {Observable} from "rxjs/Observable"; // Nieuwe component invoegen
 // Class met properties, array met cities
 export class AppComponent {
 	// Properties voor de component/class
-	public cities:City[];
-	public currentCity:City;
+	public cities: City[];
+	public currentCity: City;
 
-	constructor(private cityService:CityService) {
+	constructor(private cityService: CityService) {
 		//...eventuele extra initialisaties
 		this.getCities();
 	}
@@ -33,22 +33,17 @@ export class AppComponent {
 	}
 
 	// increase or decrease rating on Event Emitted
-	updateRating(rating:number):void {
+	updateRating(rating: number): void {
 		this.currentCity.rating += rating;
 	}
 
-	updateFavorite(favorite:boolean):void{
+	updateFavorite(favorite: boolean): void {
 		this.currentCity.favorite = favorite;
 	}
 
 
-	updateRating(rating:string, name:string):void {
-		this.currentCity.rating += parseInt(rating);
-		// Ga sorteren op rating
-	}
-
-	ngOnChanges(changes:{[rating: number]: any}) {
-		console.log('in Changes');
+	updateRating(rating: number): void {
+		this.currentCity.rating += rating;
 	}
 
 	//***********************
@@ -58,7 +53,9 @@ export class AppComponent {
 		if (!this.cities) {
 			this.cityService.getCities()
 				.subscribe(cityData => {
-						this.cities = cityData.json();				// 1. success handler
+						this.cities = cityData.json(); // 1. success handler
+						// voor nu: even hardcoded de property .favorite instellen.
+						this.cities.forEach(city => city.favorite = false)
 					},
 					err => console.log(err),						// 2. error handler
 					()=> console.log('Getting cities complete...')	// 3. complete handler

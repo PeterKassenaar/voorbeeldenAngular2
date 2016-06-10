@@ -15,17 +15,18 @@ import {CityDetail} from "./city.detail"; // Nieuwe component invoegen
 // Class met properties, array met cities
 export class AppComponent {
 	// Properties voor de component/class
-	public  cities:City[];
-	public  currentCity:boolean=false;
+	public cities: City[];
+	public currentCity: boolean = false;
 
 
-	constructor(private cityService:CityService) {
+	constructor(private cityService: CityService) {
 		//...eventuele extra initialisaties
 		this.getCities();
 	}
 
 	getCity(city) {
 		this.currentCity = true;
+		// later: this.currenCity = city;
 	}
 
 	clearCity() {
