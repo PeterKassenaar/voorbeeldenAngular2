@@ -1,0 +1,14 @@
+<h1>Selectielijst steden</h1>
+<!--Selectielijst met steden-->
+<select [(ngModel)]="currentCity" (ngModelChange)="changeCity()">
+    <option *ngFor="#city of cities"
+            [value]="city.name">
+        {{ city.id}} - {{ city.name }}
+    </option>
+</select>
+<hr>
+<div *ngIf="currentCity">
+    <img class="cityPhoto"
+         [src]="cityPhoto" alt="Foto van {{ currentCity.name}}">
+    <h2>Gekozen stad: {{ currentCity }}</h2>
+</div>
