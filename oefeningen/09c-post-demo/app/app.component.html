@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <h1>Dummy login form</h1>
+    <input [(ngModel)]="email" type="text"
+           class="input-lg" placeholder="email...">
+    <input [(ngModel)]="password" type="text"
+           class="input-lg" placeholder="password...">
+    <p>
+        <button class="btn btn-primary"
+                (click)="doLogin()">Login
+        </button>
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!-- toon response van http://reqres.in/ -->
+        <h2>Result from http://reqres.in:</h2>
+        <pre>
+            {{ response | json }}
+        </pre>
+    </div>
+</div>
