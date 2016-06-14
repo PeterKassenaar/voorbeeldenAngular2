@@ -1,5 +1,4 @@
 import { Injectable} from 'angular2/core';
-import { City } from './city.model'
 import { Http } from 'angular2/http';
 
 @Injectable()
