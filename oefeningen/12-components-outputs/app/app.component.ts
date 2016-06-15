@@ -41,11 +41,6 @@ export class AppComponent {
 		this.currentCity.favorite = favorite;
 	}
 
-
-	updateRating(rating: number): void {
-		this.currentCity.rating += rating;
-	}
-
 	//***********************
 	// implementation
 	//***********************
