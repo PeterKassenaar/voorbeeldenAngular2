@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Angular 2 - Hello World</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- 1. bibliotheken laden, gebruik exact deze volgorde -->
+	<script src="node_modules/es6-shim/es6-shim.min.js"></script>
+	<script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/rxjs/bundles/Rx.js"></script>
+	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+	<!-- 2. SystemJS configureren -->
+	<script>
+		System.config({
+			packages: {
+				app: {
+					format          : 'register',
+					defaultExtension: 'js'
+				}
+			}
+		});
+		System.import('app/main')
+				.then(null, console.error.bind(console));
+	</script>
+
+	<!-- 3. Styling toevoegen -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+		.list-group-item {
+			cursor : pointer;
+		}
+
+		.cityPhoto {
+			max-width     : 300px;
+			padding       : 8px;
+			margin        : 8px;
+			border        : 1px solid #333;
+			border-radius : 4px;
+
+		}
+	</style>
+</head>
+
+<!-- 4. De applicatie tonen -->
+<body>
+<div class="container">
+	<hello-world>
+		Bezig met laden...
+	</hello-world>
+</div>
+</body>
+
+</html>
