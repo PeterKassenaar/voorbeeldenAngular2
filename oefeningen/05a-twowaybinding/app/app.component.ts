@@ -19,9 +19,9 @@ export class AppComponent {
 		new City(4, 'Enschede', 'Overijssel'),
 	];
 
-	updateCity(e){
+	updateCity(city:City){
 		// console.log(mijnEvent);
 		// console.log(mijnEvent.target.value);
-		this.newCityExtended = e.target.value;
+		this.newCityExtended = city.name;
 	}
 }
