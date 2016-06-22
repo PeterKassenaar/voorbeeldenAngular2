@@ -8,6 +8,6 @@ export class OrderService {
 	Stream:Subject<City>;
 
 	constructor() {
-		this.Stream = new Subject();
+		this.Stream = new Subject<City>();
 	}
 }
