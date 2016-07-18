@@ -5,113 +5,198 @@
 // te stellen voor Angular 2
 // ***********************
 
-// 1. package.json - in de root van je project
 
+// *******************
+// Stap 1. Boilerplate code 
+// *******************
+
+// 1. package.json - in de root van je project
 {
-  "name"           : "<<name of project>>",
-  "version"        : "1.0.0",
-  "description"    : "Starter/base project for Angular 2 beta.2",
-  "main"           : "index.js",
-  "scripts"        : {
-    "tsc"  : "tsc",
+  "name": "ng2-bgase",
+  "description" : "a base repository for angular 2 projects, based on .rc4",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "lite" : "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+    "typings": "typings"
   },
-  "keywords"       : [
-    "Angular2",
-    "boilerplate",
-    "base",
-    "starter project"
-  ],
-  "dependencies"   : {
-    "angular2"        : "2.0.0-beta.2",
-    "bootstrap"       : "^3.3.6",
-    "es6-promise"     : "^3.0.2",
-    "es6-shim"        : "^0.33.3",
-    "reflect-metadata": "0.1.2",
-    "rxjs"            : "5.0.0-beta.0",
-    "systemjs"        : "0.19.6",
-    "zone.js"         : "0.5.10"
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "@angular/http": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/router": "3.0.0-beta.1",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.4",
+    "systemjs": "0.19.27",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "^0.6.12",
+    "angular2-in-memory-web-api": "0.0.14",
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {
-    "concurrently": "^1.0.0",
-    "lite-server" : "^1.3.1",
-    "typescript"  : "^1.7.3"
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
   },
-  "author"         : "Peter Kassenaar <info@kassenaar.com>",
-  "license"        : "ISC"
+  "author": "Peter Kassenaar <info@kassenaar.com>"
 }
 
 // 2. tsconfig.json - in de root van je project.
-
 {
   "compilerOptions": {
-    "target"                : "ES5",
-    "module"                : "system",
-    "moduleResolution"      : "node",
-    "sourceMap"             : true,
-    "emitDecoratorMetadata" : true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments"        : false,
-    "noImplicitAny"         : false
-  },
-  "exclude"        : [
-    "node_modules"
-  ]
+    "removeComments": false,
+    "noImplicitAny": false
+  }
 }
 
-// 3. Component maken - app/app.component.ts
+// 3. typings.json - in de root van je project
+{
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "node": "registry:dt/node#6.0.0+20160621231320"
+  }
+}
 
-import {Component} from 'angular2/core';
+// 4. systemjs.config.js - in de root van je project
+(function(global) {
+  // map tells the System loader where to look for things
+  var map = {
+    'app':                        'app', // 'dist',
+    '@angular':                   'node_modules/@angular',
+    'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+    'rxjs':                       'node_modules/rxjs'
+  };
+  // packages tells the System loader how to load when no filename and/or no extension
+  var packages = {
+    'app':                        { main: 'main.js',  defaultExtension: 'js' },
+    'rxjs':                       { defaultExtension: 'js' },
+    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+  };
+  var ngPackageNames = [
+    'common',
+    'compiler',
+    'core',
+    'forms',
+    'http',
+    'platform-browser',
+    'platform-browser-dynamic',
+    'router',
+    'router-deprecated',
+    'upgrade',
+  ];
+  // Individual files (~300 requests):
+  function packIndex(pkgName) {
+    packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+  }
+  // Bundled (~40 requests):
+  function packUmd(pkgName) {
+    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+  }
+  // Most environments should use UMD; some (Karma) need the individual index files
+  var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+  // Add package entries for angular packages
+  ngPackageNames.forEach(setPackageConfig);
+  var config = {
+    map: map,
+    packages: packages
+  };
+  System.config(config);
+})(this);
+
+
+
+// *******************
+// Stap 2. Component maken 
+// *******************
+
+// 5. Component maken - app/app.component.ts
+import {Component} from '@angular/core';
 
 @Component({
-	// add component description/annotations here
+	// 1. add component description/annotations here
+	selector: 'hello-world',
+	template: `
+		<h1>Hello World!</h1>
+		<h2>Dit is Angular 2</h2>
+	`
 })
 
 export class AppComponent {
-	// add constructor, class logic, etc. here
+	// optional: add constructor, class logic, etc. here
+	}
 }
 
+// *******************
+// Stap 3. Bootstrapper schrijven 
+// *******************
 
-// 4. Bootstrapper maken - app/boot.ts
+// 6. Bootstrapper maken - app/main.ts
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {AppComponent} from "./app.component";
 
-import {bootstrap} from 'angular2/platform/browser';
-bootstrap(<<Name of Component here>>);
+// bootstrap our app
+bootstrap(AppComponent);
 
-// 5. Index.html - in root van je project. In de header:
 
- <!-- 1. Load libraries -->
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+
+// *******************
+// Stap 4. Index.html schrijven 
+// *******************
+// 7. Index.html - in root van je project. In de header:
+<html>
+<head>
+    <title>Angular 2 Base Project</title>
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
-
-<!-- 2. Configure SystemJS -->
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
     <script>
-        System.config({
-            packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('app/boot')
-                .then(null, console.error.bind(console));
+      System.import('app').catch(function(err){ console.error(err); });
     </script>
-
-<!-- 3. Add some styling -->
+    <!-- 3. Add some styling -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
 
-// 6. Inhoud van index.html - in de <body>
 
-<div class="container">
-    <!-- Place root component here, for instance -->
-        <my-app>Bezig met laden...</my-app>
-</div>
+// 8. Inhoud van index.html - in de <body>
+<!-- 4. Load the application -->
+<body>
+    <div class="container">     
+        <hello-world>
+            Bezig met laden...
+        </hello-world>
+    </div>
+</body>
+</html>
 
-// 7. App draaien - in command line window
+
+// *******************
+// Stap 5. Testen of alles werkt. 
+// *******************
+
+// 9. App draaien - in command line window
 
 npm start
