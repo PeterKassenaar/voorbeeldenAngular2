@@ -30,3 +30,4 @@ oefeningen/**/app/**/*.js
 oefeningen/**/app/**/*.js.map
 
 oefeningen/**/*.d.ts
+typings
