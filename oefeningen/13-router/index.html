@@ -3,36 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<base href="/">
-	<title>Angular 2 - Training</title>
+	<title>Angular 2 - Component router</title>
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
 	<!-- 1. Load libraries -->
-	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="node_modules/core-js/client/shim.min.js"></script>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
 	<script src="node_modules/systemjs/dist/system.src.js"></script>
-	<script src="node_modules/rxjs/bundles/Rx.js"></script>
-	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-	<script src="node_modules/angular2/bundles/http.dev.js"></script>
-	<script src="node_modules/angular2/bundles/router.js"></script>
 
 	<!-- 2. Configure SystemJS -->
+	<script src="systemjs.config.js"></script>
 	<script>
-		System.config({
-			packages: {
-				app: {
-					format          : 'register',
-					defaultExtension: 'js'
-				}
-			}
+		System.import('app').catch(function (err) {
+			console.error(err);
 		});
-		System.import('app/boot')
-				.then(null, console.error.bind(console));
 	</script>
 </head>
 <body>
 <div class="container">
-<home-component>
-	Bezig met laden...
-</home-component>
+	<home-component>
+		Bezig met laden...
+	</home-component>
 </div>
 </body>
 </html>

@@ -4,10 +4,10 @@
 		<h1>Cities via een service</h1>
 		<h2>Mijn favoriete steden zijn :</h2>
 		<ul class="list-group">
-			<li *ngFor="#city of cities" class="list-group-item">
+			<li *ngFor="let city of cities" class="list-group-item" (click)="getCity(city)">
 				{{ city.id}} - {{ city.name }}
 				<a class="btn btn-sm btn-default pull-right"
-				   [routerLink]="['Detail', {id: city.id}]">Details</a>
+				   [routerLink]="['/detail', city.id]">Details</a>
 			</li>
 		</ul>
 		<button *ngIf="currentCity" class="btn btn-primary" (click)="clearCity()">Clear</button>

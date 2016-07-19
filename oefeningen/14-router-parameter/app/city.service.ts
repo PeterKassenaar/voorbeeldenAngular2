@@ -1,10 +1,8 @@
-import { Injectable} from 'angular2/core';
-import {City} from './city.model'
-import {Http} from 'angular2/http';
+import { Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 
 @Injectable()
 export class CityService {
-	private _cities;
 
 	constructor(private _http:Http) {
 

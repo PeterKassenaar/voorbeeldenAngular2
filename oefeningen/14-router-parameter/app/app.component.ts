@@ -1,24 +1,30 @@
 // app.component.ts
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component, OnInit} from '@angular/core';
+import {HTTP_PROVIDERS} from "@angular/http";
+import {RouterLink} from "@angular/router";
 import {City} from './city.model'
 import {CityService} from "./city.service";
-import {RouterLink} from "angular2/router";
+import {ROUTER_DIRECTIVES} from "@angular/router";
+import {CityDetail} from "./city.detail";
 
 @Component({
 	selector   : 'city-app',
 	templateUrl: 'app/app.html',
 	providers  : [CityService, HTTP_PROVIDERS],
-	directives:[RouterLink]
+	directives : [ROUTER_DIRECTIVES, CityDetail]
 })
 
 // Class met properties, array met cities
-export class AppComponent {
+export class AppComponent implements OnInit {
 	// Properties voor de component/class
 	public cities:City[];
 	public currentCity:City;
 
 	constructor(private cityService:CityService) {
+
+	}
+
+	ngOnInit() {
 		//...eventuele extra initialisaties
 		this.getCities();
 	}
@@ -34,7 +40,7 @@ export class AppComponent {
 	}
 
 	// Not used in this example
-	updateRating(rating){
+	updateRating(rating) {
 		this.currentCity.rating += rating;
 	}
 
