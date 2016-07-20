@@ -1,8 +1,8 @@
 // city.detail.component.ts
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {City} from "./city.model";
 // import {RouteParams} from "@angular/router"; // OLD way
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute} from '@angular/router'; // NEW way
 
 @Component({
 	selector: 'city-detail',
@@ -12,10 +12,9 @@ import {ActivatedRoute} from '@angular/router';
 	`
 })
 
-export class CityDetailComponent implements OnInit, OnDestroy{
+export class CityDetailComponent {
 	id:string;
 	currentCity:City;
-	private sub : any ; // pointer to subscription on Route
 
 	constructor(private route:ActivatedRoute) {
 		// Credits: http://blog.thoughtram.io/angular/2016/06/14/routing-in-angular-2-revisited.html
@@ -29,7 +28,7 @@ export class CityDetailComponent implements OnInit, OnDestroy{
 		// this.id = this.route.get('id');
 
 		// NEW:
-		this.sub = this.route.params
+		this.route.params
 			.map(params => params['id'])
 			.subscribe((id) => {
 				this.id = id;
@@ -43,11 +42,4 @@ export class CityDetailComponent implements OnInit, OnDestroy{
 		// A *snapshot* is simply a snapshot representation of the activated route.
 		// this.id = this.route.snapshot.params['id'];
 	}
-
-	ngOnDestroy(){
-		// If subscribed, we must unsubscribe before Angular destroys the component.
-		// Failure to do so could create a memory leak.
-		this.sub.unsubscribe();
-	}
-
 }

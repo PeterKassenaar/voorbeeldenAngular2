@@ -1,7 +1,7 @@
 // app.component.ts
 import {Component, OnInit} from '@angular/core';
 import {HTTP_PROVIDERS} from "@angular/http";
-import {RouterLink, Router} from "@angular/router";
+import {RouterLink} from "@angular/router";
 import {City} from './city.model'
 import {CityService} from "./city.service";
 import {ROUTER_DIRECTIVES} from "@angular/router";
@@ -20,8 +20,7 @@ export class AppComponent implements OnInit {
 	public cities:City[];
 	public currentCity:City;
 
-	constructor(private cityService:CityService,
-				private router:Router) {
+	constructor(private cityService:CityService) {
 
 	}
 
@@ -30,20 +29,18 @@ export class AppComponent implements OnInit {
 		this.getCities();
 	}
 
-	getCity(city:City) {
-		// OLD:
+	// Not used in this example
+	getCity(city) {
 		this.currentCity = city;
-
-		// NEW:
-		// change route imperatively (basically, now you don't need a 'Details' button anymore)
-		// this.router.navigate(['/detail', city.id])
 	}
 
+	// Not used in this example
 	clearCity() {
 		this.currentCity = null;
 	}
 
-	updateRating(rating:number) {
+	// Not used in this example
+	updateRating(rating) {
 		this.currentCity.rating += rating;
 	}
 
