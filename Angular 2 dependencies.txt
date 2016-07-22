@@ -141,7 +141,6 @@ import {Component} from '@angular/core';
 
 export class AppComponent {
 	// optional: add constructor, class logic, etc. here
-	}
 }
 
 // *******************
