@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit} from '@angular/core';
 import {City} from './city.model'
 
 @Component({
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
 			new City(4, 'Enschede', 'Overijssel'),
 		];
 		this.currentCity = this.cities[0].name;
+		this.changeCity();
 	}
 
 	changeCity() {

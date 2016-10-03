@@ -6,7 +6,7 @@
 <h1>Hello Angular 2</h1>
 <h2>Mijn favoriete steden zijn :</h2>
 <ul class="list-group">
-	<li *ngFor="#city of cities" class="list-group-item"
+	<li *ngFor="let city of cities" class="list-group-item"
 		(click)="updateCity(city)">
 		{{ city.id}} - {{ city.name }}
 	</li>
