@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-md-6">
+		<h2>17a - Template Driven Forms /app.component1.html | .ts</h2>
+		<hr>
+		<form novalidate #myForm="ngForm">
+			<div class="form-group">
+				<label for="inputEmail">Email address</label>
+				<input type="email" class="form-control" id="inputEmail"
+					   placeholder="Enter email" name="email" ngModel>
+				<small class="form-text text-muted">
+					We'll never share your email with anyone else.
+				</small>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword">Password</label>
+				<input type="password" class="form-control" ngModel
+					   id="inputPassword" placeholder="Password" name="password">
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<!--Sample results pane - showing valid/invalid of form among others-->
+	<div class="col-md-6">
+		<div class="form-result">
+			<h3>Validity</h3>
+			<div class="validity" [ngClass]="{'invalid-form': !myForm.valid}">
+				<div *ngIf="myForm.valid">Valid</div>
+				<div *ngIf="!myForm.valid">Invalid</div>
+			</div>
+			<h3>Results</h3>
+			<div class="result">
+				{{ myForm.value | json}}
+			</div>
+		</div>
+	</div>
+</div>
