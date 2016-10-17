@@ -1,7 +1,7 @@
 {
-  "name"           : "17a-forms-template-driven",
+  "name"           : "17c-forms-typeahead-demo",
   "version"        : "1.0.0",
-  "description"    : "Oefening 17 - Template Driven forms bouwen met Angular 2",
+  "description"    : "Oefening 17 - Een typeahead demo met Angular 2 - Forms & Observables",
   "scripts"        : {
 	"start"           : "tsc && concurrently \"tsc -w\" \"lite-server\" ",
 	"lint"            : "tslint ./app/**/*.ts -t verbose",
