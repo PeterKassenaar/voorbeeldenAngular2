@@ -1,18 +1,7 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {appRouterProviders} from  './app.routes';
-import {HomeComponent} from "./home.component";
-import {CanActivateGuard} from "./canActivateGuard";
-import {CanDeactivateGuard} from "./canDeActivateGuard";
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-bootstrap(HomeComponent, [
-	appRouterProviders,
-	CanActivateGuard,
-	CanDeactivateGuard,
-	{
-		provide : 'CanAlwaysActivateGuard',
-		useValue: () => {
-			console.log("Detail route requested");
-			return true;
-		}
-	}
-]);
+import {AppModule} from './app.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+platformBrowserDynamic()
+	.bootstrapModule(AppModule);

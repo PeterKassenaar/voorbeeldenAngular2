@@ -1,33 +1,34 @@
-/**
- * Created by Peter Kassenaar on 19-7-2016.
- */
-import {provideRouter, RouterConfig} from '@angular/router';
+// app.routes.ts
+import {Routes} from '@angular/router';
 import {AppComponent} from "./app.component";
 import {CityAddComponent} from "./city.add.component";
 import {CityDetailComponent} from "./city.detail.component";
-import {CanActivateGuard} from "./canActivateGuard";
+import {CanActivateViaAuthGuard} from "./canActivateViaAuthGuard";
 import {CanDeactivateComponent} from "./canDeactivate.component";
-import {CanDeactivateGuard} from "./canDeActivateGuard";
+import {CanDeactivateGuard} from "./canDeactivateGuard";
 
-// The RouterConfig is an array of routes that describe how to navigate.
-// Each Route maps a URL path to a component.
-const routes:RouterConfig = [
-	{path: '', component: AppComponent},
-	{path: 'home', component: AppComponent},
+export const AppRoutes: Routes = [
 	{
-		path: 'can-deactivate',
-		component: CanDeactivateComponent,
-		canDeactivate: [CanDeactivateGuard]},
+		path     : '',
+		component: AppComponent
+	},
 	{
-		path: 'detail/:id',
-		component: CityDetailComponent,
-		canActivate: ['CanAlwaysActivateGuard', CanActivateGuard]
+		path       : 'home',
+		component  : AppComponent,
+		canActivate: ['CanAlwaysActivateGuard'] // Function, defined in app.module.ts
+	},
+	{
+		path       : 'add',
+		component  : CityAddComponent,
+		canActivate: [CanActivateViaAuthGuard]
+	},
+	{
+		path         : 'deactivate',
+		component    : CanDeactivateComponent,
+		canDeactivate: [CanDeactivateGuard]
+	},
+	{
+		path     : 'detail/:id',
+		component: CityDetailComponent
 	}
-];
-
-// We pass the configuration array to the provideRouter() function
-// which returns (among other things) a configured Router service provider.
-// Note: this can also be handled in main.ts. It's a matter of choice, I believe
-export const appRouterProviders = [
-	provideRouter(routes)
 ];
