@@ -1,15 +1,11 @@
 // app.component.ts
 import {Component} from '@angular/core';
-import {HTTP_PROVIDERS} from "@angular/http";
 import {City} from './city.model'
 import {CityService} from "./city.service";
-import {CityDetail} from "./city.detail"; // Nieuwe component invoegen
 
 @Component({
 	selector   : 'city-app',
-	templateUrl: 'app/app.html',
-	providers  : [CityService, HTTP_PROVIDERS],
-	directives : [CityDetail]	// Niet vergeten: invoegen bij directives!
+	templateUrl: 'app/app.html'
 })
 
 // Class met properties, array met cities
@@ -26,7 +22,7 @@ export class AppComponent {
 		this.getCities();
 	}
 
-	getCity(city) {
+	getCity(city:City) {
 		this.currentCity = city;
 	}
 
@@ -35,7 +31,7 @@ export class AppComponent {
 	}
 
 	// increase or decrease rating on Event Emitted
-	updateRating(rating) {
+	updateRating(rating:number) {
 		this.currentCity.rating += rating;
 	}
 
