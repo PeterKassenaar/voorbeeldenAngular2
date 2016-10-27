@@ -1,5 +1,4 @@
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component} from '@angular/core';
 import {MovieService} from "./movie.service";
 import  'rxjs/Rx';
 import {MovieModel} from "./movie.model";
@@ -8,7 +7,6 @@ import {MovieModel} from "./movie.model";
 @Component({
 	selector   : 'movie-app',
 	templateUrl: 'app/app.html',
-	providers  : [MovieService, HTTP_PROVIDERS],
 	styles     : [`.moviePoster {max-height:200px}`]
 })
 
