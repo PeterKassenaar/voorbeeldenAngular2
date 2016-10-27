@@ -1,5 +1,4 @@
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component} from '@angular/core';
 import {MovieService} from "./movie.service";
 import  'rxjs/Rx';
 
@@ -7,7 +6,6 @@ import  'rxjs/Rx';
 @Component({
 	selector   : 'movie-app',
 	templateUrl: 'app/app.html',
-	providers  : [MovieService, HTTP_PROVIDERS]
 })
 
 // Class met properties, array met cities

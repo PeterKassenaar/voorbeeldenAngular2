@@ -1,40 +1,36 @@
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component, OnInit} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
-import  'rxjs/Rx';
 
-// Component annotation. Let op de injection van providers: []
 @Component({
 	selector   : 'hello-world',
 	templateUrl: 'app/app.html',
-	providers  : [CityService, HTTP_PROVIDERS]
+	styles     : [`.cityPhoto{max-width:200px}`]
 })
 
 // Class met properties, array met cities
-export class AppComponent {
+// push nieuwe city op de array
+export class AppComponent implements OnInit {
 	// Properties voor de component/class
-	public cities:City[];
+	currentCity: City;
+	cities: City[];
+	cityPhoto: string;
 
-	constructor(private cityService:CityService) {
-		//...eventuele extra initialisaties
-		this.getCities();
+	constructor(private cityService: CityService) {
+
 	}
 
+	ngOnInit() {
+		this.cityService.getCities()
+			.subscribe(cityData => {
+					this.cities = cityData;	// Er komt nu rechtstreeks json uit de service.
+				},
+				err => console.log('FOUT: ', err),
+				() => console.log('Getting cities complete'));
+	}
 
-	//***********************
-	// implementation
-	//***********************
-	getCities() {
-		if (!this.cities) {
-			this.cityService.getCities()
-				.map(result => result.json())
-				.subscribe(result => {
-						this.cities = result;				// 1. success handler
-					},
-					err => console.log(err),						// 2. error handler
-					()=> console.log('Getting cities complete...')	// 3. complete handler
-				)
-		}
+	getCity(city: City) {
+		this.currentCity = city;
+		this.cityPhoto   = `img/${this.currentCity.name}.jpg`;
 	}
 }

@@ -1,37 +1,32 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
 
-// Component annotation. Let op de injection van providers: []
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app/app.html'
+	templateUrl: 'app/app.html',
+	styles     : [`.cityPhoto{max-width:200px}`]
 })
 
 // Class met properties, array met cities
-export class AppComponent {
+// push nieuwe city op de array
+export class AppComponent implements OnInit {
 	// Properties voor de component/class
-	private  _cities:City[];
-	public currentCity:City;
+	currentCity: City;
+	cities: City[];
+	cityPhoto: string;
 
-	constructor(private cityService:CityService) {
-		//...eventuele extra initialisaties
+	constructor(private cityService: CityService) {
+
 	}
 
-	get cities() {
-		return this._cities || this.getCities();  // caching!
+	ngOnInit() {
+		this.cities = this.cityService.getCities();
 	}
 
-	getCity(city) {
+	getCity(city: City) {
 		this.currentCity = this.cityService.getCity(city.id);
-	}
-
-	//***********************
-	// implementation
-	//***********************
-	private getCities() {
-		this._cities = [];
-		this._cities = this.cityService.getCities();
-		return this.cities;
+		this.cityPhoto   = `img/${this.currentCity.name}.jpg`;
+		console.log('City opgehaald:', this.currentCity);
 	}
 }

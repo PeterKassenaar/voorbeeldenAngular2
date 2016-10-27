@@ -6,7 +6,7 @@
 			<button class="btn btn-primary" (click)="searchMovies(keyword.value)">Find movies</button>
 		</div>
 		<ul class="list-group">
-			<li *ngFor="#movie of movies" class="list-group-item">
+			<li *ngFor="let movie of movies" class="list-group-item">
 				{{ movie.Title}} - {{ movie.Year}}
 			</li>
 		</ul>

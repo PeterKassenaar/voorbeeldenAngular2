@@ -33,13 +33,5 @@
 	"province"  : "Limburg",
 	"rating"    : 0,
 	"highlights": "Mijnbouwmuseum"
-  },
-  {
-	"id"        : 7,
-	"name"      : "Diemen",
-	"province"  : "Noord-Holland",
-	"rating"    : -1,
-	"highlights": "World of Food, Devoteam! Yeah!"
   }
-
 ]
