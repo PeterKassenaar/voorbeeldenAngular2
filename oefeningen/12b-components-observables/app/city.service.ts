@@ -1,14 +1,25 @@
-import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {City} from "./city.model";
 
 @Injectable()
 export class CityService {
-	constructor(private _http:Http) {
+	private cities: City[];
 
+	constructor(private _http: Http) {
+
+	}
+
+	setCities(cities) {
+		this.cities = cities;
 	}
 
 	// retourneer alle cities
 	getCities() {
 		return this._http.get('app/cities.json')
+	}
+
+	numCities() {
+		return this.cities.length;
 	}
 }

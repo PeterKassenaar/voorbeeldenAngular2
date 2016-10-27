@@ -1,19 +1,17 @@
 // app.component.ts
-import {Component, Input} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component, OnInit} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
 import {CityDetail} from "./city.detail"; // Nieuwe component invoegen
 
 @Component({
+	moduleId: module.id,
 	selector   : 'city-app',
-	templateUrl: 'app/app.html',
-	providers  : [CityService, HTTP_PROVIDERS],
-	directives : [CityDetail]	// Niet vergeten: invoegen bij directives!
+	templateUrl: 'app.html',
 })
 
 // Class met properties, array met cities
-export class AppComponent {
+export class AppComponent implements  OnInit{
 	// Properties voor de component/class
 	public cities: City[];
 	public currentCity: boolean = false;
@@ -21,10 +19,18 @@ export class AppComponent {
 
 	constructor(private cityService: CityService) {
 		//...eventuele extra initialisaties
-		this.getCities();
+	}
+	ngOnInit(){
+		this.cityService.getCities()
+			.subscribe(cityData => {
+					this.cities = cityData.json();				// 1. success handler
+				},
+				err => console.log(err),						// 2. error handler
+				()=> console.log('Getting cities complete...')	// 3. complete handler
+			)
 	}
 
-	getCity(city) {
+	getCity() {
 		this.currentCity = true;
 		// later: this.currenCity = city;
 	}
@@ -33,18 +39,4 @@ export class AppComponent {
 		this.currentCity = null;
 	}
 
-	//***********************
-	// implementation
-	//***********************
-	getCities() {
-		if (!this.cities) {
-			this.cityService.getCities()
-				.subscribe(cityData => {
-						this.cities = cityData.json();				// 1. success handler
-					},
-					err => console.log(err),						// 2. error handler
-					()=> console.log('Getting cities complete...')	// 3. complete handler
-				)
-		}
-	}
 }

@@ -4,7 +4,8 @@
         <h1>Event Emitting via Observable</h1>
         <h2>Mijn favoriete steden zijn :</h2>
         <ul class="list-group">
-            <li *ngFor="#city of cities" class="list-group-item" (click)="getCity(city)">
+            <li *ngFor="let city of cities" class="list-group-item"
+                (click)="getCity(city)">
                 {{ city.id}} - {{ city.name }}
                 <span class="badge">{{city.rating}}</span>
             </li>
@@ -12,7 +13,7 @@
         <button *ngIf="currentCity" class="btn btn-primary" (click)="clearCity()">Clear</button>
         <h3>Emitted cities</h3>
         <ul>
-            <li *ngFor="#city of processedCities">
+            <li *ngFor="let city of processedCities">
                 {{ city }}
             </li>
         </ul>

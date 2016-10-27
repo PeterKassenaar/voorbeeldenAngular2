@@ -1,5 +1,5 @@
 // city.detail.ts
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 
 @Component({
 	selector: 'city-detail',

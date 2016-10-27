@@ -1,18 +1,25 @@
-// city.service.ts
-import { Injectable} from 'angular2/core';
-import {City} from '../model/city.model'
-import {Http, Response} from "angular2/http";
-import {Observable} from "rxjs/Observable";
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {City} from "../model/city.model";
 
 @Injectable()
 export class CityService {
-	constructor(private http:Http) {
+	private cities: City[];
+
+	constructor(private _http: Http) {
 
 	}
 
-	// getCities, met expliciete mapping al hier in de service.
+	setCities(cities) {
+		this.cities = cities;
+	}
+
+	// retourneer alle cities
 	getCities() {
-		return this.http.get('app/cities.json')
-			.map(res => <City[]> res.json());
+		return this._http.get('app/cities.json')
+	}
+
+	numCities() {
+		return this.cities.length;
 	}
 }

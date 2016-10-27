@@ -1,5 +1,5 @@
 // city.detail.ts
-import { Component, Input } from 'angular2/core';
+import {Component, Input} from '@angular/core';
 import {City} from "./city.model";
 
 @Component({

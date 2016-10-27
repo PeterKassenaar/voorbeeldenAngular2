@@ -1,6 +1,6 @@
 // order.service.ts
 import {Subject} from "rxjs/Subject";
-import {Injectable} from "angular2/core";
+import {Injectable} from "@angular/core";
 import {City} from "../model/city.model";
 
 @Injectable()

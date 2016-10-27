@@ -1,5 +1,5 @@
 //city.orders.ts - Een soort 'winkelmandje', bijhouden welke stedentripjes zijn geboekt.
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
 import {OrderService} from "./services/order.service";
 import {City} from "./model/city.model";
 import {CityOrderModel} from "./model/cityOrders.model";
@@ -15,14 +15,14 @@ import {CityOrderModel} from "./model/cityOrders.model";
 			<th>Aantal</th>
 			<th>Prijs</th>
 		</tr>
-		<tr *ngFor="#order of currentOrders">
+		<tr *ngFor="let order of currentOrders">
 				<td>{{ order.city.name}}</td>
 				<td>{{ order.numBookings}}</td>
-				<td>{{ order.city.price | currency:'EUR':true:1.2}}</td>
+				<td>{{ order.city.price | currency:'EUR':true:'1.2'}}</td>
 		</tr>
 		<tr>
 			<td colspan="2">Totaal</td>
-			<td><strong>{{totalPrice | currency:'EUR':true:1.2}}</strong></td>
+			<td><strong>{{totalPrice | currency:'EUR':true:'1.2'}}</strong></td>
 		</tr>
 		</table>
 		<button class="btn btn-default" (click)="cancel()">Annuleren</button>

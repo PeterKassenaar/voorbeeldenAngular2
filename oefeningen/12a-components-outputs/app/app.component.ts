@@ -19,8 +19,16 @@ export class AppComponent implements  OnInit{
 		//...eventuele extra initialisaties
 	}
 
-	ngOnInit() {
-		this.getCities();
+	ngOnInit(){
+		this.cityService.getCities()
+			.subscribe(cityData => {
+					this.cities = cityData.json(); // 1. success handler
+					// voor nu: even hardcoded de property .favorite instellen.
+					this.cities.forEach(city => city.favorite = false)
+				},
+				err => console.log(err),						// 2. error handler
+				()=> console.log('Getting cities complete...')	// 3. complete handler
+			)
 	}
 
 	getCity(city) {
@@ -31,18 +39,12 @@ export class AppComponent implements  OnInit{
 		this.currentCity = null;
 	}
 
-	//***********************
-	// implementation
-	//***********************
-	getCities() {
-		if (!this.cities) {
-			this.cityService.getCities()
-				.subscribe(cityData => {
-						this.cities = cityData.json();				// 1. success handler
-					},
-					err => console.log(err),						// 2. error handler
-					()=> console.log('Getting cities complete...')	// 3. complete handler
-				)
-		}
+	// increase or decrease rating on Event Emitted
+	updateRating(rating: number): void {
+		this.currentCity.rating += rating;
+	}
+
+	updateFavorite(favorite: boolean): void {
+		this.currentCity.favorite = favorite;
 	}
 }

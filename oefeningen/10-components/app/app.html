@@ -4,7 +4,7 @@
 		<h1>Cities via een service</h1>
 		<h2>Mijn favoriete steden zijn :</h2>
 		<ul class="list-group">
-			<li *ngFor="#city of cities" class="list-group-item" (click)="getCity()">
+			<li *ngFor="let city of cities" class="list-group-item" (click)="getCity()">
 				{{ city.id}} - {{ city.name }}
 			</li>
 		</ul>

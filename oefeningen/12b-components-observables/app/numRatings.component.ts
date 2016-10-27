@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from 'angular2/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PubSubService} from "./services/pubSubService";
 import {City} from "./city.model";
 
@@ -8,7 +8,7 @@ import {City} from "./city.model";
 	<div class="ratingStyle">
 		<h1>Totaal aantal waarderingen: {{ numRatings }}</h1>
 		<ul>
-			<li *ngFor="#city of processedCities">
+			<li *ngFor="let city of processedCities">
 				{{ city |json }}
 			</li>
 		</ul>

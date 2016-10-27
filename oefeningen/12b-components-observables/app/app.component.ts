@@ -1,39 +1,37 @@
 // app.component.ts
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
-import {CityDetail} from "./city.detail";
-import {NumRatings} from "./numRatings.component";
-import {ProducerComponent} from "./producer.component";
-import {PubSubService} from "./services/pubSubService"; // Nieuwe component invoegen
+import {PubSubService} from "./services/pubSubService";
 
 @Component({
+	moduleId   : module.id,
 	selector   : 'city-app',
-	templateUrl: 'app/app.html',
-	providers  : [CityService, HTTP_PROVIDERS],
-	directives : [CityDetail, NumRatings, ProducerComponent]	// Niet vergeten: invoegen bij directives!
+	templateUrl: 'app.html',
 })
 
 // Class met properties, array met cities
 export class AppComponent {
 	// Properties voor de component/class
-	public cities:City[];
-	public processedCities:string[] = [];
-	public currentCity:City;
-	public numRatings:number        = 0; // <-- wordt doorgegeven aan Sibling Component
+	public cities: City[];
+	public processedCities: string[] = [];
+	public currentCity: City;
+	public numRatings: number        = 0; // <-- wordt doorgegeven aan Sibling Component
 
-	constructor(private cityService:CityService,
-				private pubSubService:PubSubService) {
+	constructor(private cityService: CityService,
+				private pubSubService: PubSubService) {
 	}
 
 	ngOnInit() {
 		this.getCities();
 		this.pubSubService.Stream
-			.subscribe((city:City) => this.processCity(city));
+			.subscribe((city: City) => {
+				this.processCity(city);
+				this.cityService.setCities(this.cities); // update cache;
+			});
 	}
 
-	private processCity(city:City) {
+	private processCity(city: City) {
 		console.log('City ontvangen:', city);
 		this.cities.push(city);
 	}
@@ -61,6 +59,7 @@ export class AppComponent {
 			this.cityService.getCities()
 				.subscribe(cityData => {
 						this.cities = cityData.json();				// 1. success handler
+						this.cityService.setCities(this.cities);	// cache cities
 					},
 					err => console.log(err),						// 2. error handler
 					()=> console.log('Getting cities complete...')	// 3. complete handler

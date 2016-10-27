@@ -1,5 +1,5 @@
 // city.detail.ts
-import { Component, Input, Output, EventEmitter } from 'angular2/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {City} from'./model/city.model';
 import {OrderService} from "./services/order.service";
 
@@ -16,7 +16,7 @@ import {OrderService} from "./services/order.service";
 			<li class="list-group-item">Highlights: {{city.highlights}}</li>
 		</ul>
 		<img src="../img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-responsive"/>
-		<h2>Prijs voor een weekendje weg: {{ city.price | currency:'EUR':true:1.2 }}
+		<h2>Prijs voor een weekendje weg: {{ city.price | currency:'EUR':true:'1.2' }}
 		<button class="btn btn-lg btn-info" 
 			(click)="order(city)">Boek nu!</button>
 		</h2>
@@ -25,7 +25,7 @@ import {OrderService} from "./services/order.service";
 
 export class CityDetail {
 	@Input() city:City;
-	@Output() rating:EventEmitter<number> = new EventEmitter();
+	@Output() rating:EventEmitter<number> = new EventEmitter<number>();
 
 	constructor(private orderService:OrderService) {
 
