@@ -33,14 +33,14 @@ export class CityDetail {
 	}
 
 	// rating versturen voor huidige city
-	rate(num) {
+	rate(num:number) {
 		console.log(`Rating voor : ${this.city.name}, ${num}`);
 		this.rating.emit(num);
 	}
 
 	// Order plaatsen. Event emitten voor deze stad.
 	// Dit gaan opvangen in city.orders.ts
-	order(city) {
+	order(city:City) {
 		console.log(`Stedentripje geboekt voor: ${this.city.name}, voor EUR ${this.city.price}`);
 		this.orderService.Stream.next(city);
 	}
