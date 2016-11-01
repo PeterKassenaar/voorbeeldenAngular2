@@ -11,6 +11,8 @@ https://freemusicarchive.org/api - informatie over ('open source') songs & artie
 
 
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
+https://api.spotify.com/v1/search?type=track&query= + artistname
+https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
 http://swapi.co/ - The Star Wars API
 http://openweathermap.org/API - Open weathermap
 http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
@@ -20,6 +22,5 @@ http://omdbapi.com/ - Open Movie Database
 https://api.github.com/users/ - GitHub user information.
 http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
 http://restcountries.eu/ - Informatie over landen ter wereld.
-http://www.postcodedata.nl/api/  - Postcode Data (PC + NAW-gegevens)
-  bijvoorbeeld: http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json
-Meer API's - http://www.webresourcesdepot.com/15-free-apis-you-didnt-hear-about-but-will-make-use-of/
+http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data
+
