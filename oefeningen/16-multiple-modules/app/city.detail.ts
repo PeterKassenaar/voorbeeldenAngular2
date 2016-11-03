@@ -1,5 +1,5 @@
 // city.detail.ts
-import { Component, Input, Output, EventEmitter } from 'angular2/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {City} from "./city.model";
 
 @Component({
@@ -20,9 +20,9 @@ import {City} from "./city.model";
 
 export class CityDetail {
 	@Input() city:City;
-	@Output() rating: EventEmitter<number> = new EventEmitter();
+	@Output() rating: EventEmitter<number> = new EventEmitter<number>();
 
-	rate(num) {
+	rate(num:number) {
 		console.log('rating voor ', this.city.name, ': ', num);
 		this.rating.emit(num);
 	}

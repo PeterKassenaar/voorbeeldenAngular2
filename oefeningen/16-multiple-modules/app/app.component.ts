@@ -1,16 +1,11 @@
 // app.component.ts
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from "angular2/http";
+import {Component} from '@angular/core';
 import {City} from './city.model'
 import {CityService} from "./city.service";
-import {RouterLink} from 'angular2/router'
-import {Http} from "angular2/http";
 
 @Component({
 	selector   : 'city-app',
-	templateUrl: 'app/app.html',
-	providers  : [],
-	directives : [RouterLink]
+	templateUrl: 'app/app.html'
 })
 
 // Class met properties, array met cities
@@ -21,21 +16,22 @@ export class AppComponent {
 
 	constructor(private cityService:CityService) {
 		//...eventuele extra initialisaties
+	}
+
+	ngOnInit() {
 		this.getCities();
 	}
 
-	// Not used in this example
-	getCity(city) {
+	getCity(city:City) {
 		this.currentCity = city;
 	}
 
-	// Not used in this example
 	clearCity() {
 		this.currentCity = null;
 	}
 
-	// Not used in this example
-	updateRating(rating) {
+	// increase or decrease rating on Event Emitted
+	updateRating(rating:number) {
 		this.currentCity.rating += rating;
 	}
 
@@ -43,17 +39,14 @@ export class AppComponent {
 	// implementation
 	//***********************
 	getCities() {
-		if (!this.cityService.cache) {
+		if (!this.cities) {
 			this.cityService.getCities()
 				.subscribe(cityData => {
-						this.cities            = cityData.json();				// 1. success handler
-						this.cityService.cache = this.cities;			// caching van cities
+						this.cities = cityData.json();				// 1. success handler
 					},
 					err => console.log(err),						// 2. error handler
 					()=> console.log('Getting cities complete...')	// 3. complete handler
 				)
-		} else {
-			this.cities = this.cityService.cache;
 		}
 	}
 }
