@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {Http, Headers} from "angular2/http";
+import {Component} from '@angular/core';
+import {Http, Headers} from "@angular/http";
 
 @Component({
 	selector: 'api-component',
@@ -23,7 +23,7 @@ export class ApiComponent {
 
 	}
 
-	logError(err) {
+	logError(err:any) {
 		console.log('ERROR!', err);
 	}
 

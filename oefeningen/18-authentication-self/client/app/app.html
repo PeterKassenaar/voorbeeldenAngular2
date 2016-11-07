@@ -4,9 +4,8 @@
 		<h1>Cities via een service</h1>
 		<h2>Mijn favoriete steden zijn :</h2>
 		<ul class="list-group">
-			<li *ngFor="#city of cities" class="list-group-item">
-				<!-- pipe -->
-				{{ city.id}} - {{ city.name | uppercase }}
+			<li *ngFor="let city of cities" class="list-group-item">
+				{{ city.id}} - {{ city.name  }}
 			</li>
 		</ul>
 	</div>

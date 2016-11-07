@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {Http, Headers, HTTP_PROVIDERS} from "angular2/http";
+import {Component} from '@angular/core';
+import {Http, Headers} from "@angular/http";
 import {User} from './model/user.model';
 import {Constants} from './constants';
 import {LoginService} from "./services/login.service";
@@ -8,8 +8,7 @@ import {SessionService} from "./services/session.service";
 
 @Component({
 	selector   : 'auth-component',
-	templateUrl: 'app/auth.component.html',
-	providers  : [HTTP_PROVIDERS]
+	templateUrl: 'app/auth.component.html'
 })
 
 export class AuthComponent {
@@ -22,7 +21,7 @@ export class AuthComponent {
 				private sessionService:SessionService) {
 	}
 
-	logError(err) {
+	logError(err:any) {
 		console.log('ERROR!', err);
 	}
 
@@ -63,7 +62,7 @@ export class AuthComponent {
 		}
 	}
 
-	saveJwt(token) {
+	saveJwt(token:string) {
 		if (token) {
 			// assume modern browser
 			localStorage.setItem('token', token);

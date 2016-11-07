@@ -11,9 +11,6 @@ var app = express();
 dotenv.load();
 
 // Parsers
-// old version of line
-// app.use(bodyParser.urlencoded());
-// new version of line
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());

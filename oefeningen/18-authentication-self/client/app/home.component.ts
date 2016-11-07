@@ -1,5 +1,4 @@
-import { Component } from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
+import { Component } from '@angular/core';
 import {AppComponent} from "./app.component";
 import {CityAddComponent} from "./city.add.component";
 import {AuthComponent} from "./auth.component";
@@ -8,7 +7,6 @@ import {ApiComponent} from "./api.component";
 
 @Component({
 	selector  : 'home-component',
-	directives: [ROUTER_DIRECTIVES, LoginComponent],
 	template  : `
 	<h1>My City picker</h1>
 	<a [routerLink]="['/Home']" class="btn btn-primary">List of cities</a>
@@ -23,15 +21,6 @@ import {ApiComponent} from "./api.component";
 	<router-outlet></router-outlet>
 	`
 })
-
-// home.component.ts
-@RouteConfig([
-	{path: '/', name: 'root', redirectTo: ['Home']},
-	{path: '/home', name: 'Home', component: AppComponent},
-	{path: '/add', name: 'Add', component: CityAddComponent},
-	{path: '/auth', name: 'Auth', component: AuthComponent},
-	{path: '/api', name: 'Api', component: ApiComponent},
-])
 export class HomeComponent {
 
 }

@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import {Component} from '@angular/core';
 import {LoginService} from "./services/login.service";
 import {Constants} from'./constants';
 import {SessionService} from "./services/session.service";
@@ -11,22 +11,22 @@ import {SessionService} from "./services/session.service";
 })
 
 export class LoginComponent {
-	lblLogin:string;
+	lblLogin: string;
 
-	constructor(private loginService:LoginService, private sessionService:SessionService) {
+	constructor(private loginService: LoginService, private sessionService: SessionService) {
 
 	}
 
 	ngOnInit() {
 		this.lblLogin = 'Welkom gast - niet ingelogd';
 		this.loginService.Stream.subscribe(
-			(event:string) => this.processEvent(event),
+			(event: string) => this.processEvent(event),
 			(err) => console.log(err),
 			()=>console.log('Login complete')
 		)
 	}
 
-	processEvent(event) {
+	processEvent(event: any) {
 		console.log('login/out event binnengekregen: ', event);
 		if (event === Constants.AUTH_LOGIN_SUCCESS) {
 			console.log(this.sessionService.user);

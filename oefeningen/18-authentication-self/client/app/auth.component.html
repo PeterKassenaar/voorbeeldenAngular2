@@ -1,17 +1,18 @@
 <!-- auth.component.html -->
 <h2>Authentication Component</h2>
 
-<form (submit)="onSubmit()" #loginForm="ngForm">
+<form (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+<!--<form>-->
     <div *ngIf="!isLoggedIn">
         <div class="form-group">
             <label for="userName">Username</label>
             <input type="text" id="userName" class="form-control"
-                   [(ngModel)]="user.username" required>
+                   [(ngModel)]="user.username" name="username" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
             <input type="text" id="password" class="form-control"
-                   [(ngModel)]="user.password" required>
+                   [(ngModel)]="user.password" name="password" required>
         </div>
     </div>
     <button type="submit" class="btn btn-success">{{btnLoginMsg}}</button>

@@ -1,11 +1,11 @@
 import {Subject} from "rxjs/Subject";
-import {Injectable} from "angular2/core";
+import {Injectable} from "@angular/core";
 
 @Injectable()
 export class LoginService{
 	Stream: Subject<string>;
 
 	constructor(){
-		this.Stream = new Subject();
+		this.Stream = new Subject<string>();
 	}
 }

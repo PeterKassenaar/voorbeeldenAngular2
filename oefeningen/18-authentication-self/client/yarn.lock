@@ -62,6 +62,10 @@ angular2-in-memory-web-api@0.0.20:
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/angular2-in-memory-web-api/-/angular2-in-memory-web-api-0.0.20.tgz#d7dd822c668a9788f18634e9acf6740daa70f67a"
 
+angular2-jwt@^0.1.25:
+  version "0.1.25"
+  resolved "https://registry.yarnpkg.com/angular2-jwt/-/angular2-jwt-0.1.25.tgz#22f4d7757909f86f245c0d79a72ed97e08f407b4"
+
 ansi-align@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-1.1.0.tgz#2f0c1658829739add5ebb15e6b0c6e3423f016ba"
