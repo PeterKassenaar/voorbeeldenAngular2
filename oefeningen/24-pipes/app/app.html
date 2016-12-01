@@ -1,19 +1,19 @@
 <!-- app.html -->
 <div class="row">
 	<div class="col-md-6">
-		<h1>Cities via een service</h1>
-		<h2>Mijn favoriete steden zijn :</h2>
+		<h1>Filtering cities by using a pipe</h1>
+		<h2>My favorite cities are :</h2>
 		<input class="input-lg" type="text"
 			   placeholder="filter cities..."
 			   [(ngModel)]="filterCity">
 		<ul class="list-group">
-			<li *ngFor="#city of cities | filter:filterCity" class="list-group-item">
-				<!-- pipe -->
+			<!-- Custom pipe -->
+			<li *ngFor="let city of cities | filter:filterCity" class="list-group-item">
 				{{ city.id}} - {{ city.name | uppercase }}
 			</li>
 		</ul>
 		<button *ngIf="currentCity" class="btn btn-primary" (click)="clearCity()">Clear</button>
-		<!-- more pipes -->
+		<!-- Default (built-in) pipes -->
 		<p>Date pipe: {{ datePipe | date: 'fullDate' }}</p>
 		<p>Slice pipe: {{ slicePipe | slice:1:5 }}</p>
 		<p>Decimal pipe: {{ decimalPipe |number }}</p>
@@ -21,7 +21,5 @@
 		<p>Currency pipe: {{ currencyPipe | currency:'EUR':true }}</p>
 		<p>JSON pipe: {{ jsonPipe | json }}</p>
 		<p>Percent pipe: {{ percentPipe | percent }}</p>
-
-
 	</div>
 </div>
