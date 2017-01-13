@@ -1,15 +1,4 @@
 
-// HIER eerst registreren voor API Key
-http://developer.marvel.com/  - Marvel comics
-https://www.rijksmuseum.nl/nl/api - Rijksmuseum
-https://www.themoviedb.org/documentation/api - The Movie Database
-http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
-https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
-https://addb.absolutdrinks.com/docs/ - Eigen drankjes mixen, na sign-up
-http://openbeerdatabase.com/ - Open beer database (deels open toegankelijk)
-https://freemusicarchive.org/api - informatie over ('open source') songs & artiesten
-
-
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
 https://api.spotify.com/v1/search?type=track&query= + artistname
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
@@ -22,5 +11,16 @@ http://omdbapi.com/ - Open Movie Database
 https://api.github.com/users/ - GitHub user information.
 http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
 http://restcountries.eu/ - Informatie over landen ter wereld.
+https://restcountries.eu/rest/v1/all - Andere API met Country-informatie
 http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data
+http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie.
 
+// HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
+http://developer.marvel.com/  - Marvel comics
+https://www.rijksmuseum.nl/nl/api - Rijksmuseum
+https://www.themoviedb.org/documentation/api - The Movie Database
+http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
+https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
+https://addb.absolutdrinks.com/docs/ - Eigen drankjes mixen, na sign-up
+http://openbeerdatabase.com/ - Open beer database (deels open toegankelijk)
+https://freemusicarchive.org/api - informatie over ('open source') songs & artiesten
