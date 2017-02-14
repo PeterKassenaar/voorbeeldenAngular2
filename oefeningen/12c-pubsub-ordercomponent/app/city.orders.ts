@@ -57,9 +57,13 @@ export class CityOrders {
 
 	calculateTotal() {
 		this.totalPrice = 0; // reset
-		this.currentOrders.forEach((order)=> {
+		this.currentOrders.forEach(order=> {
 			this.totalPrice += (order.numBookings * order.city.price);
-		})
+		});
+
+		// OF: Gebruik de reduce-functie voor arrays
+        	// this.totalPrice = this.currentOrders
+	        //     .reduce((acc, order) => acc + order.numBookings * order.city.price, 0)
 	}
 
 	cancel(){
