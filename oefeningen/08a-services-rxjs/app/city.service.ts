@@ -14,6 +14,6 @@ export class CityService {
 	// retourneer alle cities, gemapt naar json
 	getCities(): Observable<City[]> {
 		return this.http.get('app/cities.json')
-			.map(cities => cities.json());	// transform stream in de service
+			.map(cities => cities.json())
 	}
 }

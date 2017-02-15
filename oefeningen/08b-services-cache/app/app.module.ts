@@ -7,16 +7,14 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 
 // Import services
-import {MovieService} from "./movie.service";
+import {CityService} from "./city.service";
 
 // Module declaration
 @NgModule({
 	imports     : [BrowserModule, HttpModule],
 	declarations: [AppComponent],
 	bootstrap   : [AppComponent],
-	providers   : [
-		{ provide: MovieService, useClass: MovieService}
-	]
+	providers   : [CityService] // DI voor service
 })
 export class AppModule {
 }
