@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {MovieService} from "./movie.service";
-import  'rxjs/Rx';
 import {MovieModel} from "./movie.model";
 
 // Component annotation. Let op de injection van providers: []
