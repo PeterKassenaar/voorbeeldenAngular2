@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {MovieModel} from "./movie.model";
 import {Observable} from "rxjs/Observable";
+import  'rxjs/add/operator/map';
 
 @Injectable()
 export class MovieService {
