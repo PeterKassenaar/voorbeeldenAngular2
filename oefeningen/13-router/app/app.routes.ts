@@ -6,5 +6,10 @@ import {CityAddComponent} from "./city.add.component";
 export const AppRoutes: Routes = [
 	{path: '', component: AppComponent},
 	{path: 'home', component: AppComponent},
-	{path: 'add', component: CityAddComponent}
+	{path: 'add', component: CityAddComponent},
+    {
+        // catch all route
+        path     : '**',
+        redirectTo: 'home'
+    },
 ];
