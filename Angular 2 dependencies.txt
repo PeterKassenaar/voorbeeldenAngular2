@@ -121,7 +121,9 @@
 	});
 })(this);
 
-
+// **************
+// Voer nu `npm install` uit om alle dependencies te installeren
+// **************
 
 
 // *******************
