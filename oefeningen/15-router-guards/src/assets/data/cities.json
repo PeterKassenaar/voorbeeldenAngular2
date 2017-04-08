@@ -1,0 +1,65 @@
+[
+  {
+	"id"        : 1,
+	"name"      : "Groningen",
+	"province"  : "Groningen",
+	"highlights": [
+	  "Martinitoren",
+	  "Grote Markt"
+	],
+	"rating"    : 0,
+	"price"     : 99
+  },
+  {
+	"id"        : 2,
+	"name"      : "Hengelo",
+	"province"  : "Overijssel",
+	"highlights": [
+	  "Stadhuis"
+	],
+	"rating"    : 0,
+	"price"     : 79.95
+  },
+  {
+	"id"        : 3,
+	"name"      : "Den Haag",
+	"province"  : "Zuid-Holland",
+	"highlights": [
+	  "Binnenhof",
+	  "Madurodam"
+	],
+	"rating"    : 0,
+	"price"     : 119
+  },
+  {
+	"id"        : 4,
+	"name"      : "Enschede",
+	"province"  : "Overijssel",
+	"highlights": [
+	  "Twentse Welle museum",
+	  "Van Heeckplein"
+	],
+	"rating"    : 0,
+	"price"     : 85
+  },
+  {
+	"id"        : 5,
+	"name"      : "Heerlen",
+	"province"  : "Limburg",
+	"highlights": [
+	  "Mijnbouwmuseum"
+	],
+	"rating"    : 0,
+	"price"     : 69.50
+  },
+  {
+	"id"        : 6,
+	"name"      : "Mechelen",
+	"province"  : "Antwerpen",
+	"highlights": [
+	  "McDonald's"
+	],
+	"rating"    : 0,
+	"price"     : 109
+  }
+]
