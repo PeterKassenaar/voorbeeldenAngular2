@@ -1,6 +1,8 @@
 Gebruik de volgende links voor meer informatie over het
 upgraden van een project naar Angular 2.
 
+- https://www.youtube.com/watch?v=5FEjA_dhnQs - Presentatie van Pete Bacon Darwin en George Kapalkas over upgraden (NG-NL 2017)
+
 - https://angular.io/docs/ts/latest/guide/upgrade.html  - officiele documentatie.
 
 - http://blog.thoughtram.io/angular/2015/10/24/upgrading-apps-to-angular-2-using-ngupgrade.html - artikel van Pascal Precht / Thougthram.io
