@@ -7,7 +7,7 @@ http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402
 http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
 http://api.yindo.com/api/book/new/10 - 10 nieuwste Yindo-boeken
 http://www.filltext.com/ - random user data
-http://omdbapi.com/ - Open Movie Database
+http://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (gebruik liever je eigen key!)
 https://api.github.com/users/ - GitHub user information.
 http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
 http://restcountries.eu/ - Informatie over landen ter wereld.
