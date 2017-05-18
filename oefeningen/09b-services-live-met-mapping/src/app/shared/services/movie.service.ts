@@ -19,7 +19,7 @@ export class MovieService {
             .map((movies: any) => {
                 // mapping naar local Model van Movie.
                 // Het enige dat hier wordt omgezet zijn de velden Title, Year en Poster.
-                // Ze krijgen nu een kleine letter.
+                // Ze krijgen nu een Nederlandse naam.
                 return movies.map(movie => {
                     return new MovieModel(
                         movie.Title,
