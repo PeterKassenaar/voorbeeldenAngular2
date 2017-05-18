@@ -1,8 +1,8 @@
 // movie.model.ts
 export interface IMovie {
-	title:string;
-	year:string;
-	poster:string;
+	titel:string;
+	jaar:string;
+	afbeelding:string;
 }
 
 // Eventueel: export class MovieModel implements IMovie {

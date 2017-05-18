@@ -27,14 +27,14 @@ export class AppComponent1 implements OnInit {
 
 		// 1a. Different notation: same effect, using new FormControl()
 		// this.myReactiveForm = this.formBuilder.group({
-		// 	email   : new FormControl(''),
-		// 	password: new FormControl(''),
-		// 	customer: this.formBuilder.group({
-		// 		prefix   : new FormControl(''),
-		// 		firstName: new FormControl(''),
-		// 		lastName : new FormControl('')
-		// 	})
-		// });
+        // 	email   : new FormControl(''),
+        // 	password: new FormControl(''),
+        // 	customer: this.formBuilder.group({
+        // 		prefix   : new FormControl(''),
+        // 		firstName: new FormControl(''),
+        // 		lastName : new FormControl('')
+        // 	})
+        // });
 
 		// 2. Subscribe to changes at form level or...
 		this.myReactiveForm.valueChanges.subscribe((value)=> {

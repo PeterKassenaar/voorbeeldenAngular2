@@ -71,6 +71,7 @@ export class CityOrders {
 	}
 
 	confirm(){
+	    // POST this.currentOrders.stringify()....etc.
 		alert('TODO: order opslaan in database...')
 	}
 }

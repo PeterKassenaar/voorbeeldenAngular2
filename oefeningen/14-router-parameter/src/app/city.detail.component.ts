@@ -5,15 +5,18 @@ import {CityService} from "./shared/services/city.service";
 
 // import {RouteParams} from "@angular/router"; // OLD way
 import {ActivatedRoute} from '@angular/router'; // NEW way
+import {Subscription} from "rxjs/Subscription";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/delay';
 
 @Component({
     selector: 'city-detail',
     template: `<h1>City Detail</h1>
     <h2>Details voor city: {{ id }}</h2>
+    <h2>Name voor city: {{ name }}</h2>
 
-    <!--<div *ngIf="currentCity">-->
+    <!--<div *ngIf="currentCity | async; let currentCity; else loading">-->
     <!--<h2>Details voor city: {{ currentCity.name }}</h2>-->
     <!--<ul class="list-group">-->
     <!--<li class="list-group-item">Naam: {{ currentCity.name }}</li>-->
@@ -21,6 +24,12 @@ import 'rxjs/add/operator/switchMap';
     <!--<li class="list-group-item">Highlights: {{ currentCity.highlights }}</li>-->
     <!--</ul>-->
     <!--</div>-->
+    <!--&lt;!&ndash;- Template voor laden van gegevens -&ndash;&gt; -->
+    <!--<ng-template #loading>-->
+    <!--<h2>Angular 4 - else templates</h2>-->
+    <!--<h3>Bezig met ophalen user data...</h3>-->
+    <!--</ng-template>-->
+
     `
 })
 
@@ -28,7 +37,7 @@ export class CityDetailComponent implements OnInit, OnDestroy {
     id: string;
     name: string;
     currentCity: City;
-    private sub: any; // pointer to subscription on Route
+    private sub: Subscription; // pointer to subscription on Route
 
     constructor(private route: ActivatedRoute, private cityService: CityService) {
         // Credits: http://blog.thoughtram.io/angular/2016/06/14/routing-in-angular-2-revisited.html
@@ -44,7 +53,7 @@ export class CityDetailComponent implements OnInit, OnDestroy {
         // NEW:
         this.sub = this.route.params
             .subscribe((params: any) => {
-                this.id = params['id'];
+                this.id = params.id;
             });
 
         // OR:
@@ -57,13 +66,12 @@ export class CityDetailComponent implements OnInit, OnDestroy {
         // this.name = this.route.snapshot.params['name'];
 
 
-        // NEW, with fetching details via Service:
-        // this.sub = this.route.params
+        // NEW, with fetching details via Service and using switchMap():
+        // this.currentCity = this.route.params
+        //     .delay(2000)
         //     .map(params => params['id'])
         //     .switchMap(id => this.cityService.getCity(id))
-        //     .subscribe((city) => {
-        //         this.currentCity = city;
-        //     });
+
     }
 
     ngOnDestroy() {

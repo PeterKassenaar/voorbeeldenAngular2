@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {MovieModel} from "../model/movie.model";
+import {MovieModel, IMovie} from "../model/movie.model";
 import {Observable} from "rxjs/Observable";
 import  'rxjs/add/operator/map';
 
@@ -9,11 +9,10 @@ export class MovieService {
     url: string = 'http://www.omdbapi.com/?';
 
     constructor(private http: Http) {
-
     }
 
-    // retourneer alle cities
-    searchMovies(keyword): Observable<MovieModel[]> {
+    // retourneer alle movies
+    searchMovies(keyword): Observable<IMovie[]> {
         return this.http.get(this.url + `s=${keyword}`)
             .map(res => (res.json().Search))
             .map((movies: any) => {
