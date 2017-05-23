@@ -3,6 +3,7 @@
 https://api.spotify.com/v1/search?type=track&query= + artistname
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
 http://swapi.co/ - The Star Wars API
+https://pokeapi.co/ - Pokemon API
 http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
 http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
 http://api.yindo.com/api/book/new/10 - 10 nieuwste Yindo-boeken
