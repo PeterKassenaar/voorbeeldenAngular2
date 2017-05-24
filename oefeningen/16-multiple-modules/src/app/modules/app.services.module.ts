@@ -11,7 +11,7 @@ import {AuthService} from "../shared/services/auth.service";
 import {CanActivateViaAuthGuard} from "../shared/guards/canActivateViaAuthGuard";
 import {CanDeactivateGuard} from "../shared/guards/canDeactivateGuard";
 
-function guardFunction() {
+export function guardFunction() {
     console.log("Route requested");
     return true; // do validation or other stuff here
 }
