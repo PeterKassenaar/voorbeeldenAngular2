@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 
 @Injectable()
 export class MovieService {
-	url: string = 'http://www.omdbapi.com/?';
+	url: string = 'http://www.omdbapi.com/?apikey=f1f56c8e&';
 
 	constructor(private http: Http) {
 
