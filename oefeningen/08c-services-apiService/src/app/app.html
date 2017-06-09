@@ -1,0 +1,28 @@
+<h1>Cities async ophalen via RESTFul API Backend</h1>
+<h2>Mijn favoriete steden zijn :</h2>
+<ul class="list-group">
+    <li *ngFor="let city of cities | async"
+        class="list-group-item"
+        (click)="getCity(city.id)">
+        {{ city.id}} - {{ city.name }}
+    </li>
+</ul>
+<button (click)="showCityForm = !showCityForm" class="btn btn-primary">Add City</button>
+<hr>
+<div *ngIf="currentCity | async ; let currentCity">
+    <h2>Gekozen stad: {{ currentCity.name }}</h2>
+    <img class="cityPhoto"
+         src="assets/img/{{currentCity.name}}.jpg" alt="Foto van {{ currentCity.name}}">
+    <p>
+        <button (click)="clear()" class="btn btn-primary">Clear</button>
+    </p>
+</div>
+<div *ngIf="showCityForm">
+    <!--Using a simple Template driven form here-->
+    <form #cityForm="ngForm">
+        <p><input type="text" name="name" placeholder="City name..." class="input-lg" ngModel></p>
+        <p><input type="text" name="province" placeholder="Province..." class="input-lg" ngModel></p>
+        <p><input type="text" name="highlights" placeholder="Highlights..." class="input-lg" ngModel></p>
+    </form>
+    <button class="btn btn-success" (click)="addCity(cityForm.value)">Add</button>
+</div>
