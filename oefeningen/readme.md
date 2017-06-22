@@ -1,6 +1,6 @@
 # Example projects Training Angular
 
-Every folder is a seperate project: use npm install / npm start
+Every folder is a seperate project: use `npm install`  and `npm start` from a command prompt. 
 
 ## Contents
 - 1xx - Hello World, Data binding examples
@@ -11,5 +11,5 @@ Every folder is a seperate project: use npm install / npm start
 - 6xx - Miscellaneous
 - 7xx - Work in Progress (wip)
 
- (C) Copyright 2017 - Peter Kassenaar, info@kassenaar.com
+(C) Copyright 2017 - Peter Kassenaar, info@kassenaar.com
  
