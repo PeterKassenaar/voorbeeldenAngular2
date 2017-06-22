@@ -1,0 +1,70 @@
+<div class="row">
+	<div class="col-md-6">
+		<h2>17a - Reactive Forms /app.component1.html | .ts</h2>
+		<hr>
+		<form novalidate [formGroup]="myReactiveForm">
+			<div class="form-group">
+				<label for="inputEmail">Email address</label>
+				<input type="email" class="form-control" id="inputEmail"
+					   placeholder="Enter email"
+					   formControlName="email">
+				<small class="form-text text-muted">
+					We'll never share your email with anyone else.
+				</small>
+			</div>
+			<div class="form-group">
+				<label for="inputPassword">Password</label>
+				<input type="password" class="form-control"
+					   formControlName="password"
+					   id="inputPassword" placeholder="Password" name="password">
+			</div>
+
+			<!--*******************-->
+			<!---- ngModelGroup --->
+			<!--*******************-->
+			<div formGroupName="customer">
+				<div class="form-group">
+					<label for="exampleSelect1">Prefix</label>
+					<select class="form-control" id="exampleSelect1" formControlName="prefix" name="namePrefix">
+						<option value="" disabled>Select Name Prefix</option>
+						<option value="Mr.">Mr.</option>
+						<option value="Mrs.">Mrs.</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="firstName">First Name</label>
+					<input type="text" class="form-control" id="firstName" placeholder="First Name"
+						   formControlName="firstName"
+						   name="firstName">
+				</div>
+
+				<div class="form-group">
+					<label for="lastName">Last Name</label>
+					<input type="text" class="form-control" id="lastName" placeholder="Last Name"
+						   formControlName="lastName"
+						   name="lastName">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary"
+					(click)="onSubmit()"
+					[disabled]="!myReactiveForm.valid">
+				Submit
+			</button>
+		</form>
+	</div>
+	<!--Sample results pane - showing valid/invalid of form among others-->
+	<div class="col-md-6">
+		<div class="form-result">
+			<h3>Validity</h3>
+			<div class="validity" [ngClass]="{'invalid-form': !myReactiveForm.valid}">
+				<div *ngIf="myReactiveForm.valid">Valid</div>
+				<div *ngIf="!myReactiveForm.valid">Invalid</div>
+			</div>
+			<h3>Results</h3>
+			<div class="result">
+				{{ myReactiveForm.value | json}}
+			</div>
+		</div>
+	</div>
+</div>

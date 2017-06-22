@@ -1,0 +1,18 @@
+<!-- app.html -->
+<div class="row">
+	<div class="col-md-6">
+		<h1>Cities met detail-routing</h1>
+		<h2>Mijn favoriete steden zijn :</h2>
+		<ul class="list-group">
+			<li *ngFor="let city of cities" class="list-group-item">
+				<a [routerLink]="['/detail', city.id]">
+                    {{ city.id}} - {{ city.name }}
+                </a>
+			</li>
+		</ul>
+		<button *ngIf="currentCity" class="btn btn-primary" (click)="clearCity()">Clear</button>
+	</div>
+	<div class="col-md-6">
+		<!-- empty, details staan nu in een aparte component, city.detail.component.ts -->
+	</div>
+</div>

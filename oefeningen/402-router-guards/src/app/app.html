@@ -1,0 +1,17 @@
+<!-- app.html -->
+<div class="row">
+	<div class="col-md-6">
+		<h1>Routing met Guards</h1>
+		<p>Kijk onder andere in <em>app/app.routes.ts</em>, <em>app/auth.service.ts</em> en <em>app/app.module.ts</em>  en de diverse <em>canActivate/canDeactivate</em>-bestanden. </p>
+		<h2>Mijn favoriete steden zijn :</h2>
+		<ul class="list-group">
+			<li *ngFor="let city of cities" class="list-group-item">
+				<a [routerLink]="['/detail', city.id]"> {{ city.id}} - {{ city.name }}</a>
+			</li>
+		</ul>
+		<button *ngIf="currentCity" class="btn btn-primary" (click)="clearCity()">Clear</button>
+	</div>
+	<div class="col-md-6">
+		<!-- empty, details staan  in een aparte component, city.detail.component.ts -->
+	</div>
+</div>
