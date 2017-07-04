@@ -14,6 +14,7 @@ http://restcountries.eu/ - Informatie over landen ter wereld.
 https://restcountries.eu/rest/v1/all - Andere API met Country-informatie
 http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data
 http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie.
+https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster
 
 // HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
 http://developer.marvel.com/  - Marvel comics
