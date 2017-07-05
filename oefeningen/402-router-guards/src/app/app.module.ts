@@ -25,7 +25,7 @@ import {CanDeactivateGuard} from "./shared/guards/canDeactivateGuard";
 
 // Inline providers/function not possible anymore. This
 // function is used inside providers: []
-function guardFunction() {
+export function guardFunction() {
     console.log("Route requested");
     return true; // do validation or other stuff here
 }
