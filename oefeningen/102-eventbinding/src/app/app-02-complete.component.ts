@@ -22,7 +22,10 @@ export class AppComponent {
 	];
 
 	addCity(txtCity) {
+		// Dummy nieuw ID berekenen.
 		let newID   = this.cities.length + 1;
+		
+		// Nieuw City-object maken en toevoegen aan de array.
 		let newCity = new City(newID, txtCity.value, 'Onbekend');
 		this.cities.push(newCity);
 		txtCity.value = '';
