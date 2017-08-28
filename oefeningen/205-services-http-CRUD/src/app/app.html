@@ -1,0 +1,78 @@
+<h1>CRUD-operations on cities:</h1>
+<h2>using package json-server</h2>
+<div class="row">
+    <div class="col-md-6">
+        <!--First (Left) column: show list of cities-->
+        <ul class="list-group">
+            <li *ngFor="let city of cities | async "
+                class="list-group-item"
+                (click)="getCity(city)">
+                {{ city.id}} - {{ city.name }}
+            </li>
+        </ul>
+        <label>
+            <input type="text" class="input-lg" #newCity>
+        </label>
+        <button class="btn btn-primary"
+                (click)="addCity(newCity.value)">
+            Add City
+        </button>
+        <button class="btn btn-primary"
+                (click)="currentCity = null">
+            Clear
+        </button>
+        <div *ngIf="cityAdded">
+            <p>City added: </p>
+            {{ cityAdded | json}}
+        </div>
+    </div><!--/col-->
+
+    <div class="col-md-6">
+        <!--Second (right) column: edit the current city-->
+        <div *ngIf="currentCity">
+            <h2>Selected city: {{ currentCity.name }}</h2>
+            <img class="cityPhoto"
+                 [src]="cityPhoto" alt="Foto van {{ currentCity.name}}">
+            <button class="btn btn-warning btn-sm"
+                    (click)="isEditing = !isEditing ">
+                <span *ngIf="isEditing">Hide</span>
+                <span *ngIf="!isEditing">Edit</span>
+            </button>
+            <button class="btn btn-danger btn-sm"
+                    (click)="removeCity(currentCity)">
+                Delete
+            </button>
+        </div>
+
+        <!--Editing a city, Quick and Dirty, using [(ngModel)] -->
+        <div *ngIf="isEditing">
+            <hr>
+            <label>City Name
+                <input type="text" [(ngModel)]="currentCity.name"
+                       placeholder="name" class="input-lg">
+            </label>
+            <label>Province
+                <input type="text" [(ngModel)]="currentCity.province"
+                       placeholder="province" class="input-lg">
+            </label>
+            <label>Highlights
+                <input type="text" [(ngModel)]="currentCity.highlights"
+                       placeholder="highlights (comma separated)" class="input-lg">
+            </label>
+            <p>
+                <button class="btn btn-success"
+                        (click)="updateCity()">Update
+                </button>
+                <button class="btn btn-default"
+                        (click)="cancel()">Cancel
+                </button>
+            </p>
+        </div>
+    </div><!--/col-->
+</div><!--/row-->
+<hr>
+<p>
+    <a href="https://github.com/typicode/json-server" target="_blank">
+        Info on json-server
+    </a>
+</p>
