@@ -32,7 +32,7 @@ export class CityDetail {
 	}
 
 	ngOnChanges() {
-		debugger;
+		// debugger;
 		if (this.city) {
 			console.log('in Changes: Nieuwe city ontvangen');
 			this.isFavorite = this.city.favorite;
