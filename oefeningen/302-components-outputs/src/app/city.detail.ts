@@ -31,10 +31,10 @@ export class CityDetail {
 		this.rating.emit(num);
 	}
 
-	ngOnChanges() {
+	ngOnChanges(change) {
 		// debugger;
 		if (this.city) {
-			console.log('in Changes: Nieuwe city ontvangen');
+			console.log('in Changes: Nieuwe city ontvangen -->', change);
 			this.isFavorite = this.city.favorite;
 		}
 	}
