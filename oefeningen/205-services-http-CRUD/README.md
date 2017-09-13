@@ -11,5 +11,5 @@ server voert de handelingen nu *live* uit in het bestandje `cities.json`.
 - Open een nieuw terminal-venster.
 - Start dan de client met `npm start`.
 
-## Rest
+## Resetten van cities
 - als je alle cities hebt verwijderd, is `cities.json` leeg! Restore dit eventueel door de inhoud van `cities-original.json` te kopieren.
