@@ -36,11 +36,13 @@ export class CityOrders {
 	currentOrders:CityOrderModel[] = [];
 	totalPrice:number              = 0;
 
+	// Injection van *dezelfde* instantie van de OrderService.
 	constructor(private orderService:OrderService) {
 
 	}
 
 	ngOnInit() {
+		// Abonneer je op events die op de OrderService worden gepubliceerd.
 		this.orderService.Stream
 			.subscribe(
 				(city:City) => this.processOrder(city),
