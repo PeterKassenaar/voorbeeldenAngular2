@@ -8,5 +8,5 @@ per project te installeren.
 Zie de oefeningen en slides voor verdere informatie. 
 
 ## Training boeken?
-Zelf, of met uw bedrijf of organisatie een Angular 2(+) training volgen? Bekijk de agenda op http://kassenaar.com/calendar/ of neem contact op met info@kassenaar.com
+Zelf, of met uw bedrijf of organisatie een Angular 2(+) training volgen? Bekijk de agenda op https://kassenaar.com/calendar/ of neem contact op met info@kassenaar.com
 
