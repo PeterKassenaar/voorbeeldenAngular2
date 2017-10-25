@@ -31,7 +31,7 @@ export class AppComponent implements  OnInit{
 
 	getCity() {
 		this.currentCity = true;
-		// later: this.currenCity = city;
+		// later: this.currentCity = city;
 	}
 
 	clearCity() {
