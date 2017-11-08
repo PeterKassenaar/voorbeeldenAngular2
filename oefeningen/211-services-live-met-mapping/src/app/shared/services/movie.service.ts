@@ -15,7 +15,7 @@ export class MovieService {
     searchMovies(keyword): Observable<IMovie[]> {
         return this.http.get(this.url + `s=${keyword}`)
             .map(res => (res.json().Search))
-            .map((movies: any) => {
+            .map((movies: any[]) => {
                 // mapping naar local Model van Movie.
                 // Het enige dat hier wordt omgezet zijn de velden Title, Year en Poster.
                 // Ze krijgen nu een Nederlandse naam.
