@@ -8,7 +8,7 @@ http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
 http://www.filltext.com/ - random user data
 http://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (gebruik liever je eigen key!)
 https://api.github.com/users/ - GitHub user information.
-http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
+http://dev.markitondemand.com/Api/v2/Quote/json?symbol=AAPL  - Aandelen/stock quote information
 http://restcountries.eu/ - Informatie over landen ter wereld.
 https://restcountries.eu/rest/v1/all - Andere API met Country-informatie
 http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data
