@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import  {City} from './shared/city.model'
+import  {City} from './city.model'
 
 @Injectable()
 export class CityService {

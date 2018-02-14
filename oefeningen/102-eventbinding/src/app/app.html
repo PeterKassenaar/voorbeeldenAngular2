@@ -18,7 +18,7 @@
 <!-- 2. Event binding voor toetsenbord, gebruik $event -->
 <h2>Event binding : keyboard</h2>
 <div>
-	<input type="text" class="input-lg" placeholder="Plaatsnaam..."
+	<input type="text" class="form-control-lg" placeholder="Plaatsnaam..."
 		   (keyup)="onKeyUp($event)">
 	<h3>{{ txtKeyUp}}</h3>
 </div>
@@ -27,7 +27,7 @@
 <!-- 3. Betere event binding, met local template variabele -->
 <h2>Betere event binding : keyboard</h2>
 <div>
-	<input type="text" class="input-lg" placeholder="Plaatsnaam..."
+	<input type="text" class="form-control-lg" placeholder="Plaatsnaam..."
 		   #txtCity (keyup)="betterKeyUp()">
 	<h3>{{ txtCity.value }}</h3>
 </div>

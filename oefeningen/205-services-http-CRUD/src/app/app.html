@@ -11,7 +11,7 @@
             </li>
         </ul>
         <label>
-            <input type="text" class="input-lg" #newCity>
+            <input type="text" class="form-control-lg" placeholder="new city..." #newCity>
         </label>
         <button class="btn btn-primary"
                 (click)="addCity(newCity.value)">
@@ -49,15 +49,15 @@
             <hr>
             <label>City Name
                 <input type="text" [(ngModel)]="currentCity.name"
-                       placeholder="name" class="input-lg">
+                       placeholder="name" class="form-control-lg">
             </label>
             <label>Province
                 <input type="text" [(ngModel)]="currentCity.province"
-                       placeholder="province" class="input-lg">
+                       placeholder="province" class="form-control-lg">
             </label>
             <label>Highlights
                 <input type="text" [(ngModel)]="currentCity.highlights"
-                       placeholder="highlights (comma separated)" class="input-lg">
+                       placeholder="highlights (comma separated)" class="form-control-lg">
             </label>
             <p>
                 <button class="btn btn-success"

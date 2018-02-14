@@ -3,9 +3,11 @@ import {City} from './shared/model/city.model';
 import {CityService} from "./shared/services/city.service";
 
 @Component({
-    selector   : 'hello-world',
+    selector: 'hello-world',
     templateUrl: 'app.html',
-    styles     : [`.cityPhoto{max-width:200px}`]
+    styles: [`.cityPhoto {
+        max-width: 200px
+    }`]
 })
 
 // Class met properties, array met cities
@@ -23,7 +25,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.cityService.getCities()
             .subscribe(cityData => {						// 1. success handler
-                    this.cities = cityData.json()
+                    this.cities = cityData
                 },
                 err => console.log('FOUT: ', err),			// 2. error handler
                 () => console.log('Getting cities complete'));	// 3. complete handler

@@ -6,7 +6,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 
 // Import services
-import {CityService} from "./city.service";
+import {CityService} from "./shared/city.service";
 
 // Module declaration
 @NgModule({

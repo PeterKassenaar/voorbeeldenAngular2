@@ -7,7 +7,7 @@
 				*ngFor="let city of cities"
 				(click)="showCity(city)">
 				{{ city.name }}
-				<span class="badge">{{city.rating}}</span>
+				<span class="badge badge-dark float-right">{{city.rating}}</span>
 			</li>
 		</ul>
 		<button class="btn btn-primary" (click)="clearCity()">Leegmaken</button>

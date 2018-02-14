@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {City} from './shared/city.model';
-import {CityService} from "./city.service";
+import {CityService} from "./shared/city.service";
 
 @Component({
 	selector   : 'hello-world',

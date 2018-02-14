@@ -15,14 +15,14 @@
 
 <!-- Two-way binding -->
 <h2>Two-way binding</h2>
-<input type="text" class="input-lg"
+<input type="text" class="form-control-lg"
 	   [(ngModel)]="newCity" placeholder="Plaatsnaam..."/>
 		<!--Let op: importeren van FormsModule in app.module.ts, omdat ngModel wordt gebruikt! -->
 <h2>{{ newCity }}</h2>
 
 <h2>Two-way binding met uitgebreide syntaxis</h2>
 <!-- Two-way binding met uitgebreide syntaxis-->
-<input type="text" class="input-lg"
+<input type="text" class="form-control-lg"
 	   [value]="newCityExtended"
 	   (input)="newCityExtended = $event.target.value"
 	   placeholder="Plaatsnaam..."/>

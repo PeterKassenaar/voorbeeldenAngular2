@@ -20,9 +20,9 @@
 <div *ngIf="showCityForm">
     <!--Using a simple Template driven form here-->
     <form #cityForm="ngForm">
-        <p><input type="text" name="name" placeholder="City name..." class="input-lg" ngModel></p>
-        <p><input type="text" name="province" placeholder="Province..." class="input-lg" ngModel></p>
-        <p><input type="text" name="highlights" placeholder="Highlights..." class="input-lg" ngModel></p>
+        <p><input type="text" name="name" placeholder="City name..." class="form-control-lg" ngModel></p>
+        <p><input type="text" name="province" placeholder="Province..." class="form-control-lg" ngModel></p>
+        <p><input type="text" name="highlights" placeholder="Highlights..." class="form-control-lg" ngModel></p>
     </form>
     <button class="btn btn-success" (click)="addCity(cityForm.value)">Add</button>
 </div>
