@@ -1,4 +1,4 @@
-// DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
+// DEZE API's zijn open, zonder registratie beschikbaar, of al geregistreerd (registratie aanvullend vaak wel mogelijk)
 
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
 http://swapi.co/ - The Star Wars API
