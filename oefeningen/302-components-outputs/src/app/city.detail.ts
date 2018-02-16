@@ -16,7 +16,7 @@ import {City} from "./shared/city.model";
 			<li class="list-group-item">Provincie: {{ city.province }}</li>
 			<li class="list-group-item">Highlights: {{ city.highlights }}</li>
 		</ul>
-		<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-responsive"/>
+		<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-fluid"/>
 	`
 })
 
