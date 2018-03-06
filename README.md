@@ -2,8 +2,10 @@
 Voorbeelden en demo's bij de training Angular Fundamentals (Peter Kassenaar <info@kassenaar.com>)
 Alle voorbeelden zijn voor versie `Angular 2.0.0` of hoger, tenzij anders vermeld.
 
+Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 5.2.0`. 
+
 ## Gebruik
-* Elke subfolder is een eigen (mini) project! Er is geen centrale node_modules o.i.d.
+* Elke subfolder is een eigen (mini) project! Er is geen centrale `node_modules`.
 * Kloon de repo en draai in de submappen van \oefeningen de opdracht `npm install` om de dependencies 
 per project te installeren. 
 
