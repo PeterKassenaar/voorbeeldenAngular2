@@ -16,7 +16,7 @@ import 'rxjs/add/operator/delay';
     <h2>Details voor city: {{ id }}</h2>
     <h2>Name voor city: {{ name }}</h2>
 
-    <!--<div *ngIf="currentCity | async; let currentCity; else loading">-->
+    <!--<div *ngIf="currentCity | async as currentCity; else loading">-->
     <!--<h2>Details voor city: {{ currentCity.name }}</h2>-->
     <!--<ul class="list-group">-->
     <!--<li class="list-group-item">Naam: {{ currentCity.name }}</li>-->
