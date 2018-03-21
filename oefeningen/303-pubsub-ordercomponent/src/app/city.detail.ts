@@ -17,7 +17,7 @@ import {OrderService} from "./shared/services/order.service";
 		</ul>
 		<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-fluid"/>
 		<h2>Prijs voor een weekendje weg: 
-		{{ city.price | currency:'EUR':true:'1.2' }}
+		{{ city.price | currency:'EUR':'symbol':'1.2' }}
 		<button class="btn btn-lg btn-info" 
 			(click)="order(city)">Boek nu!</button>
 		</h2>
