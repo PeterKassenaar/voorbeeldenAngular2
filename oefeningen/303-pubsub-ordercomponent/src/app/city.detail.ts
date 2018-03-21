@@ -15,7 +15,7 @@ import {OrderService} from "./shared/services/order.service";
 			<li class="list-group-item">Provincie: {{city.province}}</li>
 			<li class="list-group-item">Highlights: {{city.highlights}}</li>
 		</ul>
-		<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-responsive"/>
+		<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-fluid"/>
 		<h2>Prijs voor een weekendje weg: 
 		{{ city.price | currency:'EUR':true:'1.2' }}
 		<button class="btn btn-lg btn-info" 
