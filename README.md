@@ -1,6 +1,6 @@
 # VoorbeeldenAngular2
 Voorbeelden en demo's bij de training Angular Fundamentals (Peter Kassenaar <info@kassenaar.com>)
-Alle voorbeelden zijn voor versie `Angular 2.0.0` of hoger, tenzij anders vermeld.
+Alle voorbeelden zijn voor versie `Angular 4.3.0` of hoger, tenzij anders vermeld.
 
 Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 5.2.0`. 
 
