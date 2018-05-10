@@ -1,73 +1,84 @@
-import {Injectable} from '@angular/core';
-import {environment} from 'environments/environment';
-import {Http, Headers} from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import {City} from '../model/city.model';
-
-// RxJS operators
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+import { Injectable } from '@angular/core';
+import { environment } from 'environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { City } from '../model/city.model';
 
 // Fetching URL from environment variable
 const API_URL = environment.apiUrl;
 
 @Injectable()
 export class ApiService {
+  constructor(private http: HttpClient) {}
 
-	constructor(private http: Http) {
-	}
+  // API: GET /cities - get all cities
+  public getCities(): Observable<City[]> {
+    return this.http.get<City[]>(API_URL + '/cities').pipe(
+      map(response => {
+        const allCities = response;
+        return allCities.map((city: City) => {
+          return new City(
+            city.id,
+            city.name,
+            city.province,
+            city.rating,
+            city.highlights
+          );
+        });
+      }),
+      catchError(this.handleError)
+    );
+  }
 
-	// API: GET /cities - get all cities
-	public getCities(): Observable<City[]> {
-		return this.http.get(API_URL + '/cities')
-			.map(response => {
-				const allCities = response.json();
-				return allCities.map((city: City) => {
-					return new City(city.id, city.name, city.province, city.rating, city.highlights)
-				})
-			})
-			.catch(this.handleError);
-	}
+  // API: GET city/:id - get city by ID
+  public getCity(id: number): Observable<City> {
+    return this.http.get<City>(API_URL + `/cities/${id}`).pipe(
+      map(response => {
+        const city: City = response;
+        return new City(
+          city.id,
+          city.name,
+          city.province,
+          city.rating,
+          city.highlights
+        );
+      }),
+      catchError(this.handleError)
+    );
+  }
 
-	// API: GET city/:id - get city by ID
-	public getCity(id: number): Observable<City> {
-		return this.http.get(API_URL + `/cities/${id}`)
-			.map(response => {
-				const city: City = response.json();
-				return new City(city.id, city.name, city.province, city.rating, city.highlights)
-			})
-			.catch(this.handleError);
-	}
+  // API: POST/cities - add a new city
+  public createCity(city: City): Observable<City> {
+    // set headers
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-	// API: POST/cities - add a new city
-	public createCity(city: City): Observable<City> {
-		// set headers
-		const headers = new Headers();
-		headers.append('Content-Type', 'application/json');
+    // perform POST request
+    return this.http
+      .post<City>(API_URL + '/cities', city, { headers: headers })
+      .pipe(
+        map((response: City) => {
+          const city: City = response;
+          return new City(
+            city.id,
+            city.name,
+            city.province,
+            city.rating,
+            city.highlights
+          );
+        }),
+        catchError(this.handleError)
+      );
+  }
 
-		// perform POST request
-		return this.http.post(API_URL + '/cities', JSON.stringify(city), {headers: headers})
-			.map(response => {
-				const city: City = response.json();
-				return new City(city.id, city.name, city.province, city.rating, city.highlights)
-			})
-			.catch(this.handleError);
-	}
+  // API: PUT city/:id - update existing city
+  public updateCity(city: City) {}
 
-	// API: PUT city/:id - update existing city
-	public updateCity(city: City) {
+  // API: DELETE city/:id
+  public deleteCity(id: number) {}
 
-	}
-
-	// API: DELETE city/:id
-	public deleteCity(id: number) {
-
-	}
-
-	private handleError(error: Response | any) {
-		console.error('ApiService::handleError', error);
-		return Observable.throw(error);
-	}
-
+  private handleError(error: Response | any) {
+    console.error('ApiService::handleError', error);
+    return Observable.throw(error);
+  }
 }

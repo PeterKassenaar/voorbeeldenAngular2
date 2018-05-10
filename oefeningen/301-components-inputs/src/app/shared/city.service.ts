@@ -1,15 +1,14 @@
-import { Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { City } from './city.model';
 
 @Injectable()
 export class CityService {
+  constructor(private http: HttpClient) {}
 
-	constructor(private http:Http) {
-
-	}
-
-	// retourneer alle cities
-	getCities() {
-		return this.http.get('assets/data/cities.json');
-	}
+  // retourneer alle cities
+  getCities(): Observable<City[]> {
+    return this.http.get<City[]>('assets/data/cities.json');
+  }
 }

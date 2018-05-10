@@ -1,41 +1,38 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers, RequestOptions, Response} from "@angular/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {City} from '../model/city.model';
 
 // Import from rxjs
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/catch';
+import {map, catchError} from "rxjs/operators";
+import {of} from "rxjs";
 
 const API_URL = 'http://localhost:3000/cities';
 // Set RequestOptions. In this case only the header.
-const API_ARGS: RequestOptions = new RequestOptions();
-const headers = new Headers();
-headers.append('Content-Type', 'application/json');
-API_ARGS.headers = headers;
+const headers = new HttpHeaders().set('Content-Type', 'application/json');
+const API_ARGS = {headers: headers};
 
 @Injectable()
 export class CityService {
 
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
     }
 
     // GET: return all cities
     getCities(): Observable<City[]> {
-        return this.http.get(API_URL)
-            .map(result => result.json())
-            .catch(err => {
+        return this.http.get<City[]>(API_URL).pipe(
+
+            catchError(err => {
                 console.log('Error! Did you forget to start json-server? Run `npm run json-server` to start the server', err);
-                return Observable.of([])
+                return of([])
             })
+)
     }
 
     // GET: Return 1 City, based on Id
     getCity(id: number): Observable<City> {
-        return this.http.get(API_URL + `/${id}`)
-            .map(result => result.json())
+        return this.http.get<City>(API_URL + `/${id}`)
     }
 
     // POST: Add a new City
@@ -43,31 +40,25 @@ export class CityService {
 
         let newCity = new City(null, cityName);
 
-
         // Add city via POST request
-        return this.http.post(
+        return this.http.post<City>(
             API_URL,
             JSON.stringify(newCity),
             API_ARGS
         )
-            .map(result => result.json())
     }
 
     // DELETE: Delete city from the .json-file (warning: no trash. City is actually removed)
-    deleteCity(city): Observable<Response> {
+    deleteCity(city) {
         return this.http.delete(API_URL + `/${city.id}`)
-            .map(response => response.json())
     }
 
     // PUT : update a current city
     updateCity(city: City): Observable<City> {
-
-        return this.http.put(
+        return this.http.put<City>(
             API_URL + `/${city.id}`,
             JSON.stringify(city),
             API_ARGS
         )
-            .map(response => response.json())
     }
-
 }

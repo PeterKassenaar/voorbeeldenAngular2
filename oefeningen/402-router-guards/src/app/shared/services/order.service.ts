@@ -1,13 +1,13 @@
 // order.service.ts
-import {Subject} from "rxjs/Subject";
-import {Injectable} from "@angular/core";
-import {City} from "../model/city.model";
+import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { City } from '../model/city.model';
 
 @Injectable()
 export class OrderService {
-	Stream:Subject<City>;
+  Stream: Subject<City>;
 
-	constructor() {
-		this.Stream = new Subject<City>();
-	}
+  constructor() {
+    this.Stream = new Subject<City>();
+  }
 }

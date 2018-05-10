@@ -1,7 +1,7 @@
 // Angular Modules
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 // Custom Components
 import {AppComponent} from './app.component';
@@ -11,7 +11,7 @@ import {MovieService} from "./shared/services/movie.service";
 
 // Module declaration
 @NgModule({
-	imports     : [BrowserModule, HttpModule],
+	imports     : [BrowserModule, HttpClientModule],
 	declarations: [AppComponent],
 	bootstrap   : [AppComponent],
 	providers   : [

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {City} from './shared/model/city.model';
 import {CityService} from "./shared/services/city.service";
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Component({
 	selector   : 'hello-world',

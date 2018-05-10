@@ -21,7 +21,7 @@ export class AppComponent implements  OnInit{
 	ngOnInit(){
 		this.cityService.getCities()
 			.subscribe(cityData => {
-					this.cities = cityData.json(); // 1. success handler
+					this.cities = cityData; // 1. success handler
 					// voor nu: even hardcoded de property .favorite instellen.
 					this.cities.forEach(city => city.favorite = false)
 				},
