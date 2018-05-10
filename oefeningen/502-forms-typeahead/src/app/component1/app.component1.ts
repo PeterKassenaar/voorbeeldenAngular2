@@ -7,7 +7,7 @@ import { map, debounceTime, switchMap } from 'rxjs/operators';
 
 // define some constants
 const BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
-const API_KEY = 'AIzaSyBoeJLUsWjWGz1xYeeahUULqcF9U8I2TmY'; // Please, use your own API_KEY in real applications! https://developers.google.com/youtube/v3/getting-started
+const API_KEY = 'AIzaSyBoeJLUsWjWGz1xYeeahUULqcF9U8I2Tm(Y-USE-YOUR-KEY)'; // Please, use your own API_KEY in real applications! https://developers.google.com/youtube/v3/getting-started
 
 // compose a url to search for, based on a query/keyword
 const makeURL = (query: string) =>
