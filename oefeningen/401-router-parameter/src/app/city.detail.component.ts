@@ -1,18 +1,15 @@
 // city.detail.component.ts
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {City} from "./shared/model/city.model";
-import {CityService} from "./shared/services/city.service";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { City } from './shared/model/city.model';
+import { CityService } from './shared/services/city.service';
 
 // import {RouteParams} from "@angular/router"; // OLD way
-import {ActivatedRoute} from '@angular/router'; // NEW way
-import {Subscription} from "rxjs/Subscription";
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/delay';
-
+import { ActivatedRoute } from '@angular/router'; // NEW way
+import { Subscription } from 'rxjs';
+import { map, catchError, delay } from 'rxjs/operators';
 @Component({
-    selector: 'city-detail',
-    template: `<h1>City Detail</h1>
+  selector: 'city-detail',
+  template: `<h1>City Detail</h1>
     <h2>Details voor city: {{ id }}</h2>
     <h2>Name voor city: {{ name }}</h2>
 
@@ -32,52 +29,47 @@ import 'rxjs/add/operator/delay';
 
     `
 })
-
 export class CityDetailComponent implements OnInit, OnDestroy {
-    id: string;
-    name: string;
-    currentCity: City;
-    private sub: Subscription; // pointer to subscription on Route
+  id: string;
+  name: string;
+  currentCity: City;
+  private sub: Subscription; // pointer to subscription on Route
 
-    constructor(private route: ActivatedRoute, private cityService: CityService) {
-        // Credits: http://blog.thoughtram.io/angular/2016/06/14/routing-in-angular-2-revisited.html
-        // ActivatedRoute comes with a 'params' property which is an Observable.
-        // To access the property 'id', all we have to do is to subscribe to
-        // the parameters Observable changes.
-    }
+  constructor(private route: ActivatedRoute, private cityService: CityService) {
+    // Credits: http://blog.thoughtram.io/angular/2016/06/14/routing-in-angular-2-revisited.html
+    // ActivatedRoute comes with a 'params' property which is an Observable.
+    // To access the property 'id', all we have to do is to subscribe to
+    // the parameters Observable changes.
+  }
 
-    ngOnInit() {
-        // OLD:
-        // this.id = this.route.get('id');
+  ngOnInit() {
+    // OLD:
+    // this.id = this.route.get('id');
 
-        // NEW:
-        this.sub = this.route.params
-            .subscribe((params: any) => {
-                this.id = params.id;
-            });
+    // NEW:
+    this.sub = this.route.params.subscribe((params: any) => {
+      this.id = params.id;
+    });
 
-        // OR:
-        // Work via Router-snapshot:
-        // Sometimes we’re not interested in future changes of a route parameter.
-        // All we need the id and once we have it, we can provide the data we want to provide.
-        // In this case, an Observable can bit a bit of an overkill.
-        // A *snapshot* is simply a snapshot representation of the activated route.
-        // this.id = this.route.snapshot.params['id'];
-        // this.name = this.route.snapshot.params['name'];
+    // OR:
+    // Work via Router-snapshot:
+    // Sometimes we’re not interested in future changes of a route parameter.
+    // All we need the id and once we have it, we can provide the data we want to provide.
+    // In this case, an Observable can bit a bit of an overkill.
+    // A *snapshot* is simply a snapshot representation of the activated route.
+    // this.id = this.route.snapshot.params['id'];
+    // this.name = this.route.snapshot.params['name'];
 
+    // NEW, with fetching details via Service and using switchMap():
+    // this.currentCity = this.route.params
+    //     .delay(2000)
+    //     .map(params => params['id'])
+    //     .switchMap(id => this.cityService.getCity(id))
+  }
 
-        // NEW, with fetching details via Service and using switchMap():
-        // this.currentCity = this.route.params
-        //     .delay(2000)
-        //     .map(params => params['id'])
-        //     .switchMap(id => this.cityService.getCity(id))
-
-    }
-
-    ngOnDestroy() {
-        // If subscribed, we must unsubscribe before Angular destroys the component.
-        // Failure to do so could create a memory leak.
-        this.sub.unsubscribe();
-    }
-
+  ngOnDestroy() {
+    // If subscribed, we must unsubscribe before Angular destroys the component.
+    // Failure to do so could create a memory leak.
+    this.sub.unsubscribe();
+  }
 }

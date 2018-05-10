@@ -37,7 +37,7 @@ export class AppComponent implements  OnInit{
 		if (!this.cities) {
 			this.cityService.getCities()
 				.subscribe(cityData => {
-						this.cities = cityData.json();				// 1. success handler
+						this.cities = cityData;				// 1. success handler
 					},
 					err => console.log(err),						// 2. error handler
 					()=> console.log('Getting cities complete...')	// 3. complete handler

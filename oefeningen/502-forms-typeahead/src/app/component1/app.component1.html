@@ -5,14 +5,13 @@
 		<form novalidate [formGroup]="searchForm">
 			<div class="form-group">
 				<label for="searchYouTube">Search YouTube</label>
-				<input type="text" class="form-control" id="searchYouTube" formControlName="searchYouTube"
-					   placeholder="Search YouTube" name="search">
+				<input type="text" class="form-control" id="searchYouTube" formControlName="searchYouTube" placeholder="Search YouTube" name="search">
 			</div>
 			<div class="form-group">
 				<label for="searchWiki">Search Wikipedia</label>
-				<input type="text" class="form-control" id="searchWiki" formControlName="searchWiki"
-					   placeholder="Search YouTube" name="search">
+				<input type="text" class="form-control" id="searchWiki" formControlName="searchWiki" placeholder="Search Wikipedia" name="search">
 			</div>
+			<p *ngIf="wikiResultsKeywords.length > 0">Workshop: create clickable links from wikipedia response object.</p>
 		</form>
 	</div>
 	<!--Sample results pane -->
@@ -24,17 +23,19 @@
 			<li class="list-group-item" *ngFor="let video of videos | async">
 				<!--This only works if the result is pointing to an actual video. NOT a channel. Adapt to suit your own needs-->
 				<a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank">
-					<img src="{{ video.snippet.thumbnails.default.url}}"><br>
-					{{video.snippet.title}}
-				</a></li>
-		</ul>
-		<!--Wikipedia Results-->
-		<ul class="list-group" *ngIf="wikiResults">
-			<!-- NOT an async binding here, because wikipedia results are formatted in a different way.-->
-			<!-- TODO: refine results, turn them into clickable links -->
-			<li class="list-group-item" *ngFor="let result of wikiResultsKeywords ">
-					{{result }}
+					<img src="{{ video.snippet.thumbnails.default.url}}">
+					<br> {{video.snippet.title}}
+				</a>
 			</li>
 		</ul>
+		<!--Wikipedia Results-->
+		<ul class="list-group" *ngIf="wikiResultsKeywords.length > 0">
+			<!-- NOT an async binding here, because wikipedia results are formatted in a different way.-->
+			<!-- TODO: refine results, turn them into clickable links -->
+			<li class="list-group-item" *ngFor="let result of wikiResultsKeywords">
+				{{ result | json }}
+			</li>
+		</ul>
+
 	</div>
 </div>
