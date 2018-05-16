@@ -11,4 +11,15 @@ export class CityService {
   getCities(): Observable<City[]> {
     return this.http.get<City[]>('assets/data/cities.json');
   }
+  
+  getCity(id:number):Observable<City>{
+    return this.http.get('assets/data/cities.json')
+        .pipe(
+            map((res:City[]) =>{
+              return res.find((city:City)=>{
+                return city.id === id;
+              })
+            })
+        )
+  }
 }
