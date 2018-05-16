@@ -60,11 +60,12 @@ export class CityDetailComponent implements OnInit, OnDestroy {
     // this.id = this.route.snapshot.params['id'];
     // this.name = this.route.snapshot.params['name'];
 
-    // NEW, with fetching details via Service and using switchMap():
+    // EXTRA, with fetching details via Service and using switchMap():
     // this.currentCity = this.route.params
-    //     .delay(2000)
-    //     .map(params => params['id'])
-    //     .switchMap(id => this.cityService.getCity(id))
+        //     .pipe(
+        //         map(params => params['id']),
+        //         switchMap(id => this.cityService.getCity(+id))
+        //     )
   }
 
   ngOnDestroy() {
