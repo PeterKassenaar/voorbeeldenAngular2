@@ -4,18 +4,19 @@ import {CityService} from "./shared/city.service";
 
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app.html',
+	templateUrl: 'app.component.html',
 	styles     : [`.cityPhoto{max-width:200px}`]
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
+// Class
 export class AppComponent implements OnInit {
-	// Properties voor de component/class
+	// Properties
 	currentCity: City;
 	cities: City[];
 	cityPhoto: string;
 
+	// Injection of cityService, which is of type CityService.
+	// Notice the use of the keyword `private` here.
 	constructor(private cityService: CityService) {
 
 	}
@@ -27,6 +28,6 @@ export class AppComponent implements OnInit {
 	getCity(city: City) {
 		this.currentCity = this.cityService.getCity(city.id);
 		this.cityPhoto   = `assets/img/${this.currentCity.name}.jpg`;
-		console.log('City opgehaald:', this.currentCity);
+		console.log('Fetched city:', this.currentCity);
 	}
 }

@@ -1,5 +1,5 @@
-<h1>Cities via een service</h1>
-<h2>Mijn favoriete steden zijn :</h2>
+<h1>Cities via service</h1>
+<h2>My favourite cities:</h2>
 <ul class="list-group">
 	<li *ngFor="let city of cities"
 		class="list-group-item"
@@ -9,7 +9,7 @@
 </ul>
 <hr>
 <div *ngIf="currentCity">
-	<h2>Gekozen stad: {{ currentCity.name }}</h2>
+	<h2>You picked: {{ currentCity.name }}</h2>
 	<img class="cityPhoto"
 		 [src]="cityPhoto" alt="Foto van {{ currentCity.name}}">
 </div>

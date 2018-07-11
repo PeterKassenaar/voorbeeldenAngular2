@@ -3,14 +3,13 @@ import {City} from './shared/city.model';
 
 @Component({
     selector   : 'hello-world',
-    templateUrl: 'app.html',
+    templateUrl: 'app.component.html',
     styles     : [`.cityPhoto{max-width:200px}`]
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
+// Clas
 export class AppComponent implements OnInit {
-    // Properties voor de component/class
+    // Properties
     currentCity: string;
     cityPhoto: string;
     cities: City[];

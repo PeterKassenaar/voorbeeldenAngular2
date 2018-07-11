@@ -4,14 +4,14 @@ import {City} from './shared/city.model'
 // Component annotation
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app.html',
+	templateUrl: 'app.component.html',
 })
 
-// Class met properties, array met cities
+// Class
 export class AppComponent {
 	newCityExtended:string = '';
 
-	// Properties voor de component/class
+	// Properties
 	cities:City[]  = [
 		new City(1, 'Groningen', 'Groningen'),
 		new City(2, 'Hengelo', 'Overijssel'),
