@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 import {City} from './shared/city.model';
 
-// component met multi-line HTML-string
-// Nieuw: scoped classes
+// component with multi-line HTML-string
+// New: scoped classes
 @Component({
     selector   : 'hello-world',
-    templateUrl: 'app-02.html',
+    templateUrl: 'app.component.html',
     styles     : [`
 		.cityPhoto {
 			max-width : 300px;
@@ -16,9 +16,9 @@ import {City} from './shared/city.model';
 	`]
 })
 
-// Class met properties, array met cities
-export class AppComponent2 {
-    // Properties voor de component/class
+// Class
+export class AppComponent {
+    // Properties
     name: string = 'Peter Kassenaar';
     cities: City[] = [
         new City(1, 'Groningen', 'Groningen'),
@@ -30,7 +30,7 @@ export class AppComponent2 {
     currentCity: City = null;
     cityPhoto: string = '';
 
-    // Geselecteerde city updaten in de ui. Nieuw : ES6 String interpolation
+    // Update selected city in UI, using ES6 string interpolation
     updateCity(city: City) {
         this.currentCity = city;
         this.cityPhoto = `assets/img/${this.currentCity.name}.jpg`;
