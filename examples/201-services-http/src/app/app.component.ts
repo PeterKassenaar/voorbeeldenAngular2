@@ -4,20 +4,20 @@ import {CityService} from "./shared/services/city.service";
 
 @Component({
     selector: 'hello-world',
-    templateUrl: 'app.html',
+    templateUrl: 'app.component.html',
     styles: [`.cityPhoto {
         max-width: 200px
     }`]
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
+// Class
 export class AppComponent implements OnInit {
-    // Properties voor de component/class
+    // Properties
     currentCity: City;
     cities: City[];
     cityPhoto: string;
 
+    // Inject instance of CityService
     constructor(private cityService: CityService) {
 
     }
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
             .subscribe(cityData => {						// 1. success handler
                     this.cities = cityData
                 },
-                err => console.log('FOUT: ', err),			// 2. error handler
+                err => console.log('ERROR: ', err),			// 2. error handler
                 () => console.log('Getting cities complete'));	// 3. complete handler
     }
 

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class CityService {
   constructor(private http: HttpClient) {}
 
-  // retourneer alle cities, gemapt naar json
+  // return all cities
   getCities(): Observable<City[]> {
     return this.http.get<City[]>('assets/data/cities.json');
   }
