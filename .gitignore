@@ -27,8 +27,8 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 .idea
-oefeningen/**/app/**/*.js
-oefeningen/**/app/**/*.js.map
+examples/**/app/**/*.js
+examples/**/app/**/*.js.map
 
-oefeningen/**/*.d.ts
+examples/**/*.d.ts
 typings

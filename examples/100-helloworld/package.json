@@ -1,6 +1,6 @@
 {
   "name": "hello-angular",
-  "description": "Voorbeeldproject bij de training Angular (C) - info@kassenaar.com",
+  "description": "Example Hello World project on the training Angular Fundamentals (C) - info@kassenaar.com",
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {

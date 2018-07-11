@@ -1,0 +1,33 @@
+<!-- HTML in external template -->
+<h1>Hello Angular</h1>
+<h2>My favourite cities are :</h2>
+<ul class="list-group">
+	<li *ngFor="let city of cities" class="list-group-item">
+		{{ city.id}} - {{ city.name }}
+	</li>
+</ul>
+<hr>
+
+<!-- 1. Event binding for a button -->
+<h2>Event binding : mouse and touch</h2>
+<button class="btn btn-success"
+		(click)="btnClick()">Ik ben een button
+</button>
+<hr>
+
+<!-- 2. Event binding for keyboard, use $event -->
+<h2>Event binding : keyboard</h2>
+<div>
+	<input type="text" class="form-control-lg" placeholder="City..."
+		   (keyup)="onKeyUp($event)">
+	<h3>{{ txtKeyUp}}</h3>
+</div>
+<hr>
+
+<!-- 3. Better event binding, using a local template variabele -->
+<h2>Better event binding : keyboard</h2>
+<div>
+	<input type="text" class="form-control-lg" placeholder="City..."
+		   #txtCity (keyup)="betterKeyUp()">
+	<h3>{{ txtCity.value }}</h3>
+</div>

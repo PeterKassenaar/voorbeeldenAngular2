@@ -3,13 +3,14 @@ import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 // Custom Components
-import {AppComponent2} from './app-02.component';
+import {AppComponent} from './app.component';
+import {AppComponent2} from './app-02-complete.component';
 
 // Module declaration
 @NgModule({
     imports     : [BrowserModule],
-    declarations: [AppComponent2],
-    bootstrap   : [AppComponent2]
+    declarations: [AppComponent, AppComponent2],
+    bootstrap   : [AppComponent]
 })
 export class AppModule {
 }

@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
 	selector: 'hello-world',
 	template: `
 		<h1>Hello World!</h1>
-		<h2>Dit is Angular</h2>
+		<h2>This is Angular</h2>
 		<a href="http://angular.io" target="_blank">Angular Website</a>
 	`
 })

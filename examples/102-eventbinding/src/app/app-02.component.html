@@ -1,6 +1,6 @@
 <!-- HTML in externe template -->
-<h1>Hello Angular 2</h1>
-<h2>Mijn favoriete steden zijn :</h2>
+<h1>Hello Angular</h1>
+<h2>My favourite cities are :</h2>
 <ul class="list-group">
     <li *ngFor="let city of cities" class="list-group-item">
         {{ city.id}} - {{ city.name }}
@@ -8,12 +8,12 @@
 </ul>
 <hr>
 
-<!-- City toevoegen -->
+<!-- Add a city -->
 <div>
     <input type="text" class="form-control-lg"
-           placeholder="Plaatsnaam..."
+           placeholder="City..."
            #txtCity>
     <button class="btn btn-success"
-            (click)="addCity(txtCity)">Toevoegen
+            (click)="addCity(txtCity)">Add
     </button>
 </div>

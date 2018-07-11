@@ -1,17 +1,17 @@
 import {Component} from '@angular/core';
 import {City} from './shared/city.model'
 
-// component met multi-line HTML-string
-// Lijst met steden via *ngFor
-// Conditionele koptekst wordt getoond met *ngIf
+// component with multi-line HTML-string
+// List of cities via *ngFor
+// Conditional heading is shown with *ngIf
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app.html'
+	templateUrl: 'app.component.html'
 })
 
-// Class met properties, array met cities
+// Class with properties, array containing cities
 export class AppComponent {
-	// Properties voor de component/class
+	// Properties on the component/class
 	name   = 'Peter Kassenaar';
 	cities = [
 		new City(1, 'Groningen', 'Groningen'),
@@ -22,17 +22,17 @@ export class AppComponent {
 	counter: number =0;
 	txtKeyUp : string = '';
 
-	// 1. Binden aan click-event in de pagina
+	// 1. Bind to click-event in the page
 	btnClick(){
 		alert('Je hebt '+ ++this.counter +' keer geklikt');
 	}
 
-	// 2. Binden aan keyUp-event in de textbox
+	// 2. Bind to keyUp-event in the textbox
 	onKeyUp(event:any){
 		this.txtKeyUp = event.target.value;
 	}
 
-	 // 3. Binden aan keyUp-event via local template variable
+	 // 3. Bind to keyUp-event via local template variable
 	betterKeyUp(){
 		//... do nothing, for now
 	}

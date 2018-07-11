@@ -1,18 +1,14 @@
 import {Component} from '@angular/core';
 import {City} from './shared/city.model';
 
-// component met multi-line HTML-string
-// Lijst met steden via *ngFor
-// Conditionele koptekst wordt getoond met *ngIf
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app-02.html'
+	templateUrl: 'app-02.component.html'
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
-export class AppComponent {
-	// Properties voor de component/class
+// push new city to the array
+export class AppComponent2 {
+	// Properties
 	name   = 'Peter Kassenaar';
 	cities = [
 		new City(1, 'Groningen', 'Groningen'),
@@ -22,11 +18,11 @@ export class AppComponent {
 	];
 
 	addCity(txtCity) {
-		// Dummy nieuw ID berekenen.
+		// Calculate dummy new ID.
 		let newID   = this.cities.length + 1;
 		
-		// Nieuw City-object maken en toevoegen aan de array.
-		let newCity = new City(newID, txtCity.value, 'Onbekend');
+		// Create new City-object and add it to the array.
+		let newCity = new City(newID, txtCity.value, 'Unknown');
 		this.cities.push(newCity);
 		txtCity.value = '';
 	}

@@ -1,19 +1,22 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {City} from "./shared/city.model";
 
 @Component({
     // 1. add component description/annotations here
     selector   : 'hello-world',
-    templateUrl: 'app.html'
+    templateUrl: 'app.component.html'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
     name: string;
     city: string;
     cities: string[];
     citiesVolgensModel: City[];
 
     constructor() {
+
+    }
+    ngOnInit(){
         this.name = 'Peter Kassenaar';
         this.city = 'Groningen';
         this.cities = ['Groningen', 'Hengelo', 'Den Haag', 'Enschede'];
