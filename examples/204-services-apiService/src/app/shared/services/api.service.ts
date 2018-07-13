@@ -79,6 +79,7 @@ export class ApiService {
 
   private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
+    console.info('Did you forget to start json server? (npm run json-server)');
     return Observable.throw(error);
   }
 }

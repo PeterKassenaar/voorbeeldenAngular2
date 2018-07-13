@@ -1,5 +1,5 @@
-<h1>Cities async ophalen via RESTFul API Backend</h1>
-<h2>Mijn favoriete steden zijn :</h2>
+<h1>Fetch cities async via RESTFul API Backend</h1>
+<h2>My favourite cities:</h2>
 <ul class="list-group">
     <li *ngFor="let city of cities | async"
         class="list-group-item"
@@ -9,7 +9,7 @@
 </ul>
 <button (click)="showCityForm = !showCityForm" class="btn btn-primary">Add City</button>
 <hr>
-<div *ngIf="currentCity | async ; let currentCity">
+<div *ngIf="currentCity | async as currentCity">
     <h2>Gekozen stad: {{ currentCity.name }}</h2>
     <img class="cityPhoto"
          src="assets/img/{{currentCity.name}}.jpg" alt="Foto van {{ currentCity.name}}">

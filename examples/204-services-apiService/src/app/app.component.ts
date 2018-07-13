@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hello-world',
-  templateUrl: 'app.html',
+  templateUrl: 'app.component.html',
   styles: [
     `.cityPhoto {
 		max-width : 200px
@@ -13,10 +13,9 @@ import { Observable } from 'rxjs';
   ]
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
+// Class
 export class AppComponent implements OnInit {
-  // Properties voor de component/class
+  // Properties
   currentCity: Observable<City>;
   cities: Observable<City[]>;
   showCityForm: boolean = false;

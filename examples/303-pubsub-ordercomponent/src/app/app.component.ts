@@ -8,7 +8,7 @@ import { CityService } from './shared/services/city.service';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title: string = 'Steden met ordercomponent';
+  title: string = 'Cities with order Component and event bus';
   cities: City[] = [];
   currentCity: City;
 
@@ -20,7 +20,7 @@ export class AppComponent {
       .subscribe(
         cityData => (this.cities = cityData),
         err => console.log(err),
-        () => console.log('Steden ophalen compleet.')
+        () => console.log('Fetching cities complete...')
       );
   }
 

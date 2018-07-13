@@ -5,24 +5,24 @@ import {CityService} from "./shared/city.service";
 
 @Component({
 	selector   : 'city-app',
-	templateUrl: 'app.html',
+	templateUrl: 'app.component.html',
 })
 
-// Class met properties, array met cities
+// Class
 export class AppComponent implements  OnInit{
-	// Properties voor de component/class
+	// Properties
 	public cities: City[];
 	public currentCity: City;
 
 	constructor(private cityService: CityService) {
-		//...eventuele extra initialisaties
+
 	}
 
 	ngOnInit(){
 		this.cityService.getCities()
 			.subscribe(cityData => {
 					this.cities = cityData; // 1. success handler
-					// voor nu: even hardcoded de property .favorite instellen.
+					// for now: set the property .favorite hardcoded to `false`.
 					this.cities.forEach(city => city.favorite = false)
 				},
 				err => console.log(err),						// 2. error handler

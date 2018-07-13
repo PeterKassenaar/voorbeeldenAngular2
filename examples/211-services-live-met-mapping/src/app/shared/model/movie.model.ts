@@ -5,7 +5,8 @@ export interface IMovie {
 	afbeelding:string;
 }
 
-// Eventueel: export class MovieModel implements IMovie {
+// Optional (more Java-like):
+// export class MovieModel implements IMovie {
 export class MovieModel{
 	constructor(public titel:string,
 				public jaar:string,

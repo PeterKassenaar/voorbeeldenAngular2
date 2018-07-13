@@ -2,21 +2,21 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from './shared/city.model';
 import { CityService } from './shared/city.service';
-import { CityDetail } from './city.detail'; // Nieuwe component invoegen
+import { CityDetailComponent } from './city.detail'; // Nieuwe component invoegen
 
 @Component({
   selector: 'city-app',
-  templateUrl: 'app.html'
+  templateUrl: 'app.component.html'
 })
 
-// Class met properties, array met cities
+// Class
 export class AppComponent implements OnInit {
-  // Properties voor de component/class
+  // Properties
   public cities: City[];
   public currentCity: boolean = false;
 
   constructor(private cityService: CityService) {
-    //...eventuele extra initialisaties
+
   }
   ngOnInit() {
     this.cityService.getCities().subscribe(

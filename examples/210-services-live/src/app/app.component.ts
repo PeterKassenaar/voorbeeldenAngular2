@@ -2,19 +2,19 @@ import {Component} from '@angular/core';
 import {MovieService} from "./shared/services/movie.service";
 import {map} from "rxjs/operators";
 
-// Component annotation. Let op de injection van providers: []
+// Component annotation.
 @Component({
     selector: 'movie-app',
-    templateUrl: 'app.html',
+    templateUrl: 'app.component.html',
 })
 
-// Class met properties, array met cities
+// Class
 export class AppComponent {
-    // Properties voor de component/class
-    public movies: any;
+    // Properties
+    public movies: any; // TODO: Should be typed as MovieModel, or the like.
 
     constructor(private movieService: MovieService) {
-        //...eventuele extra initialisaties
+
     }
 
     searchMovies(keyword) {

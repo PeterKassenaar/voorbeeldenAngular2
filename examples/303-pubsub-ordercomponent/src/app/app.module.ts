@@ -9,13 +9,13 @@ import { OrderService } from './shared/services/order.service';
 
 // Custom Components
 import { AppComponent } from './app.component';
-import { CityDetail } from './city.detail';
-import { CityOrders } from './city.orders';
+import { CityDetailComponent } from './city-detail.component';
+import { CityOrdersComponent } from './city-orders.component';
 
 // Module declaration
 @NgModule({
   imports: [BrowserModule, HttpClientModule],
-  declarations: [AppComponent, CityDetail, CityOrders],
+  declarations: [AppComponent, CityDetailComponent, CityOrdersComponent],
   bootstrap: [AppComponent],
   providers: [CityService, OrderService]
 })

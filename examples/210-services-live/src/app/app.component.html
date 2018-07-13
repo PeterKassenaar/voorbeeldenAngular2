@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-md-6">
+		<h1>Movies service API call</h1>
+		<div>
+			<input type="text" #keyword
+				   (keyup.enter)="searchMovies(keyword.value)"
+				   class="form-control-lg" placeholder="movie name...">
+			<button class="btn btn-primary"
+					(click)="searchMovies(keyword.value)">Find movies</button>
+		</div>
+		<ul class="list-group">
+			<li *ngFor="let movie of movies" class="list-group-item">
+				{{ movie.Title}} - {{ movie.Year}}
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<img src="../assets/img/frozen.jpg" alt="Frozen poster...">
+	</div>
+</div>

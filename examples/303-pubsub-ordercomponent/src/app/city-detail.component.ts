@@ -16,15 +16,15 @@ import {OrderService} from "./shared/services/order.service";
 			<li class="list-group-item">Highlights: {{city.highlights}}</li>
 		</ul>
 		<img src="assets/img/{{ city.name}}.jpg" alt="Foto van {{ city.name }}" class="img-fluid"/>
-		<h2>Prijs voor een weekendje weg: 
+		<h2>Price for a weekend city trip: 
 		{{ city.price | currency:'EUR':'symbol':'1.2' }}
 		<button class="btn btn-lg btn-info" 
-			(click)="order(city)">Boek nu!</button>
+			(click)="order(city)">Order now!</button>
 		</h2>
 	`
 })
 
-export class CityDetail {
+export class CityDetailComponent {
 	@Input() city:City;
 	@Output() rating:EventEmitter<number> = new EventEmitter<number>();
 
@@ -32,16 +32,16 @@ export class CityDetail {
 
 	}
 
-	// rating versturen voor huidige city
+	// send rating for current city
 	rate(num) {
 		console.log(`Rating voor : ${this.city.name}, ${num}`);
 		this.rating.emit(num);
 	}
 
-	// Order plaatsen. Event emitten voor deze stad.
-	// Dit gaan opvangen in city.orders.ts
+	// Place Order. Emitten event for this city via OrderService event bus.
+	// Capture the event in city-orders.component.ts
 	order(city) {
-		console.log(`Stedentripje geboekt voor: ${this.city.name}, voor EUR ${this.city.price}`);
+		console.log(`City trip booked for: ${this.city.name}, for EUR ${this.city.price}`);
 		this.orderService.Stream.next(city);
 	}
 }

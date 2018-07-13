@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'hello-world',
-	templateUrl: 'app.html',
+	templateUrl: 'app.component.html',
 	styles: [
 		`
 			.cityPhoto {
@@ -15,21 +15,20 @@ import { Observable } from 'rxjs';
 	]
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
+// Class
 export class AppComponent implements OnInit {
-	// Properties voor de component/class
+	// Properties
 	currentCity: City;
-	// cities$ is nu een observable naar een array van cities.
+	// cities$ is now an observable to an array of cities.
 	cities$: Observable<City[]>;
 	cityPhoto: string;
 
 	constructor(private cityService: CityService) {}
 
 	ngOnInit() {
-		// de OBSERVABLE wordt toegekend.
-		// Geen .subscribe() meer, dit wordt afgehandeld
-		// door |async in de html
+		// The  OBSERVABLE from the service is now directly assigned to the class property.
+		// no more .subscribe(), this is being handled
+		// by | async in the html
 		this.cities$ = this.cityService.getCities();
 	}
 

@@ -5,17 +5,17 @@ import { CityService } from './shared/services/city.service';
 
 @Component({
   selector: 'hello-world',
-  templateUrl: 'app.html',
+  templateUrl: 'app.component.html',
   styles: [`.cityPhoto{max-width:200px}`]
 })
 
-// Class met properties, array met cities
-// push nieuwe city op de array
+// Class
 export class AppComponent implements OnInit {
-  // Properties voor de component/class
+  // Properties
   currentCity: City;
   cities: Observable<City[]>;
   cityPhoto: string;
+
 
   constructor(private cityService: CityService) {}
 

@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 
 @Component({
 	selector   : 'hello-world',
-	templateUrl: 'app.html',
+	templateUrl: 'app.component.html',
 	styles     : [`.cityPhoto {
 		max-width : 200px
 	}`]

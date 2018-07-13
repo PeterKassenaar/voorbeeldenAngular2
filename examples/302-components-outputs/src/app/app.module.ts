@@ -5,13 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Custom Components
 import { AppComponent } from './app.component';
-import { CityDetail } from './city.detail';
+import { CityDetailComponent } from './city-detail.component';
 import { CityService } from './shared/city.service';
 
 // Module declaration
 @NgModule({
   imports: [BrowserModule, HttpClientModule],
-  declarations: [AppComponent, CityDetail],
+  declarations: [AppComponent, CityDetailComponent],
   bootstrap: [AppComponent],
   providers: [CityService]
 })
