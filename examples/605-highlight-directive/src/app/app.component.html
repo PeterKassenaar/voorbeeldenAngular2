@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Using custom directives</h1>
+      <h2>My favorite cities:</h2>
+      <p>(mouseover the cities)</p>
+      <ul class="list-group">
+        <!--The directive is used inside the <li> -->
+        <li myHighlight="lightgreen" *ngFor="let city of cities" class="list-group-item">
+          {{ city.id}} - {{ city.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
