@@ -1,8 +1,8 @@
 // app.routes.ts
 import {Routes} from '@angular/router';
 import {AppComponent} from "./app.component";
-import {CityAddComponent} from "./city.add.component";
-import {CityDetailComponent} from "./city.detail.component";
+import {CityAddComponent} from "./city-add.component";
+import {CityDetailComponent} from "./city-detail.component";
 import {CanActivateViaAuthGuard} from "./shared/guards/canActivateViaAuthGuard";
 import {CanDeactivateComponent} from "./canDeactivateComponent";
 import {CanDeactivateGuard} from "./shared/guards/canDeactivateGuard";

@@ -13,9 +13,8 @@ import { CityService } from './shared/services/city.service';
 // Components
 import { MainComponent } from './MainComponent';
 import { AppComponent } from './app.component';
-import { CityAddComponent } from './city.add.component';
-import { CityDetail } from './city.detail';
-import { CityDetailComponent } from './city.detail.component';
+import { CityAddComponent } from './city-add.component';
+import { CityDetailComponent } from './city-detail.component';
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(AppRoutes)],
@@ -23,7 +22,6 @@ import { CityDetailComponent } from './city.detail.component';
     MainComponent,
     AppComponent,
     CityAddComponent,
-    CityDetail,
     CityDetailComponent
   ],
   providers: [CityService],

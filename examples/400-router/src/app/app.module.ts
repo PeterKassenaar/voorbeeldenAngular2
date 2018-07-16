@@ -13,12 +13,12 @@ import { CityService } from './shared/services/city.service';
 // Components
 import { MainComponent } from './MainComponent';
 import { AppComponent } from './app.component';
-import { CityAddComponent } from './city.add.component';
-import { CityDetail } from './city.detail';
+import { CityAddComponent } from './city-add.component';
+import { CityDetailComponent } from './city-detail.component';
 
 @NgModule({
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(AppRoutes)],
-  declarations: [MainComponent, AppComponent, CityAddComponent, CityDetail],
+  declarations: [MainComponent, AppComponent, CityAddComponent, CityDetailComponent],
   providers: [CityService],
   bootstrap: [MainComponent]
 })

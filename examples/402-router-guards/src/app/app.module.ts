@@ -26,9 +26,8 @@ export function guardFunction() {
 // Components
 import { MainComponent } from './MainComponent';
 import { AppComponent } from './app.component';
-import { CityAddComponent } from './city.add.component';
-import { CityDetail } from './city.detail';
-import { CityDetailComponent } from './city.detail.component';
+import { CityAddComponent } from './city-add.component';
+import { CityDetailComponent } from './city-detail.component';
 import { CanDeactivateComponent } from './canDeactivateComponent';
 
 @NgModule({
@@ -42,7 +41,6 @@ import { CanDeactivateComponent } from './canDeactivateComponent';
     MainComponent,
     AppComponent,
     CityAddComponent,
-    CityDetail,
     CityDetailComponent,
     CanDeactivateComponent
   ],
