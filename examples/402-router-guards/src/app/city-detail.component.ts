@@ -30,7 +30,7 @@ import {map, catchError, delay} from 'rxjs/operators';
     <!--</ng-template>-->
 
     `
-})å
+})
 export class CityDetailComponent implements OnInit, OnDestroy {
     id: string;
     name: string;

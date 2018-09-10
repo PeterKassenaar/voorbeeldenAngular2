@@ -4,6 +4,7 @@ export class City{
 		public name: string,
 		public province: string,
 		public rating : number,
+		public image: string = null,
 		public highlights?: string[]
 	){	}
 }

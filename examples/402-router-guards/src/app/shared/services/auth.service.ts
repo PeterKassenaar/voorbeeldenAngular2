@@ -8,6 +8,7 @@ export class AuthService {
     constructor() { }
 
     isLoggedIn(){
+        // return false;
     	return true; // do real authentication here!
 	}
 

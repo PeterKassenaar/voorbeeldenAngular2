@@ -1,14 +1,8 @@
-// Credits: https://angular.io/docs/ts/latest/cookbook/dependency-injection.html#!#component-element
-// Official documentation: https://angular.io/guide/structural-directives#write-a-structural-directive
-
-import {Directive, ElementRef, Input} from '@angular/core';
+// Credits: https://angular.io/guide/attribute-directives#attribute-directives
+import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[myHighlight]',
-  host: {
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()'
-  }
 })
 export class HighlightDirective {
   @Input('myHighlight') highlightColor: string;
@@ -18,14 +12,17 @@ export class HighlightDirective {
     this.el = el.nativeElement;
   }
 
+  @HostListener('mouseenter')
   onMouseEnter() {
     this.highlight(this.highlightColor || 'cyan');
   }
 
+  @HostListener('mouseleave')
   onMouseLeave() {
     this.highlight(null);
   }
 
+  // private function.
   private highlight(color: string) {
     this.el.style.backgroundColor = color;
   }

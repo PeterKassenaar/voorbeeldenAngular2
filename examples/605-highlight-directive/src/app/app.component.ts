@@ -6,7 +6,7 @@ import {CityService} from './shared/services/city.service';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements  OnInit {
+export class AppComponent implements OnInit {
   // Properties
   public cities: City[];
 
@@ -23,12 +23,7 @@ export class AppComponent implements  OnInit {
   getCities() {
     if (!this.cities) {
       this.cityService.getCities()
-        .subscribe(cityData => {
-            this.cities = cityData;				// 1. success handler
-          },
-          err => console.log(err),						// 2. error handler
-          () => console.log('Getting cities complete...')	// 3. complete handler
-        );
+        .subscribe(cityData => this.cities = cityData);
     }
   }
 }

@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 
 // Pipes
 import {FilterPipe} from './shared/pipes/filter.pipe';
+import {DefaultImagePipe} from "./shared/pipes/defaultImage.pipe";
 
 // Services
 import {CityService} from './shared/services/city.service';
 
 @NgModule({
   declarations: [
-    AppComponent, FilterPipe
+    AppComponent, FilterPipe, DefaultImagePipe
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule

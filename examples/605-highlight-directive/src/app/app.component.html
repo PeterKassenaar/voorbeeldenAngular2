@@ -6,7 +6,7 @@
       <p>(mouseover the cities)</p>
       <ul class="list-group">
         <!--The directive is used inside the <li> -->
-        <li myHighlight="lightgreen" *ngFor="let city of cities" class="list-group-item">
+        <li [myHighlight]="'lightblue'" *ngFor="let city of cities" class="list-group-item">
           {{ city.id}} - {{ city.name }}
         </li>
       </ul>

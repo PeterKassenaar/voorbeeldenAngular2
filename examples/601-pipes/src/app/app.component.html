@@ -10,6 +10,8 @@
       <ul class="list-group">
         <!-- Custom pipe -->
         <li *ngFor="let city of cities | filter:filterCity" class="list-group-item">
+          <img src="../assets/img/{{ city.image | defaultImage}}"
+               alt="Image of {{ city.name}}" width="60">
           {{ city.id}} - {{ city.name | uppercase }}
         </li>
       </ul>

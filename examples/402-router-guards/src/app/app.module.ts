@@ -29,6 +29,7 @@ import { AppComponent } from './app.component';
 import { CityAddComponent } from './city-add.component';
 import { CityDetailComponent } from './city-detail.component';
 import { CanDeactivateComponent } from './canDeactivateComponent';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { CanDeactivateComponent } from './canDeactivateComponent';
     AppComponent,
     CityAddComponent,
     CityDetailComponent,
-    CanDeactivateComponent
+    CanDeactivateComponent,
+    LoginComponent
   ],
   providers: [
     CityService,
