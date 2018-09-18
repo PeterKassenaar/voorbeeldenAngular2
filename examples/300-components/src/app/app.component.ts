@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from './shared/city.model';
 import { CityService } from './shared/city.service';
-import { CityDetailComponent } from './city.detail'; // Nieuwe component invoegen
+import { CityDetailComponent } from './city-detail.component'; // Nieuwe component invoegen
 
 @Component({
   selector: 'city-app',
