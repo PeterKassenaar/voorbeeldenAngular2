@@ -16,6 +16,7 @@ http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden A
 https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster
 https://coinmarketcap.com/api/ - Blockchain/Bitcoin informatie
 https://www.anwb.nl/feeds/gethf - realtime file-informatie Nederlandse snelwegen
+https://api.spacexdata.com/v2/launches/latest - SpaceX rocket launch information
 
 // HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
 // Deze API's zijn uitgebreider, maar ook (veel) complexer
