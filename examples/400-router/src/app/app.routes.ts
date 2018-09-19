@@ -1,7 +1,7 @@
 // app.routes.ts
 import {Routes} from '@angular/router';
 import {AppComponent} from "./app.component";
-import {CityAddComponent} from "./city.add.component";
+import {CityAddComponent} from "./city-add.component";
 
 // Routing table in this application.
 // The table is loaded via app.module.ts.
