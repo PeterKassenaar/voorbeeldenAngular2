@@ -52,6 +52,12 @@ export class CityDetailComponent implements OnInit, OnDestroy {
         this.sub = this.route.params.subscribe((params: any) => {
             this.id = params.id;
         });
+        
+        // // New - paramMap
+        // this.route.paramMap.subscribe((paramObject: any) => {
+        //     this.id = paramObject.get('id');
+        //     this.name = paramObject.get('name');
+        // });
 
         // OR:
         // Work via Router-snapshot:
