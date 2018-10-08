@@ -11,7 +11,7 @@ export class CityService {
 
     }
 
-    // retourneer alle cities
+    // return all cities
     getCities(): Observable<City[]> {
         return this.http.get<City[]>('assets/data/cities.json');
     }
