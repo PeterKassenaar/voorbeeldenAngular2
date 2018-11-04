@@ -1,10 +1,11 @@
 [English text follows below]
+
 # Voorbeelden Angular
 
 Voorbeelden en demo's bij de training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
 Alle voorbeelden zijn voor versie `Angular 4.3.0` of hoger, tenzij anders vermeld.
 
-Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 6.0.0`.
+Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 7.0.2`.
 
 ## Gebruik
 
@@ -18,11 +19,12 @@ Zie de oefeningen en slides voor verdere informatie.
 
 Zelf, of met uw bedrijf of organisatie een Angular 2(+) training volgen? Bekijk de agenda op https://kassenaar.com/calendar/ of neem contact op met info@kassenaar.com.
 
-# Workshops Angular
+# [English:] Workshops Angular
+
 Workshops, exercises and demo's on the training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
 All examples are on `Angular 4.3.0` or higher, unless otherwise noted.
 
-Workshops and exercises are updated to `Angular 6.0.0`.
+Workshops and exercises are updated to `Angular 7.0.2`.
 
 ## Usage
 
@@ -34,8 +36,7 @@ Please see exercises and slides used during the training for more information (n
 
 ## Book a training?
 
-Want do follow a training on your own, or with colleagues from your company? See the calendar at 
+Want do follow a training on your own, or with colleagues from your company? See the calendar at
 https://kassenaar.com/calendar/ or contact info@kassenaar.com.
-
 
 Copyright (C) 2018 - www.angulartraining.nl
