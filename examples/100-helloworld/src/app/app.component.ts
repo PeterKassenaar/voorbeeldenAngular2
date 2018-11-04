@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-	// 1. add component description/annotations here
+	// 1. Inside @Component Decorator.
+	// Add component description/annotations here
 	selector: 'hello-world',
 	template: `
 		<h1>Hello World!</h1>
@@ -11,7 +12,7 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-	// optional: add constructor, class logic, etc. here
+	// 2. optional: add variables, constructor, class logic, etc. here
 	constructor() {
 	}
 
