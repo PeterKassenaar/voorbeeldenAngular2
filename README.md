@@ -9,7 +9,7 @@ Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 7.0.2`.
 
 ## Gebruik
 
--   Elke subfolder is een eigen (mini) project! Er is geen centrale `node_modules`.
+-   Elke subfolder is een eigen (mini) project! Er is geen centrale `node_modules`. Dit is geen mono-repo.
 -   Kloon de repo en draai in de submappen van `\examples` de opdracht `npm install` om de dependencies
     per project te installeren.
 
@@ -28,7 +28,7 @@ Workshops and exercises are updated to `Angular 7.0.2`.
 
 ## Usage
 
--   Every subfolder is a small mini project! There is no central `node_modules`.
+-   Every subfolder is a small mini project! There is no central `node_modules`. This is not a mono-repo.
 -   Clone the repo and use `npm install` in each different subfolder of the `examples` folder to install dependencies
     per project.
 
