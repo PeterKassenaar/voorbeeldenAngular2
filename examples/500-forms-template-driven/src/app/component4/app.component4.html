@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-6">
-		<h2>17a - Submitting forms /app.component4.html | .ts</h2>
+		<h2>../500 - Submitting forms /app.component4.html | .ts</h2>
 		<hr>
 		<form novalidate #myForm="ngForm">
 			<div class="form-group">
@@ -12,6 +12,9 @@
 				<small class="form-text text-muted">
 					We'll never share your email with anyone else.
 				</small>
+				<div *ngIf="email.touched && !email.valid	">
+					U moet een geldig e-mailadres invullen
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputPassword">Password</label>

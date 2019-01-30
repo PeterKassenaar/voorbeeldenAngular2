@@ -1,19 +1,19 @@
 <div class="row">
 	<div class="col-md-6">
-		<h2>17a - Template Driven Forms /app.component1.html | .ts</h2>
+		<h2>../500 - Template Driven Forms /app.component1.html | .ts</h2>
 		<hr>
 		<form novalidate #myForm="ngForm">
 			<div class="form-group">
 				<label for="inputEmail">Email address</label>
-				<input type="email" class="form-control" id="inputEmail"
-					   placeholder="Enter email" name="email" ngModel>
+				<input  type="email" class="form-control" id="inputEmail"
+					   placeholder="Enter email" name="email" ngModel required>
 				<small class="form-text text-muted">
 					We'll never share your email with anyone else.
 				</small>
 			</div>
 			<div class="form-group">
 				<label for="inputPassword">Password</label>
-				<input type="password" class="form-control" ngModel
+				<input type="password" class="form-control" ngModel required
 					   id="inputPassword" placeholder="Password" name="password">
 			</div>
 

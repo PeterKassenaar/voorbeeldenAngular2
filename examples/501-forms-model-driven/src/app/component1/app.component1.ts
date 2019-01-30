@@ -16,7 +16,7 @@ export class AppComponent1 implements OnInit {
 		// 1. Define the model of Reactive Form.
 		// Notice the nested formBuilder.group() for group Customer
 		this.myReactiveForm = this.formBuilder.group({
-			email   : ``,
+			email   : `test@test.com`,
 			password: ``,
 			customer: this.formBuilder.group({
 				prefix   : ``,
@@ -38,7 +38,7 @@ export class AppComponent1 implements OnInit {
 
 		// 2. Subscribe to changes at form level or...
 		this.myReactiveForm.valueChanges.subscribe((value)=> {
-			//console.log('Changes at form level: ', value);
+			// console.log('Changes at form level: ', value);
 		});
 
 		// 3. Subscribe to changes at control level.
@@ -49,7 +49,7 @@ export class AppComponent1 implements OnInit {
 
 	onSubmit() {
 		console.log('Form submitted: ', this.myReactiveForm.value);
-		// alert('Form submitted!', JSON.stringify(this.myReactiveForm.value));
+		alert('Form submitted!' +  JSON.stringify(this.myReactiveForm.value));
 		// TODO: do something useful with form
 	}
 
