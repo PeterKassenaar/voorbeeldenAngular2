@@ -1,8 +1,3 @@
-<style>
-	.photoCity {
-		max-width : 300px;
-	}
-</style>
 <h1>Hello Angular</h1>
 <h2>My favourite cities are:</h2>
 <ul class="list-group">
@@ -15,6 +10,8 @@
 
 <!-- Attribute binding -->
 <div *ngIf="currentCity">
-	<img [src]="cityPhoto" [alt]="currentCity.name" class="cityPhoto">
+	<img [src]="cityPhoto"
+	     [alt]="currentCity.name" 
+	     class="cityPhoto">
 	<h2> My city: {{ currentCity.name}}</h2>
 </div>
