@@ -16,7 +16,7 @@ export class AppComponent1 implements OnInit {
 		// 1. Define the model of Reactive Form.
 		// Notice the nested formBuilder.group() for group Customer
 		this.myReactiveForm = this.formBuilder.group({
-			email   : `test@test.com`,
+			email   : ``,
 			password: ``,
 			customer: this.formBuilder.group({
 				prefix   : ``,
