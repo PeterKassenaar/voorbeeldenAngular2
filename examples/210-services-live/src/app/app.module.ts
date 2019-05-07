@@ -15,7 +15,9 @@ import {MovieService} from "./shared/services/movie.service";
 	declarations: [AppComponent],
 	bootstrap   : [AppComponent],
 	providers   : [
+		// Longhand notation: provide the requested ServiceClass when asked for a specific provider
 		{ provide: MovieService, useClass: MovieService}
+		// shorthand notation, just: 'MovieService' (b/c they are the same)
 	]
 })
 export class AppModule {
