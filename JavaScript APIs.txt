@@ -16,6 +16,7 @@ https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster
 https://coinmarketcap.com/api/ - Blockchain/Bitcoin informatie
 https://www.anwb.nl/feeds/gethf - realtime file-informatie Nederlandse snelwegen
 https://api.spacexdata.com/v3/launches/ - SpaceX rocket launch information
+https://hp-api.herokuapp.com/ - Harry Potter API
 
 // HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
 // Deze API's zijn uitgebreider, maar ook (veel) complexer
