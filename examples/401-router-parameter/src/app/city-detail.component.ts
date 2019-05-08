@@ -14,20 +14,22 @@ import {map, catchError, delay} from 'rxjs/operators';
     <h2>Details for city: {{ id }}</h2>
     <h2>Name for city: {{ name }}</h2>
 
-    <!--<div *ngIf="currentCity | async as currentCity; else loading">-->
-        <!--<h2>Details voor city: {{ currentCity.name }}</h2>-->
-        <!--<ul class="list-group">-->
-            <!--<li class="list-group-item">Name: {{ currentCity.name }}</li>-->
-            <!--<li class="list-group-item">Province: {{ currentCity.province }}</li>-->
-            <!--<li class="list-group-item">Highlights: {{ currentCity.highlights }}</li>-->
-        <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;- Template for loading data-&ndash;&gt;-->
-    <!--<ng-template #loading>-->
-        <!--<h2>Angular - else templates</h2>-->
-        <!--<h3>loading user data...</h3>-->
-        <!--<img src="../assets/loading_spinner.gif" alt="loading indicator...">-->
-    <!--</ng-template>-->
+<!--    <div *ngIf="currentCity$ | async as currentCity; else loading">-->
+<!--        <h2>Details voor city: {{ currentCity.name }}</h2>-->
+<!--        <ul class="list-group">-->
+<!--            <li class="list-group-item">Name: {{ currentCity.name }}</li>-->
+<!--            <li class="list-group-item">Province: {{ currentCity.province }}</li>-->
+<!--            <li class="list-group-item">Highlights: {{ currentCity.highlights }}</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;- Template for loading data-&ndash;&gt;-->
+<!--    <ng-template #loading>-->
+<!--        <div style="color: red">-->
+<!--            <h2>Angular - else templates</h2>-->
+<!--            <h3>loading user data...</h3>-->
+<!--            <img src="../assets/loading_spinner.gif" alt="loading indicator...">-->
+<!--        </div>-->
+<!--    </ng-template>-->
 
     `
 })
