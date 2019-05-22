@@ -39,4 +39,4 @@ Please see exercises and slides used during the training for more information (n
 Want do follow a training on your own, or with colleagues from your company? See the calendar at
 https://kassenaar.com/calendar/ or contact info@kassenaar.com.
 
-Copyright (C) 2018 - www.angulartraining.nl
+Copyright (C) 2014-2019 - www.angulartraining.nl
