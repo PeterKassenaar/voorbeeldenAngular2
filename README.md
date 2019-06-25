@@ -5,7 +5,7 @@
 Voorbeelden en demo's bij de training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
 Alle voorbeelden zijn voor versie `Angular 4.3.0` of hoger, tenzij anders vermeld.
 
-Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 7.0.2`.
+Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 8.0.1`.
 
 ## Gebruik
 
@@ -24,7 +24,7 @@ Zelf, of met uw bedrijf of organisatie een Angular 2(+) training volgen? Bekijk 
 Workshops, exercises and demo's on the training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
 All examples are on `Angular 4.3.0` or higher, unless otherwise noted.
 
-Workshops and exercises are updated to `Angular 7.0.2`.
+Workshops and exercises are updated to `Angular 8.0.1`.
 
 ## Usage
 
