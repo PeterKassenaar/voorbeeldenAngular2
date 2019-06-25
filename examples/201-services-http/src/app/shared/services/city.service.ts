@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {City} from "../model/city.model";
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {City} from '../model/city.model';
 
 @Injectable()
 export class CityService {

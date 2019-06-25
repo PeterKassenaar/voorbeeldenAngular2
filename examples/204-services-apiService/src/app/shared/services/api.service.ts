@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import { City } from '../model/city.model';
+import {Injectable} from '@angular/core';
+
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {City} from '../model/city.model';
+import {environment} from '../../../environments/environment';
 
 // Fetching URL from environment variable
 const API_URL = environment.apiUrl;
@@ -14,10 +15,10 @@ export class ApiService {
 
   // API: GET /cities - get all cities
   public getCities(): Observable<City[]> {
-    return this.http.get<City[]>(API_URL + '/cities').pipe(
+    const fullUrl = API_URL + '/cities';
+    return this.http.get<City[]>(fullUrl).pipe(
       map(response => {
-        const allCities = response;
-        return allCities.map((city: City) => {
+        return response.map((city: City) => {
           return new City(
             city.id,
             city.name,
@@ -55,16 +56,16 @@ export class ApiService {
 
     // perform POST request
     return this.http
-      .post<City>(API_URL + '/cities', city, { headers: headers })
+      .post<City>(API_URL + '/cities', city, { headers })
       .pipe(
         map((response: City) => {
-          const city: City = response;
+          const c: City = response;
           return new City(
-            city.id,
-            city.name,
-            city.province,
-            city.rating,
-            city.highlights
+            c.id,
+            c.name,
+            c.province,
+            c.rating,
+            c.highlights
           );
         }),
         catchError(this.handleError)

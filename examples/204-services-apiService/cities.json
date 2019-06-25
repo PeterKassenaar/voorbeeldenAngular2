@@ -24,7 +24,7 @@
     {
       "id": 4,
       "name": "Enschede",
-      "province": "Grote Markt",
+      "province": "Overijssel",
       "rating": 0,
       "highlights": "Twentse Welle museum"
     },
@@ -34,13 +34,6 @@
       "province": "Limburg",
       "rating": 0,
       "highlights": "Mijnbouwmuseum"
-    },
-    {
-      "id": 14,
-      "name": "Amsterdam",
-      "province": "NH",
-      "rating": 0,
-      "highlights": "De Dam"
     }
   ]
 }

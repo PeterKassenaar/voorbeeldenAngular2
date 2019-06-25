@@ -1,64 +1,63 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {City} from '../model/city.model';
 
 // Import from rxjs
-import {map, catchError} from "rxjs/operators";
-import {of} from "rxjs";
+import {map, catchError} from 'rxjs/operators';
+import {of} from 'rxjs';
 
 const API_URL = 'http://localhost:3000/cities';
 // Set RequestOptions. In this case only the header.
 const headers = new HttpHeaders().set('Content-Type', 'application/json');
-const API_ARGS = {headers: headers};
+const API_ARGS = { headers };
 
 @Injectable()
 export class CityService {
 
 
-    constructor(private http: HttpClient) {
-    }
+  constructor(private http: HttpClient) {
+  }
 
-    // GET: return all cities
-    getCities(): Observable<City[]> {
-        return this.http.get<City[]>(API_URL).pipe(
+  // GET: return all cities
+  getCities(): Observable<City[]> {
+    return this.http.get<City[]>(API_URL).pipe(
+      catchError(err => {
+        console.log('Error! Did you forget to start json-server? Run `npm run json-server` to start the server', err);
+        return of([]);
+      })
+    );
+  }
 
-            catchError(err => {
-                console.log('Error! Did you forget to start json-server? Run `npm run json-server` to start the server', err);
-                return of([])
-            })
-)
-    }
+  // GET: Return 1 City, based on Id
+  getCity(id: number): Observable<City> {
+    return this.http.get<City>(API_URL + `/${id}`);
+  }
 
-    // GET: Return 1 City, based on Id
-    getCity(id: number): Observable<City> {
-        return this.http.get<City>(API_URL + `/${id}`)
-    }
+  // POST: Add a new City
+  addCity(cityName: string): Observable<City> {
 
-    // POST: Add a new City
-    addCity(cityName: string): Observable<City> {
+    const newCity = new City(null, cityName);
 
-        let newCity = new City(null, cityName);
+    // Add city via POST request
+    return this.http.post<City>(
+      API_URL,
+      JSON.stringify(newCity),
+      API_ARGS
+    );
+  }
 
-        // Add city via POST request
-        return this.http.post<City>(
-            API_URL,
-            JSON.stringify(newCity),
-            API_ARGS
-        )
-    }
+  // DELETE: Delete city from the .json-file (warning: no trash. City is actually removed)
+  deleteCity(city) {
+    return this.http.delete(API_URL + `/${city.id}`);
+  }
 
-    // DELETE: Delete city from the .json-file (warning: no trash. City is actually removed)
-    deleteCity(city) {
-        return this.http.delete(API_URL + `/${city.id}`)
-    }
-
-    // PUT : update a current city
-    updateCity(city: City): Observable<City> {
-        return this.http.put<City>(
-            API_URL + `/${city.id}`,
-            JSON.stringify(city),
-            API_ARGS
-        )
-    }
+  // PUT : update a current city
+  updateCity(city: City): Observable<City> {
+    return this.http.put<City>(
+      API_URL + `/${city.id}`,
+      JSON.stringify(city),
+      API_ARGS
+    );
+  }
 }

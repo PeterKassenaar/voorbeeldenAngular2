@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
     this.cityService.addCity(newCity).subscribe(response => {
       console.log(response);
-      this.cities = this.cityService.getCities(); //fetch newest cities. There should be a better way to do this;
+      this.cities = this.cityService.getCities(); // fetch newest cities. There should be a better way to do this;
       this.showCityForm = false;
     });
   }
