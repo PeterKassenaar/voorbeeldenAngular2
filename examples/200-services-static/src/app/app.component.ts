@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
+    // Invoking of the cityService and getting all the cities.
+    // We are assigning them to the local variable this.cities.
 		this.cities = this.cityService.getCities();
 	}
 
