@@ -3,8 +3,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {City} from './shared/model/city.model';
 import {CityService} from './shared/services/city.service';
 
-// import {RouteParams} from "@angular/router"; // OLD way
-import {ActivatedRoute} from '@angular/router'; // NEW way
+import {ActivatedRoute} from '@angular/router'; 
 import {Subscription} from 'rxjs';
 import {map, catchError, delay} from 'rxjs/operators';
 
@@ -47,10 +46,6 @@ export class CityDetailComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        // OLD:
-        // this.id = this.route.get('id');
-
-        // NEW:
         this.sub = this.route.params.subscribe((params: any) => {
             this.id = params.id;
         });
@@ -66,12 +61,12 @@ export class CityDetailComponent implements OnInit, OnDestroy {
         // Sometimes we’re not interested in future changes of a route parameter.
         // All we need the id and once we have it, we can provide the data we want to provide.
         // In this case, an Observable can bit a bit of an overkill.
-        // A *snapshot* is simply a snapshot representation of the activated route.
+        // A *snapshot* is simply a static snapshot representation of the activated route.
         // this.id = this.route.snapshot.params['id'];
         // this.name = this.route.snapshot.params['name'];
 
         // EXTRA, with fetching details via Service and using switchMap():
-        // this.currentCity = this.route.params
+        // this.currentCity$ = this.route.params
         //     .pipe(
         //         map(params => params['id']),
         //         switchMap(id => this.cityService.getCity(+id))
