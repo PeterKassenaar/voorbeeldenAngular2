@@ -1,22 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-	// 1. Inside @Component Decorator.
-	// Add component description/annotations here
-	selector: 'hello-world',
-	template: `
-		<h1>Hello World!</h1>
-		<h2>This is Angular</h2>
-		<a href="http://angular.io" target="_blank">Angular Website</a>
-	`
+  // 1. Inside @Component Decorator.
+  // Add component description/annotations here
+  selector: 'hello-world',
+  template: `
+    <h1>Hello World!</h1>
+    <h2>This is Angular</h2>
+    <a href="http://angular.io" target="_blank">Angular Website</a>
+  `
 })
 
 export class AppComponent implements OnInit {
-	// 2. optional: add variables, constructor, class logic, etc. here
-	constructor() {
-	}
+  // 2. optional: add variables, constructor, class logic, etc. here
+  constructor() {
+  }
 
-	ngOnInit() {
-		console.log('Hello World - Angular is running');
-	}
+  ngOnInit() {
+    console.log('Hello World - Angular is running');
+  }
 }

@@ -1,17 +1,17 @@
 <h1>Hello Angular</h1>
 <h2>My favourite cities are:</h2>
 <ul class="list-group">
-	<li *ngFor="let city of cities" class="list-group-item"
-		(click)="updateCity(city)">
-		{{ city.id}} - {{ city.name }}
-	</li>
+  <li *ngFor="let city of cities" class="list-group-item"
+      (click)="updateCity(city)">
+    {{ city.id}} - {{ city.name }}
+  </li>
 </ul>
 <hr>
 
 <!-- Attribute binding -->
 <div *ngIf="currentCity">
-	<img [src]="cityPhoto"
-	     [alt]="currentCity.name" 
-	     class="cityPhoto">
-	<h2> My city: {{ currentCity.name}}</h2>
+  <img [src]="cityPhoto"
+       [alt]="currentCity.name"
+       class="cityPhoto">
+  <h2> My city: {{ currentCity.name}}</h2>
 </div>
