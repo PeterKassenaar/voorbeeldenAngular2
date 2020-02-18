@@ -23,9 +23,9 @@
   {
 	"id"        : 4,
 	"name"      : "Enschede",
-	"province"  : "Grote Markt",
+	"province"  : "Overijssel",
 	"rating"    : 0,
-	"highlights": "Twentse Welle museum"
+	"highlights": ["Twentse Welle museum", "Grote Markt"]
   },
   {
 	"id"        : 5,
