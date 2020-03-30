@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2005,
+    "price": "€65923,99"
+  },
+  {
+    "id": 2,
+    "make": "Isuzu",
+    "model": "Rodeo",
+    "year": 1999,
+    "price": "€83510,99"
+  },
+  {
+    "id": 3,
+    "make": "Lexus",
+    "model": "IS F",
+    "year": 2011,
+    "price": "€43172,92"
+  },
+  {
+    "id": 4,
+    "make": "Audi",
+    "model": "S4",
+    "year": 2013,
+    "price": "€94142,69"
+  },
+  {
+    "id": 5,
+    "make": "Aston Martin",
+    "model": "Virage",
+    "year": 2011,
+    "price": "€52642,10"
+  },
+  {
+    "id": 6,
+    "make": "Toyota",
+    "model": "Tacoma Xtra",
+    "year": 1998,
+    "price": "€94097,63"
+  },
+  {
+    "id": 7,
+    "make": "Pontiac",
+    "model": "Grand Prix",
+    "year": 1988,
+    "price": "€83651,68"
+  },
+  {
+    "id": 8,
+    "make": "Lexus",
+    "model": "IS",
+    "year": 2008,
+    "price": "€95209,47"
+  },
+  {
+    "id": 9,
+    "make": "Dodge",
+    "model": "Stratus",
+    "year": 1997,
+    "price": "€19250,26"
+  },
+  {
+    "id": 10,
+    "make": "BMW",
+    "model": "M3",
+    "year": 2009,
+    "price": "€41065,37"
+  },
+  {
+    "id": 11,
+    "make": "Porsche",
+    "model": "Boxster",
+    "year": 2002,
+    "price": "€69595,44"
+  },
+  {
+    "id": 12,
+    "make": "Cadillac",
+    "model": "STS-V",
+    "year": 2006,
+    "price": "€95583,24"
+  },
+  {
+    "id": 13,
+    "make": "Dodge",
+    "model": "Ram 1500",
+    "year": 2003,
+    "price": "€33952,43"
+  },
+  {
+    "id": 14,
+    "make": "Toyota",
+    "model": "Sienna",
+    "year": 2003,
+    "price": "€17802,87"
+  },
+  {
+    "id": 15,
+    "make": "Ford",
+    "model": "E-Series",
+    "year": 2002,
+    "price": "€68507,39"
+  },
+  {
+    "id": 16,
+    "make": "Mitsubishi",
+    "model": "Galant",
+    "year": 2010,
+    "price": "€93148,83"
+  },
+  {
+    "id": 17,
+    "make": "Dodge",
+    "model": "Ram Wagon B250",
+    "year": 1992,
+    "price": "€83313,82"
+  },
+  {
+    "id": 18,
+    "make": "Maserati",
+    "model": "Quattroporte",
+    "year": 1985,
+    "price": "€56577,24"
+  },
+  {
+    "id": 19,
+    "make": "Buick",
+    "model": "Regal",
+    "year": 1996,
+    "price": "€38124,69"
+  },
+  {
+    "id": 20,
+    "make": "Pontiac",
+    "model": "Grand Prix",
+    "year": 2007,
+    "price": "€34546,09"
+  },
+  {
+    "id": 21,
+    "make": "Mitsubishi",
+    "model": "Challenger",
+    "year": 2002,
+    "price": "€36696,01"
+  },
+  {
+    "id": 22,
+    "make": "Audi",
+    "model": "S4",
+    "year": 2000,
+    "price": "€18967,78"
+  },
+  {
+    "id": 23,
+    "make": "Ford",
+    "model": "F-250 Super Duty",
+    "year": 2006,
+    "price": "€48191,67"
+  },
+  {
+    "id": 24,
+    "make": "Cadillac",
+    "model": "Escalade ESV",
+    "year": 2009,
+    "price": "€76978,35"
+  },
+  {
+    "id": 25,
+    "make": "Cadillac",
+    "model": "STS",
+    "year": 2010,
+    "price": "€31662,61"
+  },
+  {
+    "id": 26,
+    "make": "Ford",
+    "model": "Escort",
+    "year": 1986,
+    "price": "€65564,90"
+  },
+  {
+    "id": 27,
+    "make": "Chevrolet",
+    "model": "Camaro",
+    "year": 2002,
+    "price": "€13477,23"
+  },
+  {
+    "id": 28,
+    "make": "Cadillac",
+    "model": "XLR-V",
+    "year": 2007,
+    "price": "€97010,41"
+  },
+  {
+    "id": 29,
+    "make": "Volvo",
+    "model": "XC90",
+    "year": 2003,
+    "price": "€93181,15"
+  },
+  {
+    "id": 30,
+    "make": "Mercury",
+    "model": "Villager",
+    "year": 1995,
+    "price": "€57441,59"
+  },
+  {
+    "id": 31,
+    "make": "Infiniti",
+    "model": "M",
+    "year": 2009,
+    "price": "€37685,85"
+  },
+  {
+    "id": 32,
+    "make": "Ford",
+    "model": "Crown Victoria",
+    "year": 1998,
+    "price": "€17765,83"
+  },
+  {
+    "id": 33,
+    "make": "Dodge",
+    "model": "Nitro",
+    "year": 2009,
+    "price": "€81592,36"
+  },
+  {
+    "id": 34,
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2009,
+    "price": "€39788,08"
+  },
+  {
+    "id": 35,
+    "make": "Dodge",
+    "model": "Ram Wagon B150",
+    "year": 1992,
+    "price": "€69300,60"
+  },
+  {
+    "id": 36,
+    "make": "Mazda",
+    "model": "B-Series Plus",
+    "year": 2002,
+    "price": "€95364,28"
+  },
+  {
+    "id": 37,
+    "make": "Ford",
+    "model": "Fusion",
+    "year": 2007,
+    "price": "€18616,04"
+  },
+  {
+    "id": 38,
+    "make": "Toyota",
+    "model": "Tercel",
+    "year": 1995,
+    "price": "€43814,98"
+  },
+  {
+    "id": 39,
+    "make": "Hyundai",
+    "model": "Sonata",
+    "year": 1998,
+    "price": "€35493,38"
+  },
+  {
+    "id": 40,
+    "make": "Ford",
+    "model": "Econoline E350",
+    "year": 1997,
+    "price": "€31154,78"
+  }
+]
