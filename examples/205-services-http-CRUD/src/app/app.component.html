@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <!--First (Left) column: show list of cities-->
         <ul class="list-group">
-            <li *ngFor="let city of cities | async "
+            <li *ngFor="let city of cities$ | async "
                 class="list-group-item"
                 (click)="getCity(city)">
                 {{ city.id}} - {{ city.name }}

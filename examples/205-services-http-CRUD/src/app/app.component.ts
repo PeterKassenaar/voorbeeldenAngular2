@@ -1,14 +1,18 @@
-import {Component, OnInit} from '@angular/core';
-import {City} from './shared/model/city.model';
-import {CityService} from "./shared/services/city.service";
-import {Observable} from 'rxjs';
+import { Component, OnInit } from "@angular/core";
+import { City } from "./shared/model/city.model";
+import { CityService } from "./shared/services/city.service";
+import { Observable } from "rxjs";
 
 @Component({
-	selector   : 'hello-world',
-	templateUrl: 'app.component.html',
-	styles     : [`.cityPhoto {
-		max-width : 200px
-	}`]
+  selector: "hello-world",
+  templateUrl: "app.component.html",
+  styles: [
+    `
+      .cityPhoto {
+        max-width: 200px;
+      }
+    `,
+  ],
 })
 
 // **************
@@ -21,61 +25,56 @@ import {Observable} from 'rxjs';
 // of just buttons on the template. This is covered later in this course.
 // *************
 export class AppComponent implements OnInit {
-	// Properties on the component/class
-	currentCity: City;
-	cities: Observable<City[]>;
-	cityPhoto: string;
-	cityAdded: City;
-	isEditing: boolean = false;
+  // Properties on the component/class
+  currentCity: City;
+  cities$: Observable<City[]>;
+  cityPhoto: string;
+  cityAdded: City;
+  isEditing = false;
 
-	constructor(private cityService: CityService) {
-	}
+  constructor(private cityService: CityService) {}
 
-	// 0. Initialize. Fetch all cities
-	ngOnInit() {
-		// we can use the async pipe here
-		this.cities = this.cityService.getCities()
-	}
+  // 0. Initialize. Fetch all cities
+  ngOnInit() {
+    // we can use the async pipe here
+    this.cities$ = this.cityService.getCities();
+  }
 
-	// 1. Get city by Id
-	getCity(city: City): void {
-		// Not using the async pipe, because of additional calculations in the .subscribe() block
-		this.cityService.getCity(city.id)
-			.subscribe(city => {
-				this.currentCity = city;
-				this.cityPhoto = `assets/img/${this.currentCity.name}.jpg`;
-			})
-	}
+  // 1. Get city by Id
+  getCity(city: City): void {
+    // Not using the async pipe, because of additional calculations in the .subscribe() block
+    this.cityService.getCity(city.id).subscribe((c) => {
+      this.currentCity = c;
+      this.cityPhoto = `assets/img/${this.currentCity.name}.jpg`;
+    });
+  }
 
-	// 2. Add a city
-	addCity(name: string): void {
-		this.cityService.addCity(name)
-			.subscribe(result => {
-				this.cityAdded = result;
-				this.cities = this.cityService.getCities();
-			})
-	}
+  // 2. Add a city
+  addCity(name: string): void {
+    this.cityService.addCity(name).subscribe((result) => {
+      this.cityAdded = result;
+      this.cities$ = this.cityService.getCities();
+    });
+  }
 
-	// 3. Delete a city
-	removeCity(city) {
-		this.cityService.deleteCity(city)
-			.subscribe(res => {
-				this.currentCity = null;
-				this.isEditing = false;
-				this.cities = this.cityService.getCities();
-			})
-	}
+  // 3. Delete a city
+  removeCity(city) {
+    this.cityService.deleteCity(city).subscribe((res) => {
+      this.currentCity = null;
+      this.isEditing = false;
+      this.cities$ = this.cityService.getCities();
+    });
+  }
 
-	// 4. Edit a city & update
-	updateCity() {
-		this.cityService.updateCity(this.currentCity)
-			.subscribe(res=>{
-				this.currentCity = res; // should be the same.
-				this.isEditing = false;
-			})
-	}
+  // 4. Edit a city & update
+  updateCity() {
+    this.cityService.updateCity(this.currentCity).subscribe((res) => {
+      this.currentCity = res; // should be the same.
+      this.isEditing = false;
+    });
+  }
 
-	cancel() {
-		this.isEditing = false;
-	}
+  cancel() {
+    this.isEditing = false;
+  }
 }
