@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { City } from "./shared/model/city.model";
-import { CityService } from "./shared/services/city.service";
-import { Observable } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { City } from './shared/model/city.model';
+import { CityService } from './shared/services/city.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: "hello-world",
-  templateUrl: "app.component.html",
+  selector: 'hello-world',
+  templateUrl: 'app.component.html',
   styles: [
     `
       .cityPhoto {
