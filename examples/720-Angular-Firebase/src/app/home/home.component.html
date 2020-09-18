@@ -1,0 +1,10 @@
+<!-- Fetch cities from firebase and show in the UI.-->
+<h1 class="alert-info">Lijst met cities uit Cloud Firestore</h1>
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let city of cities$ | async">
+    <h3>{{ city.name}}</h3>
+    {{city.province}}
+    <em class="fa fa-trash pull-right" (click)="removeCity(city.id)"></em>
+  </li>
+</ul>

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2 class="alert-info">Add a city</h2>
+    <!--Simple form to add a city. NO VALIDATION AT THIS MOMENT!-->
+    <div>
+      <input type="text" #cityName class="form-control-lg" placeholder="City name...">
+    </div>
+    <div>
+      <input type="text" #cityProvince class="form-control-lg" placeholder="Province...">
+    </div>
+    <div>
+      <input type="text" #cityHighlights class="form-control-lg" placeholder="Highlights (comma separated)...">
+    </div>
+    <hr>
+    <div *ngIf="added" class="alert alert-success" role="alert">
+      City added!
+    </div>
+    <button class="btn btn-success"
+            (click)="addCity(cityName.value, cityProvince.value, cityHighlights.value)">
+      <i class="fa fa-save"></i>
+      Save
+    </button>
+    <button class="btn btn-default"
+            (click)="cancel()">
+      <i class="fa fa-undo"></i>
+      Cancel
+    </button>
+  </div>
+</div>
