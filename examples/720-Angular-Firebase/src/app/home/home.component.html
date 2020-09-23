@@ -5,6 +5,12 @@
       *ngFor="let city of cities$ | async">
     <h3>{{ city.name}}</h3>
     {{city.province}}
-    <em class="fa fa-trash pull-right" (click)="removeCity(city.id)"></em>
+
+    <em class="fa fa-trash pull-right" (click)="removeCity(city.id)"
+        title="delete item"></em>
+
+    <a [routerLink]="['/update', city.id]" title="update item">
+      <em class="fa fa-pencil pull-right"></em>
+    </a>
   </li>
 </ul>
