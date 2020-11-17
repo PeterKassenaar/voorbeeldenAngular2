@@ -1,25 +1,31 @@
+//************************************************************
 // DEZE API's zijn open, zonder registratie beschikbaar, of al geregistreerd (registratie aanvullend vaak wel mogelijk)
+// THESE API's are open, free, mostly available without registration (or already registered).
 
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
-http://swapi.co/ - The Star Wars API
-http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
-http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
+https://swapi.dev/ - The Star Wars API
+https://pokeapi.co/ - The RESTful Pokemon API
+https://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
+https://ergast.com/mrd/ - Ergast Motor (Formule 1) API
 https://randomuser.me/api/?results=10 - random user data
-http://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (gebruik liever je eigen key!)
+https://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (gebruik liever je eigen key!)
 https://api.github.com/users/ - GitHub user information.
-http://dev.markitondemand.com/Api/v2/Quote/json?symbol=AAPL  - Aandelen/stock quote information
-http://restcountries.eu/ - Informatie over landen ter wereld.
+https://restcountries.eu/ - Informatie over landen ter wereld.
 https://restcountries.eu/rest/v1/all - Andere API met Country-informatie
-http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data
-http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie.
-https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster
+http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data (Dutch)
+http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie (complex).
+https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster (complex)
 https://coinmarketcap.com/api/ - Blockchain/Bitcoin informatie
-https://www.anwb.nl/feeds/gethf - realtime file-informatie Nederlandse snelwegen
 https://api.spacexdata.com/v3/launches/ - SpaceX rocket launch information
 https://hp-api.herokuapp.com/ - Harry Potter API
 
+//************************************************************
 // HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
 // Deze API's zijn uitgebreider, maar ook (veel) complexer
+
+// REGISTER FIRST AT THESE API's. Afterwards, add the key in every subsequent request.
+// These API's are a lot richer, but also more complex
+
 http://developer.marvel.com/  - Marvel comics
 https://www.rijksmuseum.nl/nl/api - Rijksmuseum
 https://www.themoviedb.org/documentation/api - The Movie Database
@@ -27,3 +33,8 @@ http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
 https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
 https://freemusicarchive.org/api - informatie over ('open source') songs & artiesten
 https://api.nasa.gov/ - NASA API, met informatie over galaxy's en meer
+
+
+//************************************************************
+// Even more API's:
+https://github.com/toddmotto/public-apis
