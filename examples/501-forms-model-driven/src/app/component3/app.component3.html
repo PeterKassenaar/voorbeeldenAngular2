@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>../501 - Using a validation Directive /app.component3.html | .ts</h2>
+    <p>
+      <em>NOT complete yet - just a bit of quick hacking on Custom Directives!</em>
+    </p>
+    <hr>
+    <form novalidate [formGroup]="myReactiveForm">
+      <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" class="form-control" id="inputEmail"
+               placeholder="Enter email" name="email"
+               formControlName="email">
+        <small class="form-text text-muted">
+          We'll never share your email with anyone else.
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control"
+               formControlName="password"
+               id="inputPassword" placeholder="Password" name="password">
+      </div>
+      Password valid? {{ myReactiveForm.get('password').status  }} <br>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control"
+               formControlName="confirm"
+               passwordConfirm="password"
+               id="confirmPassword" placeholder="Confirm Password" name="confirm">
+      </div>
+      <div>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="myReactiveForm.get('confirm').errors?.required
+            && myReactiveForm.get('confirm').touched">
+        Confirm password is required
+      </div>
+      <!--      No worky worky yet?-->
+      <div class="alert alert-danger" *ngIf="myReactiveForm.get('confirm').errors?.notEqual
+                                    && myReactiveForm.get('confirm').touched
+                                    && !myReactiveForm.get('confirm').errors?.required">
+        Password doesn't match
+      </div>
+      <button type="submit" class="btn btn-primary"
+              (click)="onSubmit()"
+              [disabled]="!myReactiveForm.valid">
+        Submit
+      </button>
+    </form>
+  </div>
+  <!--Sample results pane - showing valid/invalid of form among others-->
+  <div class="col-md-6">
+    <div class="form-result">
+      <h3>Validity</h3>
+      <div class="validity" [ngClass]="{'invalid-form': !myReactiveForm.valid}">
+        <div *ngIf="myReactiveForm.valid">Valid</div>
+        <div *ngIf="!myReactiveForm.valid">Invalid</div>
+      </div>
+      <h3>Results</h3>
+      <div class="result">
+        <p>{{ myReactiveForm.value | json}}</p>
+        <p>validity: {{myReactiveForm.valid}}</p>
+        <p>errors: {{myReactiveForm.errors | json}}</p>
+      </div>
+    </div>
+  </div>
+</div>
