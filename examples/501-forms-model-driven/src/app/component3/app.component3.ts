@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {PasswordConfirmDirective} from "../directives/password-confirm.directive";
 
 
 // Class Decorator
@@ -29,7 +28,7 @@ export class AppComponent3 implements OnInit {
 
   onSubmit() {
     console.log('Form submitted: ', this.myReactiveForm.value);
-    // alert('Form submitted!', JSON.stringify(this.myReactiveForm.value));
+    alert('Form submitted! :: ' +  JSON.stringify(this.myReactiveForm.value));
     // TODO: do something useful with form
   }
 }
