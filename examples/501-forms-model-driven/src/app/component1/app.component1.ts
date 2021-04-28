@@ -36,6 +36,15 @@ export class AppComponent1 implements OnInit {
         // 	})
         // });
 
+    // 1b - other, alternative notation, create a FormGroup
+    // directly, without the need for .formBuilder.group().
+    // AFAIK, this is yet another option to create reactive Forms.
+    // this.myReactiveForm = new FormGroup({
+    //   email: new FormControl(''),
+    //   password: new FormControl('')
+    //   // other controls...
+    // })
+
 		// 2. Subscribe to changes at form level or...
 		this.myReactiveForm.valueChanges.subscribe((value)=> {
 			// console.log('Changes at form level: ', value);
