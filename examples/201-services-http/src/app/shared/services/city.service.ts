@@ -6,7 +6,7 @@ import {City} from '../model/city.model';
 @Injectable()
 export class CityService {
 
-    // Deprecated/OLD : constructor(private http: Http) { ... }
+    // Dependency Injection from HttpClient (it is imported as HttpClientModule in app.module.ts)
     constructor(private http: HttpClient) {
 
     }
