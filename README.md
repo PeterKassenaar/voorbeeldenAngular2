@@ -3,9 +3,7 @@
 # Voorbeelden Angular
 
 Voorbeelden en demo's bij de training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
-Alle voorbeelden zijn voor versie `Angular 4.3.0` of hoger, tenzij anders vermeld.
-
-Voorbeelden en oefeningen zijn bijgewerkt naar `Angular 8.0.1`.
+Alle voorbeelden geschikt zijn voor versie `Angular 4.3.0` of hoger, tenzij anders vermeld.
 
 ## Gebruik
 
@@ -24,8 +22,6 @@ Zelf, of met uw bedrijf of organisatie een Angular 2(+) training volgen? Bekijk 
 Workshops, exercises and demo's on the training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
 All examples are on `Angular 4.3.0` or higher, unless otherwise noted.
 
-Workshops and exercises are updated to `Angular 8.0.1`.
-
 ## Usage
 
 -   Every subfolder is a small mini project! There is no central `node_modules`. This is not a mono-repo.
@@ -39,4 +35,4 @@ Please see exercises and slides used during the training for more information (n
 Want do follow a training on your own, or with colleagues from your company? See the calendar at
 https://kassenaar.com/calendar/ or contact info@kassenaar.com.
 
-Copyright (C) 2014-2020 - www.angulartraining.nl
+Copyright (C) 2014-2021 - www.angulartraining.nl
