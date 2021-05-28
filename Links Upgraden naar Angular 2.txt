@@ -1,3 +1,5 @@
+(status: outdated! Not maintained anymore)
+
 Gebruik de volgende links voor meer informatie over het
 upgraden van een project naar Angular 2.
 
