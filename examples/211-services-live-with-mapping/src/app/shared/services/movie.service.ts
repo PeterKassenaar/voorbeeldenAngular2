@@ -13,7 +13,7 @@ export class MovieService {
   constructor(private http: HttpClient) {}
 
   // return all movies
-  searchMovies(keyword): Observable<IMovie[]> {
+  searchMovies(keyword): Observable<MovieModel[]> {
     return this.http.get(this.url + `s=${keyword}`).pipe(
       map((res: any) => res.Search),
       map((movies: any[]) => {
