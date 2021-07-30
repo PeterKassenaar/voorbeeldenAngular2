@@ -24,6 +24,6 @@
 <!-- Two-way binding with extensive syntax-->
 <input type="text" class="form-control-lg"
 	   [value]="newCityExtended"
-	   (input)="newCityExtended = $event.target.value"
+	   (input)="checkMe($event)"
 	   placeholder="City..."/>
 <h2>{{ newCityExtended }}</h2>

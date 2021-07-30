@@ -1,7 +1,7 @@
 // app.component.ts
 import {Component, OnInit} from '@angular/core';
-import {City} from './shared/city.model'
-import {CityService} from "./shared/city.service";
+import {City} from './shared/model/city.model'
+import {CityService} from "./shared/services/city.service";
 
 @Component({
 	selector   : 'city-app',

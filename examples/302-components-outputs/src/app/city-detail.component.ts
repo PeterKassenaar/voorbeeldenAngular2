@@ -1,6 +1,6 @@
 // city.detail.ts
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {City} from "./shared/city.model";
+import {Component, Input, Output, EventEmitter, OnChanges} from '@angular/core';
+import {City} from "./shared/model/city.model";
 
 @Component({
 	selector: 'city-detail',
@@ -20,7 +20,7 @@ import {City} from "./shared/city.model";
 	`
 })
 
-export class CityDetailComponent {
+export class CityDetailComponent implements OnChanges{
 	isFavorite: boolean                    = true;
 	@Input() city: City;
 	@Output() rating: EventEmitter<number> = new EventEmitter<number>();

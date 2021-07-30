@@ -2,7 +2,7 @@
 
 # Voorbeelden Angular
 
-Voorbeelden en demo's bij de training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
+Voorbeelden en demo's bij de training `Angular Fundamentals` (Peter Kassenaar <mailto:info@kassenaar.com>)
 Alle voorbeelden geschikt zijn voor versie `Angular 4.3.0` of hoger, tenzij anders vermeld.
 
 ## Gebruik

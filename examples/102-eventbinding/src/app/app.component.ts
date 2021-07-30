@@ -24,7 +24,7 @@ export class AppComponent {
 
   // 1. Bind to click-event in the page
   btnClick() {
-    alert('Je hebt ' + ++this.counter + ' keer geklikt');
+    alert('You clicked ' + ++this.counter + ' time(s)'); // Workshop: check if 1 time or multiple times cliced
   }
 
   // 2. Bind to keyUp-event in the textbox

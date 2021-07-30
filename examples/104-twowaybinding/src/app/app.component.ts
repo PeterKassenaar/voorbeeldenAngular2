@@ -3,25 +3,30 @@ import {City} from './shared/city.model'
 
 // Component annotation
 @Component({
-	selector   : 'hello-world',
-	templateUrl: 'app.component.html',
+  selector: 'hello-world',
+  templateUrl: 'app.component.html',
 })
 
 // Class
 export class AppComponent {
-	newCityExtended:string = '';
+  newCity: string;
+  newCityExtended: string = '';
 
-	// Properties
-	cities:City[]  = [
-		new City(1, 'Groningen', 'Groningen'),
-		new City(2, 'Hengelo', 'Overijssel'),
-		new City(3, 'Den Haag', 'Zuid-Holland'),
-		new City(4, 'Enschede', 'Overijssel'),
-	];
+  // Properties
+  cities: City[] = [
+    new City(1, 'Groningen', 'Groningen'),
+    new City(2, 'Hengelo', 'Overijssel'),
+    new City(3, 'Den Haag', 'Zuid-Holland'),
+    new City(4, 'Enschede', 'Overijssel'),
+  ];
 
-	updateCity(city:City){
-		// console.log(mijnEvent);
-		// console.log(mijnEvent.target.value);
-		this.newCityExtended = city.name;
-	}
+  updateCity(city: City) {
+    // console.log(mijnEvent);
+    // console.log(mijnEvent.target.value);
+    this.newCityExtended = city.name;
+  }
+
+  checkMe(event: any) { // <== Ugly, the 'any' type. So preferably avoid this.
+    this.newCityExtended = event.target.value;
+  }
 }

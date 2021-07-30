@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Custom Components
 import { AppComponent } from './app.component';
 import { CityDetailComponent } from './city-detail.component';
-import { CityService } from './shared/city.service';
+import { CityService } from './shared/services/city.service';
 
 // Module declaration
 @NgModule({

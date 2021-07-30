@@ -1,8 +1,8 @@
 // app.component.ts
-import { Component, OnInit } from '@angular/core';
-import { City } from './shared/city.model';
-import { CityService } from './shared/city.service';
-import { CityDetailComponent } from './city-detail.component'; // Nieuwe component invoegen
+import {Component, OnInit} from '@angular/core';
+import {City} from './shared/model/city.model';
+import {CityService} from './shared/services/city.service';
+import {CityDetailComponent} from './city-detail.component'; // Nieuwe component invoegen
 
 @Component({
   selector: 'city-app',
@@ -18,14 +18,10 @@ export class AppComponent implements OnInit {
   constructor(private cityService: CityService) {
 
   }
+
   ngOnInit() {
-    this.cityService.getCities().subscribe(
-      cityData => {
-        this.cities = cityData; // 1. success handler
-      },
-      err => console.log(err), // 2. error handler
-      () => console.log('Getting cities complete...') // 3. complete handler
-    );
+    this.cityService.getCities()
+      .subscribe(cityData => this.cities = cityData);
   }
 
   getCity() {
