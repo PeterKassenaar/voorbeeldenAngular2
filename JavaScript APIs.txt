@@ -10,8 +10,8 @@ https://ergast.com/mrd/ - Ergast Motor (Formule 1) API
 https://randomuser.me/api/?results=10 - random user data
 https://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (gebruik liever je eigen key!)
 https://api.github.com/users/ - GitHub user information.
-https://restcountries.eu/ - Informatie over landen ter wereld.
-https://restcountries.eu/rest/v1/all - Andere API met Country-informatie
+https://restcountries.com/ - Informatie over landen ter wereld.
+https://restcountries.com/v2/all - Andere API met Country-informatie
 http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data (Dutch)
 http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie (complex).
 https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster (complex)
