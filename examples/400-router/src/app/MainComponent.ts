@@ -14,7 +14,7 @@ import {Component, OnInit} from '@angular/core';
 
         <!-- Static footer here. Always visible-->
         <hr>
-        Copyright (C) 2021
+        Copyright (C) 2022
     `
 })
 export class MainComponent {

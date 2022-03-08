@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
 	selector: 'my-app',
@@ -12,9 +12,8 @@ import {Component, OnInit} from '@angular/core';
 		<!-- Dynamically inject views here -->
 		<router-outlet></router-outlet>
 		<!-- Static footer here. Always visible-->
+
 		`
 })
-export class MainComponent implements OnInit {
-	constructor() {	}
-	ngOnInit() { }
+export class MainComponent {
 }
