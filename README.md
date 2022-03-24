@@ -20,7 +20,7 @@ Zelf, of met uw bedrijf of organisatie een Angular 2(+) training volgen? Bekijk 
 # [English:] Workshops Angular
 
 Workshops, exercises and demo's on the training Angular Fundamentals (Peter Kassenaar <mailto:info@kassenaar.com>)
-All examples are on `Angular 4.3.0` or higher, unless otherwise noted.
+All examples are on `Angular 8.0.0` or higher, unless otherwise noted.
 
 ## Usage
 
@@ -35,4 +35,4 @@ Please see exercises and slides used during the training for more information (n
 Want do follow a training on your own, or with colleagues from your company? See the calendar at
 https://kassenaar.com/calendar/ or contact info@kassenaar.com.
 
-Copyright (C) 2014-2021 - www.angulartraining.nl
+Copyright (C) 2014-2022 - www.angulartraining.nl
