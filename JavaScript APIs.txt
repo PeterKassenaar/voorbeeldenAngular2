@@ -3,6 +3,7 @@
 // THESE API's are open, free, mostly available without registration (or already registered).
 
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
+https://cataas.com/#/ - Cats as a Service (random cat gif's)
 https://swapi.dev/ - The Star Wars API
 https://pokeapi.co/ - The RESTful Pokemon API
 https://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
