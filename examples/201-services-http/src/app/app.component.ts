@@ -24,11 +24,9 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.cityService.getCities()
-            .subscribe(cityData => {						// 1. success handler
-                    this.cities = cityData
-                },
-                err => console.log('ERROR: ', err),			// 2. error handler
-                () => console.log('Getting cities complete'));	// 3. complete handler
+            .subscribe(result => {
+                    this.cities = result; // 'unpack' the results in the subscriber
+                })
     }
 
     getCity(city: City) {
