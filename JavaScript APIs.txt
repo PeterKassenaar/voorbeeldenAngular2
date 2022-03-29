@@ -9,13 +9,13 @@ https://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd940
 https://ergast.com/mrd/ - Ergast Motor (Formula 1) API
 https://randomuser.me/api/?results=10 - Random user data
 https://jsonplaceholder.typicode.com/users/ - Also random user data
-https://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (gebruik liever je eigen key!)
+https://www.omdbapi.com/?apikey=f1f56c8e& - Open Movie Database (preferably: use your own key!)
 https://api.github.com/users/ - GitHub user information.
 https://restcountries.com/ - Information on all countries in the world.
 https://placesapi.dev/introduction - Another API with country information.
 http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data (Dutch)
-http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie (complex).
-https://data.pdok.nl/datasets - Allerlei informatie van het Kadaster (complex)
+http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Dutch: Honderden API's met statistische CBS-informatie (complex).
+https://data.pdok.nl/datasets - Dutch: Allerlei informatie van het Kadaster (complex)
 https://coinmarketcap.com/api/ - Blockchain/Bitcoin information
 https://api.spacexdata.com/v3/launches/ - SpaceX rocket launch information
 https://hp-api.herokuapp.com/ - Harry Potter API
@@ -39,4 +39,4 @@ https://api.nasa.gov/ - NASA API, met informatie over galaxy's en meer
 
 //************************************************************
 // Even more API's:
-https://github.com/toddmotto/public-apis
+https://github.com/public-apis/public-apis
