@@ -33,8 +33,8 @@ https://www.rijksmuseum.nl/nl/api - Rijksmuseum
 https://www.themoviedb.org/documentation/api - The Movie Database
 http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
 https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
-https://freemusicarchive.org/api - informatie over ('open source') songs & artiesten
-https://api.nasa.gov/ - NASA API, met informatie over galaxy's en meer
+https://freemusicarchive.org/api - informatie over ('open source') songs & artists
+https://api.nasa.gov/ - NASA API, information on galaxys, stars and so on
 
 
 //************************************************************
