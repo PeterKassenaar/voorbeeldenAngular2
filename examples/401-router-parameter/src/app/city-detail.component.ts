@@ -3,7 +3,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {City} from './shared/model/city.model';
 import {CityService} from './shared/services/city.service';
 
-import {ActivatedRoute} from '@angular/router'; 
+import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {map, catchError, delay} from 'rxjs/operators';
 
@@ -13,15 +13,16 @@ import {map, catchError, delay} from 'rxjs/operators';
     <h2>Details for city: {{ id }}</h2>
     <h2>Name for city: {{ name }}</h2>
 
-<!--    <div *ngIf="currentCity$ | async as currentCity; else loading">-->
-<!--        <h2>Details voor city: {{ currentCity.name }}</h2>-->
+<!--    We're going to comment this in during the presentation! -->
+<!--    <div *ngIf="currentCity; else loading">-->
+<!--        <h2>Details for city: {{ currentCity.name }}</h2>-->
 <!--        <ul class="list-group">-->
 <!--            <li class="list-group-item">Name: {{ currentCity.name }}</li>-->
 <!--            <li class="list-group-item">Province: {{ currentCity.province }}</li>-->
 <!--            <li class="list-group-item">Highlights: {{ currentCity.highlights }}</li>-->
 <!--        </ul>-->
 <!--    </div>-->
-<!--    &lt;!&ndash;- Template for loading data-&ndash;&gt;-->
+    <!--- Template for loading data--->
 <!--    <ng-template #loading>-->
 <!--        <div style="color: red">-->
 <!--            <h2>Angular - else templates</h2>-->
@@ -38,7 +39,8 @@ export class CityDetailComponent implements OnInit, OnDestroy {
     currentCity: City;
     private sub: Subscription; // pointer to subscription on Route
 
-    constructor(private route: ActivatedRoute, private cityService: CityService) {
+    constructor(private route: ActivatedRoute,
+                private cityService: CityService) {
         // Credits: http://blog.thoughtram.io/angular/2016/06/14/routing-in-angular-2-revisited.html
         // ActivatedRoute comes with a 'params' property which is an Observable.
         // To access the property 'id', all we have to do is to subscribe to
@@ -46,10 +48,11 @@ export class CityDetailComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.sub = this.route.params.subscribe((params: any) => {
+        this.sub = this.route.params
+          .subscribe((params: any) => {
             this.id = params.id;
         });
-        
+
         // // New - paramMap
         // this.route.paramMap.subscribe((paramObject: any) => {
         //     this.id = paramObject.get('id');
