@@ -6,6 +6,6 @@ export class City {
               public rating: number,
               public price: number,
               public highlights?: string[],
-              population?: number) {
+              public population?: number) {
   }
 }
