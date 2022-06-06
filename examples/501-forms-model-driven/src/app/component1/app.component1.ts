@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, FormControl} from '@angular/forms';
+import {FormGroup, FormBuilder, FormControl}
+  from '@angular/forms';
 
 @Component({
 	selector   : 'component1',
@@ -9,6 +10,7 @@ export class AppComponent1 implements OnInit {
 
 	myReactiveForm: FormGroup;
 
+  // DI of the formBuilder class to construct our form
 	constructor(private formBuilder: FormBuilder) {
 	}
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -10,11 +10,5 @@ import {Component, OnInit} from '@angular/core';
     <router-outlet></router-outlet>
   `
 })
-export class MainComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+export class AppComponent {
 }
