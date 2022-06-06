@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
 	templateUrl: '/app.component4.html'
 })
 export class AppComponent4 implements OnInit {
-	public myLastName: string;
+	public myLastName: string ='';
 
 	constructor() {
 	}
@@ -14,7 +14,7 @@ export class AppComponent4 implements OnInit {
 		this.myLastName = 'Default Value (coming from component): Kassenaar';
 	}
 
-	onSubmit(form) {
+	onSubmit(form: any) {
 		console.log('Form submitted: ', form.value);
 		alert('Form submitted!' + JSON.stringify(form.value));
 		// TODO: send result to actual API/RESTful endpoint.

@@ -15,7 +15,7 @@
         <!--        Validation message(s) for the email field-->
         <div *ngIf="!email.valid && (email.dirty || email.touched)"
              class="alert alert-danger">
-          <div *ngIf="email.errors?.required">
+          <div *ngIf="email.errors?.['required']"> <!-- Note the weird index-syntax since Angular v13 -->
             A valid email address is required.
           </div>
           <div *ngIf="!email.valid">
@@ -34,7 +34,10 @@
         <!--          - must be at least 6 characters long-->
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit"
+              [disabled]="!myForm.valid"
+              (click)="submitForm(myForm.value)"
+              class="btn btn-primary">Submit</button>
     </form>
   </div>
   <!--Sample results pane - showing valid/invalid of form among others-->
