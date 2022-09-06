@@ -22,6 +22,8 @@ https://api.spacexdata.com/v3/launches/ - SpaceX rocket launch information
 https://hp-api.herokuapp.com/ - Harry Potter API
 https://fide-ratings-scraper.herokuapp.com/ - FIDE (chess) ratings scraping and using in your application. Zie also https://github.com/xRuiAlves/fide-ratings-scraper/
 
+https://rapidapi.com/hub - Register once, use the key for *a lot* of other API's (but: you're on your own here!)
+
 //************************************************************
 // HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
 // Deze API's zijn uitgebreider, maar ook (veel) complexer
