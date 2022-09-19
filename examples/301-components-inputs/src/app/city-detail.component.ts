@@ -1,6 +1,6 @@
 // city.detail.ts
 import { Component, Input } from '@angular/core';
-import { City } from './shared/city.model';
+import { City } from './shared/model/city.model';
 
 @Component({
   selector: 'city-detail',
