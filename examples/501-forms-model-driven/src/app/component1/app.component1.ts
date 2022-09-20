@@ -8,6 +8,7 @@ import {FormGroup, FormBuilder, FormControl}
 })
 export class AppComponent1 implements OnInit {
 
+  // form variable
 	myReactiveForm: FormGroup;
 
   // DI of the formBuilder class to construct our form
@@ -29,14 +30,14 @@ export class AppComponent1 implements OnInit {
 
 		// 1a. Different notation: same effect, using new FormControl()
 		// this.myReactiveForm = this.formBuilder.group({
-        // 	email   : new FormControl(''),
-        // 	password: new FormControl(''),
-        // 	customer: this.formBuilder.group({
-        // 		prefix   : new FormControl(''),
-        // 		firstName: new FormControl(''),
-        // 		lastName : new FormControl('')
-        // 	})
-        // });
+    //     	email   : new FormControl(''),
+    //     	password: new FormControl(''),
+    //     	customer: this.formBuilder.group({
+    //     		prefix   : new FormControl(''),
+    //     		firstName: new FormControl(''),
+    //     		lastName : new FormControl('')
+    //     	})
+    //     });
 
     // 1b - other, alternative notation, create a FormGroup
     // directly, without the need for .formBuilder.group().
@@ -53,9 +54,17 @@ export class AppComponent1 implements OnInit {
 		});
 
 		// 3. Subscribe to changes at control level.
-		this.myReactiveForm.get('email').valueChanges.subscribe((value)=> {
+		this.myReactiveForm.get('email')
+      .valueChanges
+      .subscribe((value)=> {
 			console.log('Changes at control level: ', value);
 		});
+
+    // 4. If you want to set default values in fields:
+    // This is invalid!
+    // this.myReactiveForm.get('email') = 'info@kassenaar.com ';
+    // 4b.You HAVE to use .setValue() or .patchValue():
+    // this.setDefault();
 	}
 
 	onSubmit() {
@@ -65,15 +74,15 @@ export class AppComponent1 implements OnInit {
 	}
 
 	////************************** extra
-	// 1a. Default values?
-	// setDefault() {
-	// 	setTimeout(()=> {
-	// 		this.myReactiveForm.patchValue({
-	// 			email   : 'info@kassenaar.com',
-	// 			password: 'test'
-	// 		});
-	// 	}, 2000);
+	// 5a. Default values?
+	setDefault() {
+		setTimeout(()=> {
+			this.myReactiveForm.patchValue({
+				email   : 'info@kassenaar.com',
+				password: 'test1234'
+			});
+		}, 2000);
 	// see: .patchValue() and .setValue by Kara: https://github.com/angular/angular/issues/10057
-	// }
+	}
 }
 
