@@ -1,6 +1,6 @@
 // city.orders.ts - Some kind of 'shopping basket',
 // to remember which city trips are booked.
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OrderService} from './shared/services/order.service';
 import {City} from './shared/model/city.model';
 import {CityOrderModel} from './shared/model/cityOrders.model';
@@ -17,7 +17,7 @@ import {CityOrderModel} from './shared/model/cityOrders.model';
           <th>Price</th>
         </tr>
         <tbody>
-        <tr *ngFor="let order of currentOrders">
+        <tr *ngFor="let order of currentOrders ">
           <td>{{ order.city.name}}</td>
           <td>{{ order.numBookings}}</td>
           <td>{{ order.city.price | currency:'EUR':'symbol':'1.2'}}</td>
@@ -34,7 +34,7 @@ import {CityOrderModel} from './shared/model/cityOrders.model';
   `
 })
 
-export class CityOrdersComponent {
+export class CityOrdersComponent implements OnInit{
   currentOrders: CityOrderModel[] = [];
   totalPrice: number = 0;
 
