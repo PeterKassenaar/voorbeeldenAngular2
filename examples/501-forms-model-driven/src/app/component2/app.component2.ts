@@ -37,7 +37,7 @@ function validateForm(control: AbstractControl) {
 // Class Decorator
 @Component({
   selector: 'component2',
-  templateUrl: '/app.component2.html'
+  templateUrl: 'app.component2.html'
 })
 
 // Class
