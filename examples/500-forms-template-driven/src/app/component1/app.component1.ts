@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
 	selector   : 'component1',
-	templateUrl: '/app.component1.html'
+	templateUrl: 'app.component1.html'
 })
 export class AppComponent1 {
   sendForm(){

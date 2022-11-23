@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
 	selector   : 'component3',
-	templateUrl: '/app.component3.html'
+	templateUrl: 'app.component3.html'
 })
 export class AppComponent3 implements OnInit {
 	myLastName : string = '';
