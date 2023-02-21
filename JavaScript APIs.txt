@@ -16,7 +16,6 @@ https://restcountries.com/ - Information on all countries in the world.
 https://placesapi.dev/introduction - Another API with country information.
 http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json - Postcode Data (Dutch)
 http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Dutch: Honderden API's met statistische CBS-informatie (complex).
-https://data.pdok.nl/datasets - Dutch: Allerlei informatie van het Kadaster (complex)
 https://coinmarketcap.com/api/ - Blockchain/Bitcoin information
 https://api.spacexdata.com/v3/launches/ - SpaceX rocket launch information
 https://hp-api.herokuapp.com/ - Harry Potter API
