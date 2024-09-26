@@ -14,7 +14,7 @@ import {CityService} from "./shared/services/city.service";
     imports     : [BrowserModule, HttpClientModule],
     declarations: [AppComponent],
     bootstrap   : [AppComponent],
-    providers   : [CityService] // DI for service. We can also use @Injectable({providedIn: 'root'}) in the service
+    // providers   : [CityService] // DI for service. We can also use @Injectable({providedIn: 'root'}) in the service
 })
 export class AppModule {
 }

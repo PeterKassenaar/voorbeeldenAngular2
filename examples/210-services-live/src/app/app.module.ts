@@ -8,10 +8,11 @@ import {AppComponent} from './app.component';
 
 // Import services
 import {MovieService} from "./shared/services/movie.service";
+import {NgOptimizedImage} from "@angular/common";
 
 // Module declaration
 @NgModule({
-	imports     : [BrowserModule, HttpClientModule],
+    imports: [BrowserModule, HttpClientModule, NgOptimizedImage],
 	declarations: [AppComponent],
 	bootstrap   : [AppComponent],
 	providers   : [

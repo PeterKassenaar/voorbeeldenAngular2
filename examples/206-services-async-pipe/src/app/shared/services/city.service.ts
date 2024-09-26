@@ -15,7 +15,7 @@ export class CityService {
 		return this.http.get<City[]>('assets/data/cities.json').pipe(
 			catchError(err => {
 				console.log('FOUT!!!!', err);
-				return of(null);
+				return of([]);
 			})
 		);
 	}

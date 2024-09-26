@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { City } from './shared/model/city.model';
-import { CityService } from './shared/services/city.service';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {City} from './shared/model/city.model';
+import {CityService} from './shared/services/city.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'hello-world',
@@ -26,13 +26,14 @@ import { Observable } from 'rxjs';
 // *************
 export class AppComponent implements OnInit {
   // Properties on the component/class
-  currentCity: City;
-  cities$: Observable<City[]>;
-  cityPhoto: string;
-  cityAdded: City;
+  currentCity?: City;
+  cities$?: Observable<City[]>;
+  cityPhoto: string = '';
+  cityAdded?: City;
   isEditing = false;
 
-  constructor(private cityService: CityService) {}
+  constructor(private cityService: CityService) {
+  }
 
   // 0. Initialize. Fetch all cities
   ngOnInit() {
@@ -58,9 +59,9 @@ export class AppComponent implements OnInit {
   }
 
   // 3. Delete a city
-  removeCity(city) {
+  removeCity(city : City) {
     this.cityService.deleteCity(city).subscribe((res) => {
-      this.currentCity = null;
+      this.currentCity = undefined;
       this.isEditing = false;
       this.cities$ = this.cityService.getCities();
     });
@@ -77,4 +78,6 @@ export class AppComponent implements OnInit {
   cancel() {
     this.isEditing = false;
   }
+
+  protected readonly City = City;
 }

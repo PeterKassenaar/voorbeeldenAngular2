@@ -18,7 +18,7 @@
             Add City
         </button>
         <button class="btn btn-primary"
-                (click)="currentCity = null">
+                (click)="currentCity = undefined">
             Clear
         </button>
         <div *ngIf="cityAdded">
@@ -30,9 +30,9 @@
     <div class="col-md-6">
         <!--Second (right) column: edit the current city-->
         <div *ngIf="currentCity">
-            <h2>Selected city: {{ currentCity.name }}</h2>
+            <h2>Selected city: {{ currentCity['name'] }}</h2>
             <img class="cityPhoto"
-                 [src]="cityPhoto" alt="Foto van {{ currentCity.name}}">
+                 [src]="cityPhoto" alt="Foto van {{ currentCity['name']}}">
             <button class="btn btn-warning btn-sm"
                     (click)="isEditing = !isEditing ">
                 <span *ngIf="isEditing">Hide</span>
@@ -45,18 +45,18 @@
         </div>
 
         <!--Editing a city, Quick and Dirty, using [(ngModel)] -->
-        <div *ngIf="isEditing">
+        <div *ngIf="isEditing && currentCity">
             <hr>
             <label>City Name
-                <input type="text" [(ngModel)]="currentCity.name"
+                <input type="text" [(ngModel)]="currentCity['name']"
                        placeholder="name" class="form-control-lg">
             </label>
             <label>Province
-                <input type="text" [(ngModel)]="currentCity.province"
+                <input type="text" [(ngModel)]="currentCity['province']"
                        placeholder="province" class="form-control-lg">
             </label>
             <label>Highlights
-                <input type="text" [(ngModel)]="currentCity.highlights"
+                <input type="text" [(ngModel)]="currentCity['highlights']"
                        placeholder="highlights (comma separated)" class="form-control-lg">
             </label>
             <p>

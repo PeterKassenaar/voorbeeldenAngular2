@@ -17,7 +17,7 @@ export class AppComponent {
 
   }
 
-  searchMovies(keyword) {
+  searchMovies(keyword : string) {
     // Workshop: refactor this call, so the architecture/structure is better.
     this.movieService.searchMovies(keyword)
       .pipe(

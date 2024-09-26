@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {City} from '../model/city.model';
 import {environment} from '../../../environments/environment';
@@ -81,6 +81,6 @@ export class ApiService {
   private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
     console.info('Did you forget to start json server? (npm run json-server)');
-    return Observable.throw(error);
+    return throwError(error);
   }
 }

@@ -10,7 +10,7 @@ import {of} from 'rxjs';
 const API_URL = 'http://localhost:3000/cities';
 // Set RequestOptions. In this case only the header.
 const headers = new HttpHeaders().set('Content-Type', 'application/json');
-const API_ARGS = { headers };
+const API_ARGS = {headers};
 
 @Injectable()
 export class CityService {
@@ -37,7 +37,7 @@ export class CityService {
   // POST: Add a new City
   addCity(cityName: string): Observable<City> {
 
-    const newCity = new City(null, cityName);
+    const newCity = new City(undefined, cityName);
 
     // Add city via POST request
     return this.http.post<City>(
@@ -48,14 +48,14 @@ export class CityService {
   }
 
   // DELETE: Delete city from the .json-file (warning: no trash. City is actually removed)
-  deleteCity(city) {
+  deleteCity(city: any) {
     return this.http.delete(API_URL + `/${city.id}`);
   }
 
   // PUT : update a current city
-  updateCity(city: City): Observable<City> {
+  updateCity(city: City | undefined): Observable<City> {
     return this.http.put<City>(
-      API_URL + `/${city.id}`,
+      API_URL + `/${city?.id}`,
       JSON.stringify(city),
       API_ARGS
     );

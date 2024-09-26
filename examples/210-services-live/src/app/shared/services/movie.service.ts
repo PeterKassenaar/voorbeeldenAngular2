@@ -12,7 +12,7 @@ export class MovieService {
 	}
 
 	// Return all movies. Read the documentation on parameters at www.omdbapi.com
-	searchMovies(keyword) {
+	searchMovies(keyword : string) {
 		return this.http.get(this.url + `s=${keyword}`);
 	}
 }

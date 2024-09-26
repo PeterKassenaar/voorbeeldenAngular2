@@ -16,7 +16,7 @@ export class CityService {
 	}
 
 	// return city based on ID
-	getCity(id: number): City {
+	getCity(id: number): City | undefined {
 		return this.cities.find(c => c.id === id);
 
 		// another option: using .filter(). If you

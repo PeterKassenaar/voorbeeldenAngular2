@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { MovieModel, IMovie } from '../model/movie.model';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {MovieModel, IMovie} from '../model/movie.model';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class MovieService {
-    // My private key. Please sign up for your own key at www.omdbapi.com
+  // My private key. Please sign up for your own key at www.omdbapi.com
   url: string = 'http://www.omdbapi.com/?apikey=f1f56c8e&';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   // return all movies
-  searchMovies(keyword): Observable<MovieModel[]> {
+  searchMovies(keyword: string): Observable<MovieModel[]> {
     return this.http.get(this.url + `s=${keyword}`).pipe(
       map((res: any) => res.Search),
       map((movies: any[]) => {

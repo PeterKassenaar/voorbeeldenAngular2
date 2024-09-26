@@ -1,20 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { City } from '../model/city.model';
-import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
+import {City} from '../model/city.model';
+import {HttpClient} from '@angular/common/http';
+import {map, catchError} from 'rxjs/operators';
 
 @Injectable()
 export class CityService {
   // private variable, acting as cache for cities
-  private cityCache: any[];
-  private observable: Observable<any>;
+  private cityCache: any[] = [];
+  private observable: Observable<any> | undefined;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   // retourneer alle cities, gemapt naar json
   getCities(): Observable<City[]> {
-    if (this.cityCache) {
+    if (this.cityCache.length > 0) {
       // 1. cities al aanwezig. Return Observable naar cities.
       return of(this.cityCache);
     } else if (this.observable) {
@@ -26,7 +27,7 @@ export class CityService {
         map(cities => {
           console.log('Fetched cities.json via HTTP-call');
           // 3a. Als er cached data is, hebben we this.observable niet meer nodig
-          this.observable = null;
+          this.observable = undefined;
           // 3b. Data is binnen, set cache
           this.cityCache = cities;
           return cities;
@@ -43,6 +44,6 @@ export class CityService {
 
   clearCache() {
     console.log('Cache cleared - cities removed');
-    this.cityCache = null;
+    this.cityCache = [];
   }
 }
