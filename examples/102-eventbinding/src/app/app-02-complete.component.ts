@@ -18,7 +18,7 @@ export class AddCityComponent {
   ];
 
   // Adding a city to the array
-  addCity(txtCity) {
+  addCity(txtCity:HTMLInputElement) {
     // Calculate dummy new ID.
     let newID = this.cities.length + 1;
 

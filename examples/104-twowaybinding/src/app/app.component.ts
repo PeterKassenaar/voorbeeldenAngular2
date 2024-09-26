@@ -9,7 +9,7 @@ import {City} from './shared/city.model'
 
 // Class
 export class AppComponent {
-  newCity: string;
+  newCity: string= '';
   newCityExtended: string = '';
 
   // Properties
@@ -21,8 +21,6 @@ export class AppComponent {
   ];
 
   updateCity(city: City) {
-    // console.log(mijnEvent);
-    // console.log(mijnEvent.target.value);
     this.newCityExtended = city.name;
   }
 

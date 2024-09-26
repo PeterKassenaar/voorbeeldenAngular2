@@ -27,7 +27,7 @@ export class AppComponent {
     new City(4, 'Enschede', 'Overijssel'),
   ];
   textVisible: boolean = true;
-  currentCity: City = null;
+  currentCity?: City;
   cityPhoto: string = '';
 
   // Update selected city in UI, using ES6 string interpolation
