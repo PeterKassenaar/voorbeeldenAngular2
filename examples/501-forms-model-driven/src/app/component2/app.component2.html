@@ -14,8 +14,7 @@
         <!--        Validation message with reactive forms-->
         <div *ngIf="showEmailValidationMessage">
           <div class="alert alert-danger"
-               *ngIf="myReactiveForm.get('email')
-                        .errors?.required">
+               *ngIf="myReactiveForm.get('email')?.errors?.['required']">
             An email address is required
           </div>
           <!--          ****************************-->
@@ -36,8 +35,8 @@
                id="confirmPassword" placeholder="Confirm Password" name="confirm">
       </div>
       <div>
-        Password valid? {{ myReactiveForm.get('password').status  }} <br>
-        Password matches? {{ myReactiveForm.errors | json }}
+        Password valid? {{ myReactiveForm?.get('password')?.['status']  }} <br>
+        Password matches? {{ myReactiveForm?.errors | json }}
       </div>
 
       <!--*******************-->

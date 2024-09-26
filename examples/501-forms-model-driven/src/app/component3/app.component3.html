@@ -5,7 +5,7 @@
       <em>See source code for a bit of quick hacking on Custom Directives.</em>
     </p>
     <hr>
-    <form novalidate [formGroup]="myReactiveForm">
+    <form novalidate [formGroup]="myReactiveForm" *ngIf="myReactiveForm">
       <div class="form-group">
         <label for="inputEmail">Email address</label>
         <input type="email" class="form-control" id="inputEmail"
@@ -21,7 +21,7 @@
                formControlName="password"
                id="inputPassword" placeholder="Password" name="password">
       </div>
-      Password valid? {{ myReactiveForm.get('password').status  }} <br>
+      Password valid? {{ myReactiveForm.get('password')?.status }} <br>
       <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" class="form-control"
@@ -29,17 +29,14 @@
                passwordConfirm="password"
                id="confirmPassword" placeholder="Confirm Password" name="confirm">
       </div>
-      <div>
-      </div>
-
-      <div class="alert alert-danger" *ngIf="myReactiveForm.get('confirm').errors?.required
-            && myReactiveForm.get('confirm').touched">
+      <div class="alert alert-danger" *ngIf="myReactiveForm.get('confirm')?.errors?.['required']
+            && myReactiveForm.get('confirm')?.['touched']">
         Confirm password is required
       </div>
       <!--      No worky worky yet?-->
-      <div class="alert alert-danger" *ngIf="myReactiveForm.get('confirm').errors?.notEqual
-                                    && myReactiveForm.get('confirm').touched
-                                    && !myReactiveForm.get('confirm').errors?.required">
+      <div class="alert alert-danger" *ngIf="myReactiveForm.get('confirm')?.errors?.['notEqual']
+                                    && myReactiveForm.get('confirm')?.['touched']
+                                    && !myReactiveForm.get('confirm')?.errors?.['required']">
         Password doesn't match
       </div>
       <button type="submit" class="btn btn-primary"
@@ -51,7 +48,7 @@
   </div>
   <!--Sample results pane - showing valid/invalid of form among others-->
   <div class="col-md-6">
-    <div class="form-result">
+    <div class="form-result" *ngIf="myReactiveForm">
       <h3>Validity</h3>
       <div class="validity" [ngClass]="{'invalid-form': !myReactiveForm.valid}">
         <div *ngIf="myReactiveForm.valid">Valid</div>
@@ -59,8 +56,8 @@
       </div>
       <h3>Results</h3>
       <div class="result">
-        <p>{{ myReactiveForm.value | json}}</p>
-        <p>validity: {{myReactiveForm.valid}}</p>
+        <p>{{ myReactiveForm.value | json }}</p>
+        <p>validity: {{ myReactiveForm.valid }}</p>
       </div>
     </div>
   </div>

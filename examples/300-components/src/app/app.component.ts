@@ -12,7 +12,7 @@ import {CityDetailComponent} from './city-detail.component'; // Nieuwe component
 // Class
 export class AppComponent implements OnInit {
   // Properties
-  public cities: City[];
+  public cities: City[] = [];
   public currentCity: boolean = false;
 
   constructor(private cityService: CityService) {
@@ -30,6 +30,6 @@ export class AppComponent implements OnInit {
   }
 
   clearCity() {
-    this.currentCity = null;
+    this.currentCity = false;
   }
 }

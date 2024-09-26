@@ -18,5 +18,5 @@ import { City } from './shared/model/city.model';
 })
 export class CityDetailComponent {
     // Input parameter - define `city` as an attribute on this component
-  @Input() city: City;
+  @Input() city?: City;
 }

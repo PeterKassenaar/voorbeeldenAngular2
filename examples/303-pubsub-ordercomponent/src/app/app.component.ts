@@ -1,7 +1,7 @@
 // app.component.ts
-import { Component } from '@angular/core';
-import { City } from './shared/model/city.model';
-import { CityService } from './shared/services/city.service';
+import {Component} from '@angular/core';
+import {City} from './shared/model/city.model';
+import {CityService} from './shared/services/city.service';
 
 @Component({
   selector: 'city-app',
@@ -10,9 +10,10 @@ import { CityService } from './shared/services/city.service';
 export class AppComponent {
   title: string = 'Cities with order Component and event bus';
   cities: City[] = [];
-  currentCity: City;
+  currentCity?: City;
 
-  constructor(private cityService: CityService) {}
+  constructor(private cityService: CityService) {
+  }
 
   ngOnInit() {
     this.cityService
@@ -29,10 +30,12 @@ export class AppComponent {
   }
 
   clearCity() {
-    this.currentCity = null;
+    this.currentCity = undefined;
   }
 
-  updateCityRating(rating) {
-    this.currentCity.rating += rating;
+  updateCityRating(rating: number) {
+    if (this.currentCity) {
+      this.currentCity.rating += rating;
+    }
   }
 }

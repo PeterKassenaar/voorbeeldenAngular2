@@ -18,15 +18,15 @@ import {CityOrderModel} from './shared/model/cityOrders.model';
         </tr>
         <tbody>
         <tr *ngFor="let order of currentOrders ">
-          <td>{{ order.city.name}}</td>
-          <td>{{ order.numBookings}}</td>
-          <td>{{ order.city.price | currency:'EUR':'symbol':'1.2'}}</td>
+          <td>{{ order.city.name }}</td>
+          <td>{{ order.numBookings }}</td>
+          <td>{{ order.city.price | currency:'EUR':'symbol':'1.2' }}</td>
         </tr>
-        </tbody>
         <tr>
           <td colspan="2">Total</td>
-          <td><strong>{{totalPrice | currency:'EUR':'symbol':'1.2'}}</strong></td>
+          <td><strong>{{ totalPrice | currency:'EUR':'symbol':'1.2' }}</strong></td>
         </tr>
+        </tbody>
       </table>
       <button class="btn btn-default" (click)="cancel()">Cancel</button>
       <button class="btn btn-success" (click)="confirm()">Confirm</button>
@@ -46,11 +46,11 @@ export class CityOrdersComponent implements OnInit{
   ngOnInit() {
     // Subscribe to events being published on the orderService.Stream property.
     this.orderService.Stream
-      .subscribe(
-        (city: City) => this.processOrder(city),
-        (err) => console.log('Error when processing City-order'),
-        () => console.log('Complete...')
-      );
+      .subscribe({
+        next: (city: City) => this.processOrder(city),
+        error: (err) => console.log('Error when processing City-order'),
+        complete: () => console.log('Complete...')
+      });
   }
 
   processOrder(city: City) {

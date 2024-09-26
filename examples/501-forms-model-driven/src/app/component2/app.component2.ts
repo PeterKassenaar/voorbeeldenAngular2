@@ -5,17 +5,18 @@ import {FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/form
 // Example 1. Function to match passwords
 //********************
 function passwordMatcher(control: AbstractControl) {
-  return control.get('password').value === control.get('confirm').value
+  return control.get('password')?.value === control.get('confirm')?.value
     ? null : {'nomatch': true};
   // we *could*  return just true/false here, but by returning an object
   // we're more flexible in composing our validators.
+
 }
 
 //********************
 // Example 2: Function to validate email
 //********************
 function validateEmail(control: AbstractControl) {
-  let email = control.get('email').value;
+  let email = control.get('email')?.value;
   let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email)
     ? null : {'no valid email': true};
@@ -43,8 +44,8 @@ function validateForm(control: AbstractControl) {
 // Class
 export class AppComponent2 implements OnInit {
 
-  myReactiveForm: FormGroup;
-  showEmailValidationMessage: boolean = false;
+  myReactiveForm: FormGroup = this.formBuilder.group({}); // empty group, redefined in ngOnInit()
+  showEmailValidationMessage?: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -68,24 +69,23 @@ export class AppComponent2 implements OnInit {
     // Validating the email field by subscribing to it.
     // We set it to 'required' in the
     // model above.
-    this.myReactiveForm.get('email')
-      .valueChanges
+    this.myReactiveForm.get('email')?.valueChanges
       .subscribe(data => {
         this.checkEmail();
       })
   }
 
   onSubmit() {
-    console.log('Form submitted: ', this.myReactiveForm.value);
+    console.log('Form submitted: ', this.myReactiveForm?.value);
     // alert('Form submitted!', JSON.stringify(this.myReactiveForm.value));
     // TODO: do something useful with form
   }
 
   checkEmail() {
     console.log('Email checked....');
-    this.showEmailValidationMessage = !this.myReactiveForm.get('email').valid &&
-      (this.myReactiveForm.get('email').dirty ||
-        this.myReactiveForm.get('email').touched)
+    this.showEmailValidationMessage = !this.myReactiveForm?.get('email')?.valid &&
+      (this.myReactiveForm?.get('email')?.dirty ||
+        this.myReactiveForm?.get('email')?.touched)
   }
 
 }

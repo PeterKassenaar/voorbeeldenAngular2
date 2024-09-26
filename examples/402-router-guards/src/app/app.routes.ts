@@ -10,7 +10,7 @@ import {LoginComponent} from "./login/login.component";
 // Guards
 import {CanActivateViaAuthGuard} from "./shared/guards/canActivateViaAuthGuard";
 import {CanDeactivateComponent} from "./canDeactivateComponent";
-import {CanDeactivateGuard} from "./shared/guards/canDeactivateGuard";
+import {CanDeactivateGuard} from "./shared/guards/canDeActivateGuard";
 
 export const AppRoutes: Routes = [
     {

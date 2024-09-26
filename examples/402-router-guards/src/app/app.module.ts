@@ -14,7 +14,6 @@ import { AuthService } from './shared/services/auth.service';
 
 // Guard
 import { CanActivateViaAuthGuard } from './shared/guards/canActivateViaAuthGuard';
-import { CanDeactivateGuard } from './shared/guards/canDeactivateGuard';
 
 // Inline providers/function not possible anymore. This
 // function is used inside providers: []
@@ -53,8 +52,7 @@ import { LoginComponent } from './login/login.component';
       provide: 'CanAlwaysActivateGuard', // Guard as a function
       useValue: guardFunction
     },
-    CanActivateViaAuthGuard,
-    CanDeactivateGuard
+    CanActivateViaAuthGuard
   ],
   bootstrap: [MainComponent]
 })

@@ -12,7 +12,7 @@ import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 // tslint:disable-next-line:component-class-suffix
 export class AppComponent3 implements OnInit {
 
-  myReactiveForm: FormGroup;
+  myReactiveForm?: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -27,9 +27,11 @@ export class AppComponent3 implements OnInit {
   }
 
   onSubmit() {
-    console.log('Form submitted: ', this.myReactiveForm.value);
-    alert('Form submitted! :: ' +  JSON.stringify(this.myReactiveForm.value));
-    // TODO: do something useful with form
+    if (this.myReactiveForm) {
+      console.log('Form submitted: ', this.myReactiveForm.value);
+      alert('Form submitted! :: ' + JSON.stringify(this.myReactiveForm.value));
+      // TODO: do something useful with form
+    }
   }
 }
 
