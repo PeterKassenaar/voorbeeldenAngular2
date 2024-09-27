@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
   template: `
     <h1>Hello World!</h1>
     <h2>This is Angular</h2>
-    <a href="http://angular.io" target="_blank">Angular Website</a>
+    <a href="https://angular.dev" target="_blank">Angular Website</a>
   `
 })
 
